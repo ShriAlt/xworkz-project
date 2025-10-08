@@ -102,12 +102,12 @@
           <artifactId>hibernate-core</artifactId>
           <version>5.6.15.Final</version>
       </dependency>
-<!-- this is fromm spring Boot still works with spring Mvc no need for extra mail dependencies-->
-      <dependency>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-starter-mail</artifactId>
-          <version>2.5.6</version>
-      </dependency>
+<!-- this is from spring Boot still works with spring Mvc no need for extra mail dependencies-->
+<!--      <dependency>-->
+<!--          <groupId>org.springframework.boot</groupId>-->
+<!--          <artifactId>spring-boot-starter-mail</artifactId>-->
+<!--          <version>2.5.6</version>-->
+<!--      </dependency>-->
   </dependencies>
   <build>
     <finalName>TechRoute</finalName>
