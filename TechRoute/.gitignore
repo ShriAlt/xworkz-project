@@ -39,4 +39,4 @@ build/
 .DS_Store
 
 # Prevent secrets from being committed
-!**/src/main/resources/application-secret.properties
+src/main/resources/application-secret.properties
