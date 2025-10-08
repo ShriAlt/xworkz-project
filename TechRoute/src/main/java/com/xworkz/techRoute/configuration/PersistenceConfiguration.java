@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.configuration;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -13,6 +14,15 @@ import java.util.Properties;
 @Configuration
 public class PersistenceConfiguration {
 
+    @Value("${db.url}")
+    private String url;
+
+    @Value("${db.password}")
+    private String password;
+
+    @Value("${db.username}")
+    private String userName;
+
     public PersistenceConfiguration(){
         System.out.println("no args of PersistenceConfiguration ");
     }
@@ -21,9 +31,9 @@ public class PersistenceConfiguration {
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/module_db");
-        dataSource.setPassword("@Mythsri.com10");
-        dataSource.setUsername("root");
+        dataSource.setUrl(url);
+        dataSource.setPassword(password);
+        dataSource.setUsername(userName);
         return dataSource;
     }
     @Bean
@@ -31,7 +41,7 @@ public class PersistenceConfiguration {
     {
         LocalContainerEntityManagerFactoryBean factoryBean =new LocalContainerEntityManagerFactoryBean();
         factoryBean.setDataSource(dataSource);
-        factoryBean.setPackagesToScan("com.xworkz.modules.entity");
+        factoryBean.setPackagesToScan("com.xworkz.techRoute.entity");
         JpaVendorAdapter jpaVendorAdapter=new HibernateJpaVendorAdapter();
         factoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         factoryBean.setJpaProperties(jpaProperties());
