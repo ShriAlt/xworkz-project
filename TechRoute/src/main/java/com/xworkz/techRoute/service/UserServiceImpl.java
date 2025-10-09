@@ -51,7 +51,7 @@ public class UserServiceImpl implements UserService{
         if (identifier == null){
             return "invalid";
         }
-       if (identifier.contains("^[6-9]\\d{9}$")){
+       if (identifier.matches("^[6-9]\\d{9}$")){
           UserEntity userEntity =  userRepository.checkByPhone(identifier);
 
            return getResult(loginDto, userEntity);

@@ -32,6 +32,7 @@ public class WebAppConfiguration implements WebMvcConfigurer {
     {
         return new InternalResourceViewResolver("/",".jsp");
     }
+
     @Bean
     public static PropertySourcesPlaceholderConfigurer properties() throws IOException {
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
