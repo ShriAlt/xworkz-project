@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/")
-public class UserController {
+public class UserRestController {
 
-    public UserController(){
-        System.out.println("No args of UserController");
+    public UserRestController(){
+        System.out.println("No args of UserRestController");
     }
 
     @Autowired

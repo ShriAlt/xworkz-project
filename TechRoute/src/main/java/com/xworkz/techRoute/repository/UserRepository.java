@@ -1,7 +1,7 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.LoginEntity;
 import com.xworkz.techRoute.entity.UserEntity;
-import org.springframework.stereotype.Repository;
 
 public interface UserRepository {
 
@@ -10,5 +10,7 @@ public interface UserRepository {
     UserEntity checkByMail(String email);
 
     UserEntity checkByPhone(String phone);
+
+    boolean saveLoginInfo(LoginEntity loginEntity);
 
 }

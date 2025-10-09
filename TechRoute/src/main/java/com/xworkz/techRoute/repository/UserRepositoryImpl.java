@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.LoginEntity;
 import com.xworkz.techRoute.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -82,6 +83,32 @@ public class UserRepositoryImpl implements UserRepository {
         catch (Exception e){
             e.printStackTrace();
             return null;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public boolean saveLoginInfo(LoginEntity loginEntity) {
+        EntityManager entityManager = null;
+        EntityTransaction entityTransaction = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction = entityManager.getTransaction();
+            entityTransaction.begin();
+            entityManager.persist(loginEntity);
+            entityTransaction.commit();
+            return true;
+        }
+        catch (Exception e){
+            if (entityTransaction != null && entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {
