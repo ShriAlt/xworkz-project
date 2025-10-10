@@ -42,11 +42,13 @@ public class UserRestController {
 
     @GetMapping("checkEmail")
     public ResponseEntity<String> checkEmail(String email){
-        return ResponseEntity.status(HttpStatus.CREATED).body("Working");
+        boolean exist = userService.checkMail(email);
+        return ResponseEntity.ok(String.valueOf(exist));
     }
 
     @GetMapping("checkPhone")
     public ResponseEntity<String> checkPhone(String phone){
-        return ResponseEntity.status(HttpStatus.CREATED).body("Working");
+        boolean exist = userService.checkPhone(phone);
+        return ResponseEntity.ok(String.valueOf(exist));
     }
 }

@@ -83,4 +83,21 @@ public class UserServiceImpl implements UserService{
         return "allGood";
     }
 
+    @Override
+    public boolean checkMail(String mail) {
+        if (mail == null){
+            return false;
+        }
+       UserEntity userEntity = userRepository.checkByMail(mail);
+        return userEntity != null;
+    }
+
+    @Override
+    public boolean checkPhone(String phone) {
+        if (phone == null){
+            return false;
+        }
+        UserEntity userEntity = userRepository.checkByPhone(phone);
+        return userEntity != null;
+    }
 }

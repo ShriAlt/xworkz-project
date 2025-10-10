@@ -8,4 +8,8 @@ public interface UserService {
     String validateAndSave(UserDto dto);
 
     String login(LoginDto loginDto);
+
+   boolean checkMail(String mail);
+
+   boolean checkPhone(String phone);
 }
