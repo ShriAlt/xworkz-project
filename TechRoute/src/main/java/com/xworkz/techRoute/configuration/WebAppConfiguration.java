@@ -34,7 +34,7 @@ public class WebAppConfiguration implements WebMvcConfigurer {
     }
 
     @Bean
-    public static PropertySourcesPlaceholderConfigurer properties() throws IOException {
+    public static PropertySourcesPlaceholderConfigurer properties() {
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
         Resource[] resources = new Resource[] {
                 new ClassPathResource("application.properties"),

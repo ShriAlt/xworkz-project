@@ -34,14 +34,17 @@ public class LoginController {
                     return "LoginPage";
                 }
                 case "noEmail": {
-                    model.addAttribute("error", "mail doesn't exist ");
+                    model.addAttribute("identifier",dto.getIdentifier());
+                    model.addAttribute("error", "please use registered phone number or email  ");
                     return "LoginPage";
                 }
                 case "passwordMisMatch": {
+                    model.addAttribute("identifier",dto.getIdentifier());
                     model.addAttribute("passwordError", "password doesn't match ");
                     return "LoginPage";
                 }
                 case "dbError": {
+                    model.addAttribute("identifier",dto.getIdentifier());
                     model.addAttribute("error", "internal db error");
                     return "LoginPage";
                 }

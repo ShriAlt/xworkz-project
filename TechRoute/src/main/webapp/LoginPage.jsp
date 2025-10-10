@@ -40,18 +40,17 @@
     </div>
     <div class="card-body p-4">
         <form action="login" method="POST">
-<!--            <span class="text-danger">${emailError}</span>-->
-<!--            <span class="text-danger">${dbError}</span>-->
-<!--            <span class="text-danger">${passwordError}</span>-->
+            <span class="text-danger">${error}</span>
             <div class="mb-3">
                 <label for="identifier" class="form-label">Email address</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-                    <input type="text" class="form-control" id="identifier" name="identifier" value="${email}"  placeholder="email or phone " required>
+                    <input type="text" class="form-control" id="identifier" name="identifier" value="${identifier}" onchange="validateIdentifier()"  placeholder="email or phone " required>
                 </div>
-<!--                <span id="emailError" class="text-danger"></span>-->
+                <span id="identifierError" class="text-danger"></span>
             </div>
             <div class="mb-3">
+                <span class="text-danger">${passwordError}</span>
                 <label for="password" class="form-label">Password</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
@@ -65,18 +64,18 @@
                   <input class="form-check-input" type="checkbox" id="rememberMe">
                   <label class="form-check-label" for="rememberMe"> Remember Me </label>
                 </div> -->
-                <a href="forgotPassword" class="small text-decoration-none">Forgot Password?</a>
+<!--                <a href="forgotPassword" class="small text-decoration-none">Forgot Password?</a>-->
             </div>
 
             <button type="submit" class="btn btn-primary w-100" id="submitBtn" >Login</button>
         </form>
-        <p class="text-center mt-3 mb-0">
-            Don’t have an account? <a href="signUp" class="text-decoration-none">Register here</a>
-        </p>
+<!--        <p class="text-center mt-3 mb-0">-->
+<!--            Don’t have an account? <a href="signUp" class="text-decoration-none">Register here</a>-->
+<!--        </p>-->
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!--<script src="SignInPageValidation.js"></script>-->
+<script src="js/LoginPageValidation.js"></script>
 
 </body>
 </html>
