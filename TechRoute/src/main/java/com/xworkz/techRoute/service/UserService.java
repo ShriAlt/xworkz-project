@@ -12,4 +12,6 @@ public interface UserService {
    boolean checkMail(String mail);
 
    boolean checkPhone(String phone);
+
+   String verifyAndSendOtp(String identifier);
 }

@@ -58,11 +58,13 @@ public class LoginController {
         }
         return "LoginPage";
     }
-
-    @PostMapping("forgotPassword")
-    public String forgotPassword( String identifier , String password){
-
+    @GetMapping("forgotPassword")
+    public String forgotPassword(){
         return "ForgotPasswordPage";
     }
+    @PostMapping("sendOtp")
+    public String sendOtp(String identifier ){
 
+        return "verifyOtp";
+    }
 }

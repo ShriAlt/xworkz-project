@@ -100,4 +100,22 @@ public class UserServiceImpl implements UserService{
         UserEntity userEntity = userRepository.checkByPhone(phone);
         return userEntity != null;
     }
+
+    @Override
+    public String verifyAndSendOtp(String identifier) {
+        if (identifier == null){
+            return "invalid";
+        }
+        if (identifier.matches("^[6-9]\\d{9}$")){
+
+
+            return "";
+        }
+        if (identifier.contains(".") && identifier.contains("@")){
+
+            
+            return "";
+        }
+        return "invalid";
+    }
 }
