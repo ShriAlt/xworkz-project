@@ -1,8 +1,8 @@
 package com.xworkz.techRoute.restController;
 
 
-import com.xworkz.techRoute.dto.UserDto;
-import com.xworkz.techRoute.service.UserService;
+import com.xworkz.techRoute.dto.ProfileDto;
+import com.xworkz.techRoute.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,23 +12,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/")
-public class UserRestController {
+public class RegisterRestController {
 
-    public UserRestController(){
-        System.out.println("No args of UserRestController");
+    public RegisterRestController(){
+        System.out.println("No args of RegisterRestController");
     }
 
     @Autowired
-    private UserService userService;
+    private ProfileService profileService;
 
-    @PostMapping("userRegister")
-    public ResponseEntity<String> userRegister(UserDto userDto, BindingResult bindingResult){
+    @PostMapping("profileRegister")
+    public ResponseEntity<String> profileRegister(@Valid ProfileDto profileDto, BindingResult bindingResult){
         if (bindingResult.hasErrors()){
-            return ResponseEntity.badRequest().body("has Errors in your data ");
+            return ResponseEntity.badRequest().body("fill the valid data ");
         }
-        String result =  userService.validateAndSave(userDto);
+        String result =  profileService.validateAndSave(profileDto);
         switch (result) {
             case "emailExist":
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("mail exist");
@@ -37,18 +39,18 @@ public class UserRestController {
             case "dbError":
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("developer error ");
         }
-        return ResponseEntity.ok("Registered : " + userDto.getEmail()+" !!!!");
+        return ResponseEntity.ok("Registered : " + profileDto.getEmail()+" !!!!");
     }
 
     @GetMapping("checkEmail")
     public ResponseEntity<String> checkEmail(String email){
-        boolean exist = userService.checkMail(email);
+        boolean exist = profileService.checkMail(email);
         return ResponseEntity.ok(String.valueOf(exist));
     }
 
     @GetMapping("checkPhone")
     public ResponseEntity<String> checkPhone(String phone){
-        boolean exist = userService.checkPhone(phone);
+        boolean exist = profileService.checkPhone(phone);
         return ResponseEntity.ok(String.valueOf(exist));
     }
 }

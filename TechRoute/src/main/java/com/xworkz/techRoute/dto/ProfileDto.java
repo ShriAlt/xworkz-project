@@ -7,10 +7,10 @@ import javax.validation.constraints.*;
 import java.io.Serializable;
 
 @Data
-public class UserDto implements Serializable {
+public class ProfileDto implements Serializable {
 
-    public UserDto(){
-        System.out.println("no args of UserDto ");
+    public ProfileDto(){
+        System.out.println("no args of ProfileDto ");
     }
 
     private String firstName;

@@ -1,7 +1,6 @@
 package com.xworkz.techRoute.repository;
 
-import com.xworkz.techRoute.entity.LoginEntity;
-import com.xworkz.techRoute.entity.UserEntity;
+import com.xworkz.techRoute.entity.RegisterEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -11,23 +10,23 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository {
+public class ProfileRepositoryImpl implements ProfileRepository {
 
-    public UserRepositoryImpl(){
-        System.out.println("no args of UserRepositoryImpl");
+    public ProfileRepositoryImpl(){
+        System.out.println("no args of ProfileRepositoryImpl");
     }
     @Autowired
     EntityManagerFactory entityManagerFactory;
 
     @Override
-    public boolean saveUser(UserEntity userEntity) {
+    public boolean saveUser(RegisterEntity registerEntity) {
         EntityManager entityManager = null;
         EntityTransaction entityTransaction = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
-            entityManager.persist(userEntity);
+            entityManager.persist(registerEntity);
             entityTransaction.commit();
             return true;
         }
@@ -46,15 +45,15 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public UserEntity checkByMail(String email) {
+    public RegisterEntity checkByMail(String email) {
         EntityManager entityManager = null;
-        UserEntity userEntity = null;
+        RegisterEntity registerEntity = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             Query query = entityManager.createNamedQuery("findByMail");
             query.setParameter("email",email);
-           userEntity =  (UserEntity) query.getSingleResult();
-            return userEntity;
+           registerEntity =  (RegisterEntity) query.getSingleResult();
+            return registerEntity;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -69,16 +68,16 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public UserEntity checkByPhone(String phone) {
+    public RegisterEntity checkByPhone(String phone) {
 
         EntityManager entityManager = null;
-        UserEntity userEntity ;
+        RegisterEntity registerEntity;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             Query query = entityManager.createNamedQuery("findByPhone");
             query.setParameter("phoneNumber",phone);
-            userEntity =  (UserEntity) query.getSingleResult();
-            return userEntity;
+            registerEntity =  (RegisterEntity) query.getSingleResult();
+            return registerEntity;
         }
         catch (Exception e){
             e.printStackTrace();
@@ -92,14 +91,40 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public boolean saveLoginInfo(LoginEntity loginEntity) {
+    public <T> boolean saveLoginInfo(T entity) {
         EntityManager entityManager = null;
         EntityTransaction entityTransaction = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
-            entityManager.persist(loginEntity);
+            entityManager.persist(entity);
+            entityTransaction.commit();
+            return false;
+        }
+        catch (Exception e){
+            if (entityTransaction != null && entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+            e.printStackTrace();
+            return true;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public <T> boolean updateProfile(T entity) {
+        EntityManager entityManager = null;
+        EntityTransaction entityTransaction = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction = entityManager.getTransaction();
+            entityTransaction.begin();
+            entityManager.merge(entity);
             entityTransaction.commit();
             return true;
         }

@@ -1,11 +1,11 @@
 package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.LoginDto;
-import com.xworkz.techRoute.dto.UserDto;
+import com.xworkz.techRoute.dto.ProfileDto;
 
-public interface UserService {
+public interface ProfileService {
 
-    String validateAndSave(UserDto dto);
+    String validateAndSave(ProfileDto dto);
 
     String login(LoginDto loginDto);
 

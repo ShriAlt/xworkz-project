@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <title>OTP Verification</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -15,36 +15,37 @@
             justify-content: center;
             align-items: center;
         }
-        .forgot-password-card {
+
+        .otp-verification-card {
             width: 400px;
             max-width: 90%;
         }
     </style>
 </head>
 <body>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card forgot-password-card">
+            <div class="card otp-verification-card">
                 <div class="card-header text-center">
-                    <h3>Reset your Password </h3>
+                    <h3>OTP Verification</h3>
+                    <p>Please enter the 6-digit OTP sent to your <span>${email}</span>.</p>
                 </div>
                 <div class="card-body">
-                    <form id="forgotPasswordForm" action="sendOtp" method="post">
-                        <span>${locked}</span>
+                    <form id="otpForm" action="VerifyOtp" method="post">
                         <div class="mb-3">
-                            <label for="identifier" class="form-label">Email / phone  </label>
-                            <input type="text" class="form-control" id="identifier" value= "${identifier}" name="identifier" placeholder="Enter your email or phone number" onchange="validateIdentifier()" required>
+                            <label for="otp" class="form-label">One-Time Password (OTP)</label>
+                            <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP"
+                                   required pattern="[0-9]{6}" title="Please enter a 6-digit OTP">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+                        <button type="submit" class="btn btn-primary w-100">Verify OTP</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/LoginPageValidation.js"></script>
 </body>
 </html>

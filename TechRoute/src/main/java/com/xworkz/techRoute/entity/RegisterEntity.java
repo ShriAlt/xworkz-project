@@ -4,20 +4,21 @@ import com.xworkz.techRoute.enums.Role;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name = "user_details")
+@Table(name = "register_details")
 @Data
 @NamedQuery(
         name = "findByMail",
-        query = "SELECT u FROM UserEntity u WHERE u.email = :email"
+        query = "SELECT u FROM RegisterEntity u WHERE u.email = :email"
 )
 @NamedQuery(
         name = "findByPhone",
-        query = "SELECT u FROM UserEntity u WHERE u.phoneNumber = :phoneNumber"
+        query = "SELECT u FROM RegisterEntity u WHERE u.phoneNumber = :phoneNumber"
 )
-public class UserEntity {
+public class RegisterEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,10 @@ public class UserEntity {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    private int loginAttempt;
+
+    private String otp;
+
+    private LocalDateTime otpTimeStamp;
 }
