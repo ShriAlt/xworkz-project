@@ -13,5 +13,4 @@ public interface ProfileService {
 
    boolean checkPhone(String phone);
 
-   String verifyAndSendOtp(String identifier);
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OTP Verification</title>
+    <title>Reset Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -16,31 +16,36 @@
             align-items: center;
         }
 
-        .otp-verification-card {
+        .reset-password-card {
             width: 400px;
             max-width: 90%;
         }
     </style>
 </head>
 <body>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card otp-verification-card">
+            <div class="card reset-password-card">
                 <div class="card-header text-center">
-                    <h3>OTP Verification</h3>
-                    <p>Please enter the 6-digit OTP sent to your <span>${email}</span>.</p>
+                    <h3>Reset Your Password</h3>
                 </div>
                 <div class="card-body">
-                    <form id="otpForm" action="VerifyOtp" method="post">
+                    <form id="resetPasswordForm" action="UpdatePassword" method="post">
                         <span>${error}</span>
+                        <input type="hidden" id="identifier" name="identifier" value="${identifier}">
                         <div class="mb-3">
-                            <input type="text" value="${identifier}" name="identifier" hidden />
-                            <label for="otp" class="form-label">One-Time Password (OTP)</label>
-                            <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP"
-                                   required pattern="[0-9]{6}" title="Please enter a 6-digit OTP">
+                            <label for="password" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Verify OTP</button>
+
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">Update Password</button>
                     </form>
                 </div>
             </div>

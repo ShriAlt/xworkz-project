@@ -48,13 +48,13 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public String login(LoginDto loginDto) {
-
         String identifier = loginDto.getIdentifier();
         if (identifier == null){
             return "invalid";
         }
        if (identifier.matches("^[6-9]\\d{9}$")){
           RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
+           System.err.println(registerEntity);
            return getResult(loginDto, registerEntity);
        }
        if (identifier.contains(".") && identifier.contains("@")){
@@ -70,17 +70,22 @@ public class ProfileServiceImpl implements ProfileService {
             return "noEmail";
         }
         if (registerEntity.getLoginAttempt()<3){
-            registerEntity.setLoginAttempt(registerEntity.getLoginAttempt()+1);
-            profileRepository.updateProfile(registerEntity);
             if (!bCryptPasswordEncoder.matches(loginDto.getPassword(), registerEntity.getPassword())){
+                registerEntity.setLoginAttempt(registerEntity.getLoginAttempt()+1);
+                profileRepository.updateProfile(registerEntity);
                 return "passwordMisMatch";
             }
+            registerEntity.setLoginAttempt(0);
+          boolean update = profileRepository.updateProfile(registerEntity);
+          if (!update){
+              return "dbError";
+          }
             switch (registerEntity.getRole()){
                 case USER:{
                     UserLoginEntity userLoginEntity = new UserLoginEntity();
                     BeanUtils.copyProperties(loginDto, userLoginEntity);
                     userLoginEntity.setTimestamp(LocalDateTime.now());
-                    if (profileRepository.saveLoginInfo(userLoginEntity)){
+                    if (!profileRepository.saveLoginInfo(userLoginEntity)){
                         return "dbError";
                     }
                     return "user";
@@ -89,7 +94,7 @@ public class ProfileServiceImpl implements ProfileService {
                     AdminLoginEntity adminLoginEntity = new AdminLoginEntity();
                     BeanUtils.copyProperties(loginDto,adminLoginEntity);
                     adminLoginEntity.setTimestamp(LocalDateTime.now());
-                    if (profileRepository.saveLoginInfo(adminLoginEntity)){
+                    if (!profileRepository.saveLoginInfo(adminLoginEntity)){
                         return "dbError";
                     }
                     return "admin";
@@ -117,21 +122,4 @@ public class ProfileServiceImpl implements ProfileService {
         return registerEntity != null;
     }
 
-    @Override
-    public String verifyAndSendOtp(String identifier) {
-        if (identifier == null){
-            return "invalid";
-        }
-        if (identifier.matches("^[6-9]\\d{9}$")){
-
-
-            return "";
-        }
-        if (identifier.contains(".") && identifier.contains("@")){
-
-            
-            return "";
-        }
-        return "invalid";
-    }
 }

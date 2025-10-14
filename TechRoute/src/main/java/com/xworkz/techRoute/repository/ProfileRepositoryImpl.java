@@ -100,14 +100,14 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             entityTransaction.begin();
             entityManager.persist(entity);
             entityTransaction.commit();
-            return false;
+            return true;
         }
         catch (Exception e){
             if (entityTransaction != null && entityTransaction.isActive()){
                 entityTransaction.rollback();
             }
             e.printStackTrace();
-            return true;
+            return false;
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {

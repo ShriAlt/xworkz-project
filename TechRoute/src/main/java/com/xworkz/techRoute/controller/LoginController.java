@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/")
 public class LoginController {
@@ -25,7 +27,8 @@ public class LoginController {
     }
 
     @PostMapping("login")
-    public String login(LoginDto dto , Model model){
+    public String login(LoginDto dto , Model model , HttpSession httpSession){
+        System.err.println(dto);
         if (dto!=null) {
             String result = profileService.login(dto);
             switch (result) {
@@ -48,9 +51,11 @@ public class LoginController {
                     return "LoginPage";
                 }
                 case "user": {
+                    httpSession.setAttribute("userIdentifier",dto.getIdentifier());
                     return "UserHome";
                 }
                 case "admin": {
+                    httpSession.setAttribute("adminIdentifier",dto.getIdentifier());
                     return "AdminHome";
                 }
                 case "accountLocked":{

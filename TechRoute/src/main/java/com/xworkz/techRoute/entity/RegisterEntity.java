@@ -41,5 +41,5 @@ public class RegisterEntity {
 
     private String otp;
 
-    private LocalDateTime otpTimeStamp;
+    private LocalDateTime otpExpiryTime;
 }
