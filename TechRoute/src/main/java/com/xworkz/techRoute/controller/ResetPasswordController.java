@@ -18,7 +18,6 @@ public class ResetPasswordController {
     }
     @PostMapping("sendOtp")
     public String sendOtp(String identifier ){
-
        String result = resetPasswordService.sendAndSaveOtp(identifier);
 
         return "OtpVerificationPage";
