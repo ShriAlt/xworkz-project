@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -17,6 +18,7 @@ import java.io.IOException;
 @Configuration
 @ComponentScan(basePackages = "com.xworkz.techRoute")
 @EnableWebMvc
+@EnableScheduling
 public class WebAppConfiguration implements WebMvcConfigurer {
 
     public WebAppConfiguration(){
