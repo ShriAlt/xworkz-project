@@ -36,16 +36,18 @@
                         <span>${error}</span>
                         <input type="hidden" id="identifier" name="identifier" value="${identifier}">
                         <div class="mb-3">
+                            <span class="text-danger" id="PasswordError"></span>
                             <label for="password" class="form-label">New Password</label>
-                            <input type="password" class="form-control" id="password" name="password" required>
+                            <input type="password" class="form-control" id="password" name="password" onchange="validatePassword()" required>
                         </div>
 
                         <div class="mb-3">
+                            <span class="text-danger" id="confirmPasswordError"></span>
                             <label for="confirmPassword" class="form-label">Confirm New Password</label>
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100">Update Password</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary w-100">Update Password</button>
                     </form>
                 </div>
             </div>
@@ -54,5 +56,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/ResetPasswordValidation.js"></script>
 </body>
 </html>
