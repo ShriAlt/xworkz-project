@@ -6,6 +6,7 @@ import com.xworkz.techRoute.dto.ProfileDto;
 import com.xworkz.techRoute.entity.AdminLoginEntity;
 import com.xworkz.techRoute.entity.RegisterEntity;
 import com.xworkz.techRoute.entity.UserLoginEntity;
+import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,29 +29,29 @@ public class ProfileServiceImpl implements ProfileService {
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public String validateAndSave(ProfileDto dto) {
+    public IssueCode validateAndSave(ProfileDto dto) {
         if (profileRepository.checkByMail(dto.getEmail()) != null){
-            return "emailExist";
+            return IssueCode.EMAIL_EXIST;
         }
         if (profileRepository.checkByPhone(dto.getPhoneNumber()) != null){
-            return "phoneNumberExist";
+            return IssueCode.PHONE_EXIST;
         }
         RegisterEntity registerEntity = new RegisterEntity();
         BeanUtils.copyProperties(dto, registerEntity);
         registerEntity.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
         boolean result = profileRepository.saveUser(registerEntity);
         if (result){
-            return "all good";
+            return IssueCode.OK;
         }
-        return "dbError";
+        return IssueCode.DB_ERROR;
     }
 
 
     @Override
-    public String login(LoginDto loginDto) {
+    public IssueCode login(LoginDto loginDto) {
         String identifier = loginDto.getIdentifier();
         if (identifier == null){
-            return "invalid";
+            return IssueCode.INVALID;
         }
        if (identifier.matches("^[6-9]\\d{9}$")){
           RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
@@ -61,24 +62,24 @@ public class ProfileServiceImpl implements ProfileService {
          RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
          return getResult(loginDto, registerEntity);
        }
-        return "invalid";
+        return IssueCode.INVALID;
     }
 
 
-    private String getResult(LoginDto loginDto, RegisterEntity registerEntity) {
+    private IssueCode getResult(LoginDto loginDto, RegisterEntity registerEntity) {
         if (registerEntity == null){
-            return "noEmail";
+            return IssueCode.NO_EMAIL;
         }
         if (registerEntity.getLoginAttempt()<3){
             if (!bCryptPasswordEncoder.matches(loginDto.getPassword(), registerEntity.getPassword())){
                 registerEntity.setLoginAttempt(registerEntity.getLoginAttempt()+1);
                 profileRepository.updateProfile(registerEntity);
-                return "passwordMisMatch";
+                return IssueCode.PASSWORD_MISMATCH;
             }
             registerEntity.setLoginAttempt(0);
           boolean update = profileRepository.updateProfile(registerEntity);
           if (!update){
-              return "dbError";
+              return IssueCode.DB_ERROR;
           }
             switch (registerEntity.getRole()){
                 case USER:{
@@ -86,22 +87,22 @@ public class ProfileServiceImpl implements ProfileService {
                     BeanUtils.copyProperties(loginDto, userLoginEntity);
                     userLoginEntity.setTimestamp(LocalDateTime.now());
                     if (!profileRepository.saveLoginInfo(userLoginEntity)){
-                        return "dbError";
+                        return IssueCode.DB_ERROR;
                     }
-                    return "user";
+                    return IssueCode.USER;
                 }
                 case ADMIN:{
                     AdminLoginEntity adminLoginEntity = new AdminLoginEntity();
                     BeanUtils.copyProperties(loginDto,adminLoginEntity);
                     adminLoginEntity.setTimestamp(LocalDateTime.now());
                     if (!profileRepository.saveLoginInfo(adminLoginEntity)){
-                        return "dbError";
+                        return IssueCode.DB_ERROR;
                     }
-                    return "admin";
+                    return IssueCode.ADMIN;
                 }
             }
         }
-        return "accountLocked";
+        return IssueCode.ACCOUNT_LOCKED;
     }
 
     @Override

@@ -1,6 +1,6 @@
- const submitBtn = document.getElementById("submitBtn");
  async function validateIdentifier(){
   const identifier=document.getElementById("identifier").value;
+   const submitBtn = document.getElementById("submitBtn");
   const errorSpan =  document.getElementById("identifierError");
 
  const isEmail = identifier.includes("@") && identifier.includes(".");

@@ -112,7 +112,8 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
     }
 
     private String checkAndUpdatePassword(RegisterEntity registerEntity, String password, String confirmPassword) {
-        if (password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")){
+
+        if (!password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$")){
             return "invalidPassword";
         }
         if (!password.equals(confirmPassword)){

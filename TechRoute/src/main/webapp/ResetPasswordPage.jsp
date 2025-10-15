@@ -6,6 +6,7 @@
     <title>Reset Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         body {
             background-color: #f8f9fa;
@@ -38,13 +39,13 @@
                         <div class="mb-3">
                             <span class="text-danger" id="PasswordError"></span>
                             <label for="password" class="form-label">New Password</label>
-                            <input type="password" class="form-control" id="password" name="password" onchange="validatePassword()" required>
+                            <input type="password" class="form-control" id="password" name="password" onchange="validatePasswords()" required>
                         </div>
 
                         <div class="mb-3">
                             <span class="text-danger" id="confirmPasswordError"></span>
                             <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" onchange="validatePasswords()" required>
                         </div>
 
                         <button type="submit" id="submitBtn" class="btn btn-primary w-100">Update Password</button>

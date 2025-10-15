@@ -2,12 +2,13 @@ package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.LoginDto;
 import com.xworkz.techRoute.dto.ProfileDto;
+import com.xworkz.techRoute.enums.IssueCode;
 
 public interface ProfileService {
 
-    String validateAndSave(ProfileDto dto);
+    IssueCode validateAndSave(ProfileDto dto);
 
-    String login(LoginDto loginDto);
+    IssueCode login(LoginDto loginDto);
 
    boolean checkMail(String mail);
 

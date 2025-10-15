@@ -2,6 +2,7 @@ package com.xworkz.techRoute.restController;
 
 
 import com.xworkz.techRoute.dto.ProfileDto;
+import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -27,16 +28,17 @@ public class RegisterRestController {
 
     @PostMapping("profileRegister")
     public ResponseEntity<String> profileRegister(@Valid ProfileDto profileDto, BindingResult bindingResult){
+
         if (bindingResult.hasErrors()){
             return ResponseEntity.badRequest().body("fill the valid data ");
         }
-        String result =  profileService.validateAndSave(profileDto);
+        IssueCode result =  profileService.validateAndSave(profileDto);
         switch (result) {
-            case "emailExist":
+            case EMAIL_EXIST:
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("mail exist");
-            case "phoneNumberExist":
+            case PHONE_EXIST:
                 return ResponseEntity.status(HttpStatus.CONFLICT).body("phone number exist");
-            case "dbError":
+            case DB_ERROR:
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("developer error ");
         }
         return ResponseEntity.ok("Registered : " + profileDto.getEmail()+" !!!!");

@@ -44,6 +44,8 @@
             <img src="images/logo-hollowKnight.jpeg" alt="Logo">
             <strong>TechRoute</strong>
         </a>
+
+        <strong> User </strong>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,8 +53,8 @@
 
         <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-                <a href="loginPage" class="btn btn-outline-primary nav-link">
-                    <i class="fa fa-user"></i> Login
+                <a href="viewProfile" class="btn btn-outline-primary nav-link">
+                    <i class="fa fa-user"></i> view Profile
                 </a>
             </li>
         </ul>

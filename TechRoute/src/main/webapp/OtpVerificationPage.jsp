@@ -29,7 +29,7 @@
             <div class="card otp-verification-card">
                 <div class="card-header text-center">
                     <h3>OTP Verification</h3>
-                    <p>Please enter the 6-digit OTP sent to your <span>${email}</span>.</p>
+                    <p>Please enter the 6-digit OTP sent to your registered mail :  <span>${identifier}</span>.</p>
                 </div>
                 <div class="card-body">
                     <form id="otpForm" action="VerifyOtp" method="post">

@@ -50,8 +50,8 @@
                 <span id="identifierError" class="text-danger"></span>
             </div>
             <div class="mb-3">
-                <span class="text-danger">${passwordError}</span>
                 <label for="password" class="form-label">Password</label>
+                <span class="text-danger">${passwordError}</span>
                 <div class="input-group">
                     <span class="input-group-text"><i class="fas fa-lock"></i></span>
                     <input type="password" class="form-control" id="password"  name="password" required>
@@ -66,12 +66,8 @@
                 </div> -->
                 <a href="forgotPassword" class="small text-decoration-none">Forgot Password?</a>
             </div>
-
             <button type="submit" class="btn btn-primary w-100" id="submitBtn" >Login</button>
         </form>
-<!--        <p class="text-center mt-3 mb-0">-->
-<!--            Don’t have an account? <a href="signUp" class="text-decoration-none">Register here</a>-->
-<!--        </p>-->
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

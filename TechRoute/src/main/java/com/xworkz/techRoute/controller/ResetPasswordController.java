@@ -22,15 +22,19 @@ public class ResetPasswordController {
        String result = resetPasswordService.sendAndSaveOtp(identifier);
        switch (result){
            case "noPhoneNumber"  :{
+               model.addAttribute("error","please register");
                return "ForgotPasswordPage";
            }
            case "sendError"  :{
+               model.addAttribute("error","could not send otp ");
                return "ForgotPasswordPage";
            }
            case "dbError"  :{
+               model.addAttribute("error","internal error");
                return "ForgotPasswordPage";
            }
            case "invalid"  :{
+               model.addAttribute("error","something went wrong ");
                return "ForgotPasswordPage";
            }
        }
@@ -70,18 +74,22 @@ public class ResetPasswordController {
             case "invalid" :
             case "dbError" : {
                 model.addAttribute("error","something went wrong");
+                model.addAttribute("identifier",identifier);
                 return "ResetPasswordPage";
             }
             case "missMatch" :{
                 model.addAttribute("error","password missMatch");
+                model.addAttribute("identifier",identifier);
                 return "ResetPasswordPage";
             }
             case "nullError" :{
                 model.addAttribute("error","can not be  null");
+                model.addAttribute("identifier",identifier);
                 return "ResetPasswordPage";
             }
             case "invalidPassword" :{
                 model.addAttribute("error","password is not valid ");
+                model.addAttribute("identifier",identifier);
                 return "ResetPasswordPage";
             }
         }
