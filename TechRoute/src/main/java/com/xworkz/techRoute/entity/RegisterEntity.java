@@ -18,6 +18,10 @@ import java.time.LocalDateTime;
         name = "findByPhone",
         query = "SELECT u FROM RegisterEntity u WHERE u.phoneNumber = :phoneNumber"
 )
+@NamedQuery(
+        name = "clearExpiredOtp",
+        query = "UPDATE RegisterEntity r SET r.otp = NULL, r.otpExpiryTime = NULL WHERE r.otpExpiryTime < :currentTime"
+        )
 public class RegisterEntity {
 
     @Id

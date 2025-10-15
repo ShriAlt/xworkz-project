@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import java.time.LocalDateTime;
 
 @Repository
 public class ProfileRepositoryImpl implements ProfileRepository {
@@ -125,6 +126,34 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
             entityManager.merge(entity);
+            entityTransaction.commit();
+            return true;
+        }
+        catch (Exception e){
+            if (entityTransaction != null && entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public boolean clearOtp() {
+        EntityManager entityManager = null;
+        EntityTransaction entityTransaction = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction = entityManager.getTransaction();
+            entityTransaction.begin();
+            Query query=  entityManager.createNamedQuery("clearExpiredOtp");
+            query.setParameter("currentTime", LocalDateTime.now());
+            query.executeUpdate();
             entityTransaction.commit();
             return true;
         }

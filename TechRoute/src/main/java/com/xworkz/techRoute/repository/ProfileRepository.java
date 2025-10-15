@@ -14,4 +14,6 @@ public interface ProfileRepository {
 
   <T> boolean updateProfile(T entity);
 
+  boolean clearOtp();
+
 }
