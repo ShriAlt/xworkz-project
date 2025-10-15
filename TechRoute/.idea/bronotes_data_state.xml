@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BroNotes">
+    <option name="doneNotes">
+      <list>
+        <option value="work on log out" />
+      </list>
+    </option>
     <option name="todoNotes">
       <list>
         <option value="add view profile  page  " />
-        <option value="work on log out" />
         <option value="work on resend otp " />
       </list>
     </option>

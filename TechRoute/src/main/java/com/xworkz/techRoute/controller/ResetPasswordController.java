@@ -1,11 +1,14 @@
 package com.xworkz.techRoute.controller;
 
+import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.service.ResetPasswordService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ResetPasswordController {
@@ -19,21 +22,21 @@ public class ResetPasswordController {
     }
     @PostMapping("sendOtp")
     public String sendOtp(String identifier , Model model){
-       String result = resetPasswordService.sendAndSaveOtp(identifier);
+       IssueCode result = resetPasswordService.sendAndSaveOtp(identifier);
        switch (result){
-           case "noPhoneNumber"  :{
+           case NO_PHONE_NUMBER:  {
                model.addAttribute("error","please register");
                return "ForgotPasswordPage";
            }
-           case "sendError"  :{
+           case SEND_ERROR:  {
                model.addAttribute("error","could not send otp ");
                return "ForgotPasswordPage";
            }
-           case "dbError"  :{
+           case DB_ERROR:{
                model.addAttribute("error","internal error");
                return "ForgotPasswordPage";
            }
-           case "invalid"  :{
+           case INVALID:{
                model.addAttribute("error","something went wrong ");
                return "ForgotPasswordPage";
            }
@@ -95,4 +98,6 @@ public class ResetPasswordController {
         }
         return "LoginPage";
     }
+
+
 }

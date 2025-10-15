@@ -6,7 +6,7 @@
     <title>OTP Verification | TechRoute</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <style>
         /* ===== Global Theme ===== */
         body {
@@ -111,9 +111,20 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Verify OTP</button>
         </form>
+
+        <!-- Resend OTP Section -->
+        <div class="text-center mt-3">
+            <span>Didn't receive the OTP?</span>
+            <form id="resendOtpForm" action="resendOtp" method="post" onsubmit="resendOtp(event)">
+                <input type="text" value="${identifier}" id="identifier" name="identifier" hidden />
+                <button type="submit" id="resendOtpBtn" class="btn btn-link" >Resend OTP</button>
+                <span id="resendError" class="text-danger"></span>
+            </form>
+        </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/OtpPage.js"></script>
 </body>
 </html>

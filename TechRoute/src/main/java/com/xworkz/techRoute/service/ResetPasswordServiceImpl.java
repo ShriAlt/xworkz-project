@@ -1,6 +1,7 @@
 package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.entity.RegisterEntity;
+import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,9 +27,9 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
-    public String sendAndSaveOtp(String identifier) {
+    public IssueCode sendAndSaveOtp(String identifier) {
         if (identifier == null){
-            return "invalid";
+            return IssueCode.INVALID;
         }
         if (identifier.matches("^[6-9]\\d{9}$")){
             RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
@@ -38,25 +39,24 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
             RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
             return validateAndSendOtp(registerEntity);
         }
-        return "invalid";
+        return IssueCode.INVALID;
     }
 
-    private String validateAndSendOtp(RegisterEntity registerEntity) {
+    private IssueCode validateAndSendOtp(RegisterEntity registerEntity) {
         if (registerEntity == null){
-            return "noPhoneNumber";
+            return IssueCode.NO_PHONE_NUMBER;
         }
         String otp = generateOtp();
         if (!mailService.sendOtp(registerEntity.getEmail(),otp)){
-            return "sendError";
+            return IssueCode.SEND_ERROR;
         }
         registerEntity.setOtp(bCryptPasswordEncoder.encode(otp));
         registerEntity.setOtpExpiryTime(LocalDateTime.now().plusMinutes(5));
-//        System.err.println(registerEntity);
        boolean result = profileRepository.updateProfile(registerEntity);
        if (!result){
-           return "dbError";
+           return IssueCode.DB_ERROR;
        }
-        return "otpSent";
+        return IssueCode.OK;
     }
     private String generateOtp(){
         Random random = new Random();
@@ -128,4 +128,19 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
         return "allGood";
     }
 
+    @Override
+    public IssueCode resendOtp(String identifier) {
+        if (identifier == null){
+            return IssueCode.INVALID;
+        }
+        if (identifier.matches("^[6-9]\\d{9}$")){
+            RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
+            return validateAndSendOtp(registerEntity);
+        }
+        if (identifier.contains(".") && identifier.contains("@")){
+            RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
+            return validateAndSendOtp(registerEntity);
+        }
+        return IssueCode.NULL_ERROR;
+    }
 }
