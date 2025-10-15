@@ -4,12 +4,12 @@
     <option name="doneNotes">
       <list>
         <option value="work on log out" />
+        <option value="work on resend otp " />
       </list>
     </option>
     <option name="todoNotes">
       <list>
         <option value="add view profile  page  " />
-        <option value="work on resend otp " />
       </list>
     </option>
   </component>
