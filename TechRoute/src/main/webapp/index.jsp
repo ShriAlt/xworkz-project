@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechRoute</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/techroute-logo.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -89,6 +91,10 @@
           margin: auto;
         }
 
+.navbar-brand img:hover {
+  filter: drop-shadow(0 0 4px #38bdf8);
+}
+
         /* ===== Footer ===== */
         footer {
           background: #0f172a;
@@ -127,48 +133,54 @@
 <body>
 
 <!-- Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm">
-    <div class="container">
+    <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/logo-hollowKnight.jpeg" alt="Logo">
-            <strong>TechRoute</strong>
+            <img src="images/techroute-logo.png" alt="TechRoute Logo" style="height: 45px; margin-right: 9px;">
+            <strong class="text-info">TechRoute</strong>
         </a>
+
         <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-                <a href="loginPage" class="btn btn-outline-primary nav-link">
-                    <i class="fa fa-user"></i> Login
-                </a>
-            </li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a href="loginPage" class="btn btn-outline-primary nav-link">
+                        <i class="fa fa-user"></i> Login
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
 </nav>
 
+
 <!-- Content Area -->
 <div class="content">
-    <div class="container">
+    <div class="container-fluid text-center">
         <h1>Welcome to TechRoute</h1>
-        <p>Your journey through the latest laptops starts here. Explore innovation, speed, and design—all in one route.</p>
+        <p>Your journey through the latest laptops starts here. Explore innovation, speed, and design all in one route.</p>
     </div>
 </div>
 
 <!-- Footer -->
 <footer class="py-3 my-4">
-    <div class="container">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+    <div class="container-fluid">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3 flex-wrap">
             <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
         </ul>
-        <p class="text-center">© 2025 Shriharsha | Where Code Meets Character</p>
+        <p class="text-center"> © 2025 Shriharsha | Where Code Meets Character</p>
     </div>
 </footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

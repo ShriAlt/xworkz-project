@@ -118,7 +118,7 @@
 <nav class="navbar navbar-expand-lg shadow-sm">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/logo-hollowKnight.jpeg" alt="Logo">
+            <img src="images/techroute-logo.png" alt="Logo">
             <strong>TechRoute</strong>
         </a>
 
