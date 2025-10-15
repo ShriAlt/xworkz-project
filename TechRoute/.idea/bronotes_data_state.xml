@@ -3,7 +3,6 @@
   <component name="BroNotes">
     <option name="todoNotes">
       <list>
-        <option value="add schedulers to reset otps &#10;" />
         <option value="add view profile  page  " />
         <option value="work on log out" />
         <option value="work on resend otp " />
