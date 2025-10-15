@@ -68,4 +68,11 @@ public class LoginController {
         return "LoginPage";
     }
 
+    @GetMapping("logout")
+    public String logout(HttpSession httpSession){
+        httpSession.invalidate();
+        return "index";
+    }
+
+
 }
