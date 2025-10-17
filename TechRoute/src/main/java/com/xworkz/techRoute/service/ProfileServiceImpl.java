@@ -64,8 +64,6 @@ public class ProfileServiceImpl implements ProfileService {
        }
         return IssueCode.INVALID;
     }
-
-
     private IssueCode getResult(LoginDto loginDto, RegisterEntity registerEntity) {
         if (registerEntity == null){
             return IssueCode.NO_EMAIL;
@@ -123,4 +121,25 @@ public class ProfileServiceImpl implements ProfileService {
         return registerEntity != null;
     }
 
+    @Override
+    public ProfileDto displayProfile(String identifier) {
+        if (identifier == null){
+            return null;
+        }
+        if (identifier.matches("^[6-9]\\d{9}$")){
+            RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
+            ProfileDto dto = new ProfileDto();
+            BeanUtils.copyProperties(registerEntity,dto);
+            System.err.println(dto);
+            return dto;
+        }
+        if (identifier.contains(".") && identifier.contains("@")){
+            RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
+            ProfileDto dto = new ProfileDto();
+            BeanUtils.copyProperties(registerEntity,dto);
+            System.err.println(dto);
+            return dto;
+        }
+        return null;
+    }
 }

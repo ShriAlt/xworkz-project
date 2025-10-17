@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<%@ page isELIgnored="false" %>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -114,6 +113,7 @@
 
         <!-- Admin Dropdown -->
         <div class="dropdown ms-auto me-3">
+            <span>${dto.firstName}</span>
             <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
                 <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel

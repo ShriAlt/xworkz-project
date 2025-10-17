@@ -1,6 +1,7 @@
 package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.LoginDto;
+import com.xworkz.techRoute.dto.ProfileDto;
 import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,11 +52,19 @@ public class LoginController {
                     return "LoginPage";
                 }
                 case USER: {
-                    httpSession.setAttribute("userIdentifier",dto.getIdentifier());
+                 ProfileDto profileDto = profileService.displayProfile(dto.getIdentifier());
+                    if (profileDto == null){
+                        return "LoginPage";
+                    }
+                    httpSession.setAttribute("dto",profileDto);
                     return "UserHome";
                 }
                 case ADMIN: {
-                    httpSession.setAttribute("adminIdentifier",dto.getIdentifier());
+                    ProfileDto profileDto = profileService.displayProfile(dto.getIdentifier());
+                    if (profileDto == null){
+                        return "LoginPage";
+                    }
+                    httpSession.setAttribute("dto",profileDto);
                     return "AdminHome";
                 }
                 case ACCOUNT_LOCKED:{

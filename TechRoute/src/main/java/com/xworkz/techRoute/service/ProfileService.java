@@ -10,8 +10,10 @@ public interface ProfileService {
 
     IssueCode login(LoginDto loginDto);
 
-   boolean checkMail(String mail);
+    boolean checkMail(String mail);
 
-   boolean checkPhone(String phone);
+    boolean checkPhone(String phone);
+
+    ProfileDto displayProfile(String identifier);
 
 }
