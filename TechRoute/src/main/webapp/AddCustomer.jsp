@@ -105,19 +105,19 @@
             <!-- GST Number -->
             <div class="col-md-6">
                 <label for="gst" class="form-label">GST Number</label>
-                <input type="text" class="form-control" id="gst" placeholder="Enter GSTIN">
+                <input type="text" class="form-control" name="gst" id="gst" placeholder="Enter GSTIN">
             </div>
 
             <!-- Country (Read-only) -->
             <div class="col-md-6">
                 <label for="country" class="form-label">Country</label>
-                <input type="text" class="form-control" id="country" value="India" readonly>
+                <input type="text" class="form-control"  name="country" id="country" value="India" readonly>
             </div>
 
             <!-- State (API-driven) -->
             <div class="col-md-6">
                 <label for="state" class="form-label">State</label>
-                <select class="form-select" id="state">
+                <select class="form-select" name="state" id="state">
                     <option selected disabled>Loading states...</option>
                 </select>
             </div>
@@ -125,25 +125,25 @@
             <!-- City -->
             <div class="col-md-6">
                 <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control" id="city" placeholder="Enter city">
+                <input type="text" class="form-control" name="city" id="city" placeholder="Enter city">
             </div>
 
             <!-- Pincode -->
             <div class="col-md-6">
                 <label for="pincode" class="form-label">Pincode</label>
-                <input type="text" class="form-control" id="pincode" placeholder="Enter pincode">
+                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode">
             </div>
 
             <!-- Address -->
             <div class="col-md-6">
                 <label for="address" class="form-label">Address</label>
-                <textarea class="form-control" id="address" rows="2" placeholder="Street, locality..."></textarea>
+                <textarea class="form-control" id="address" name="address" rows="2" placeholder="Street, locality..."></textarea>
             </div>
 
             <!-- Billing Address -->
             <div class="col-md-6">
                 <label for="billingAddress" class="form-label">Billing Address</label>
-                <textarea class="form-control" id="billingAddress" rows="2" placeholder="Billing details..."></textarea>
+                <textarea class="form-control" id="billingAddress" name="billingAddress" rows="2" placeholder="Billing details..."></textarea>
             </div>
 
             <!-- Same as Billing Checkbox -->
@@ -159,7 +159,7 @@
             <!-- Shipping Address -->
             <div class="col-md-12">
                 <label for="shippingAddress" class="form-label">Shipping Address</label>
-                <textarea class="form-control" id="shippingAddress" rows="2" placeholder="Shipping details..."></textarea>
+                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="2" placeholder="Shipping details..."></textarea>
             </div>
 
             <!-- Payment Mode -->
