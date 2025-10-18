@@ -68,7 +68,7 @@
 
 <div class="container py-5">
     <h2 class="text-info mb-4">Add Customer</h2>
-    <form action="AddCustomer" method="post">
+    <form action="addCustomer" method="post">
         <div class="row g-3">
             <!-- Customer Name -->
             <div class="col-md-6">

@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.controller;
 
+import com.xworkz.techRoute.dto.CustomerDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,22 +12,23 @@ public class AdminController {
         System.out.println("no args of AdminController");
     }
 
-    @GetMapping("viewProfile")
+    @GetMapping("viewProfilePage")
     public String viewProfilePage(){
         return "ViewPage";
     }
-    @GetMapping("viewCustomer")
+    @GetMapping("viewCustomerPage")
     public String viewCustomerPage(){
         return "CustomerDetails";
     }
-    @GetMapping("addCustomer")
+    @GetMapping("addCustomerPage")
     public String addCustomerPage(){
         return "AddCustomer";
     }
 
-    @PostMapping("AddCustomer")
-    public String addCustomer(){
-
+    @PostMapping("addCustomer")
+    public String addCustomer(CustomerDto customerDto){
+        System.out.println("workinng");
+        System.err.println(customerDto.toString());
         return "AddCustomer";
     }
 

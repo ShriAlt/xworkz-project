@@ -116,17 +116,17 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
                 <li>
-                    <a class="dropdown-item text-light" href="viewProfile">
+                    <a class="dropdown-item text-light" href="viewProfilePage">
                         <i class="fa fa-user-circle me-2 text-info"></i> View Profile
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item text-light" href="addCustomer">
+                    <a class="dropdown-item text-light" href="addCustomerPage">
                         <i class="fa fa-user-plus me-2 text-info"></i> Add Customer
                     </a>
                 </li>
                 <li>
-                    <a class="dropdown-item text-light" href="viewCustomer">
+                    <a class="dropdown-item text-light" href="viewCustomerPage">
                         <i class="fa fa-users me-2 text-info"></i> View Customers
                     </a>
                 </li>
