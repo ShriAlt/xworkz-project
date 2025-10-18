@@ -18,18 +18,15 @@
           color: #e2e8f0;
           font-family: 'Poppins', sans-serif;
         }
-
         h2 {
           color: #38bdf8;
           font-weight: 700;
           text-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
         }
-
         label {
           font-weight: 500;
           color: #e2e8f0;
         }
-
         .form-control,
         .form-select,
         textarea {
@@ -37,7 +34,6 @@
           color: #e2e8f0;
           border: 1px solid #334155;
           transition: border-color 0.3s ease;
-        }
 
         .form-control:focus,
         .form-select:focus,
@@ -72,7 +68,7 @@
 
 <div class="container py-5">
     <h2 class="text-info mb-4">Add Customer</h2>
-    <form>
+    <form action="AddCustomer" method="post">
         <div class="row g-3">
             <!-- Customer Name -->
             <div class="col-md-6">
