@@ -124,10 +124,10 @@
                 <input type="text" class="form-control" name="city" id="city" placeholder="Enter city">
             </div>
 
-            <!-- Pincode -->
+            <!-- PinCode -->
             <div class="col-md-6">
                 <label for="pincode" class="form-label">Pincode</label>
-                <input type="text" class="form-control" name="pincode" id="pincode" placeholder="Enter pincode">
+                <input type="text" class="form-control" name="pinCode" id="pincode" placeholder="Enter pincode">
             </div>
 
             <!-- Address -->
