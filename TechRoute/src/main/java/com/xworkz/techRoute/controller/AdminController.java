@@ -27,7 +27,8 @@ public class AdminController {
 
     @PostMapping("addCustomer")
     public String addCustomer(CustomerDto customerDto){
-        System.out.println("working");
+        System.err.println("working");
+        System.err.println(customerDto.toString());
         return "AddCustomer";
     }
 

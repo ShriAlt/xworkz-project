@@ -81,8 +81,8 @@
                 <label for="customerType" class="form-label">Customer Type</label>
                 <select class="form-select" name="customerType" id="customerType">
                     <option selected disabled>Select type</option>
-                    <option value="creditor">Creditor</option>
-                    <option value="debitor">Debitor</option>
+                    <option value="Creditors">Creditor</option>
+                    <option value="Debitors">Debitor</option>
                 </select>
             </div>
 
@@ -157,24 +157,22 @@
                 <label for="shippingAddress" class="form-label">Shipping Address</label>
                 <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="2" placeholder="Shipping details..."></textarea>
             </div>
-
             <!-- Payment Mode -->
             <div class="col-md-12">
                 <label class="form-label d-block mb-2">Payment Mode</label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="paymentMode" id="online" value="online">
+                    <input class="form-check-input" type="radio" name="paymentMode" id="online" value="Online">
                     <label class="form-check-label" for="online">Online</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="paymentMode" id="cash" value="cash">
+                    <input class="form-check-input" type="radio" name="paymentMode" id="cash" value="Cash">
                     <label class="form-check-label" for="cash">Cash</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="paymentMode" id="cheque" value="cheque">
+                    <input class="form-check-input" type="radio" name="paymentMode" id="cheque" value="Cheque">
                     <label class="form-check-label" for="cheque">Cheque</label>
                 </div>
             </div>
-
             <!-- Submit Button -->
             <div class="col-12 text-end mt-4">
                 <button type="submit" class="btn btn-outline-primary">Add Customer</button>
