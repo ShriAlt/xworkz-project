@@ -110,7 +110,6 @@ public class ProfileServiceImpl implements ProfileService {
        RegisterEntity registerEntity = profileRepository.checkByMail(mail);
         return registerEntity != null;
     }
-
     @Override
     public boolean checkPhone(String phone) {
         if (phone == null){
