@@ -9,7 +9,6 @@ import java.util.Random;
 
 @Service
 public class MailServiceImpl implements MailService{
-
     public MailServiceImpl(){
         System.out.println("no args of MailService");
     }
