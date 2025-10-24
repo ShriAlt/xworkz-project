@@ -110,6 +110,13 @@
                 <input type="text" class="form-control"  name="country" id="country" value="India" readonly>
             </div>
 
+
+            <div class="col-md-6">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input type="text" class="form-control" name="pinCode" id="pinCode" placeholder="Enter pincode" onchange="checkPincode()">
+                <span id="pincodeError" class="text-danger"></span>
+            </div>
+
             <!-- State (API-driven) -->
             <div class="col-md-6">
                 <label for="state" class="form-label">State</label>
@@ -124,11 +131,6 @@
                 <input type="text" class="form-control" name="city" id="city" placeholder="Enter city">
             </div>
 
-            <!-- PinCode -->
-            <div class="col-md-6">
-                <label for="pincode" class="form-label">Pincode</label>
-                <input type="text" class="form-control" name="pinCode" id="pincode" placeholder="Enter pincode">
-            </div>
 
             <!-- Address -->
             <div class="col-md-6">
@@ -183,38 +185,7 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- State API + Address Sync -->
-<!--<script>-->
-<!--    // Load Indian states from API-->
-<!--    axios.get("https://cdn-api.co-vin.in/api/v2/admin/location/states")-->
-<!--      .then(response => {-->
-<!--        const stateSelect = document.getElementById("state");-->
-<!--        stateSelect.innerHTML = '<option selected disabled>Select state</option>';-->
-<!--        response.data.states.forEach(state => {-->
-<!--          const option = document.createElement("option");-->
-<!--          option.value = state.state_name;-->
-<!--          option.textContent = state.state_name;-->
-<!--          stateSelect.appendChild(option);-->
-<!--        });-->
-<!--      })-->
-<!--      .catch(error => {-->
-<!--        console.error("Error loading states:", error);-->
-<!--      });-->
-
-<!--    // Sync billing and shipping address-->
-<!--    document.getElementById("sameAddress").addEventListener("change", function () {-->
-<!--      const billing = document.getElementById("billingAddress").value;-->
-<!--      const shipping = document.getElementById("shippingAddress");-->
-<!--      if (this.checked) {-->
-<!--        shipping.value = billing;-->
-<!--        shipping.setAttribute("readonly", true);-->
-<!--      } else {-->
-<!--        shipping.removeAttribute("readonly");-->
-<!--        shipping.value = "";-->
-<!--      }-->
-<!--    });-->
-<!--</script>-->
+<script src=js/AddCustomer.js></script>
 </body>
 
 </html>
