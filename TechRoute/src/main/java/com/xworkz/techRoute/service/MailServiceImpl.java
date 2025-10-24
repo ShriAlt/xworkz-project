@@ -13,7 +13,6 @@ public class MailServiceImpl implements MailService{
     public MailServiceImpl(){
         System.out.println("no args of MailService");
     }
-
     @Autowired
     private JavaMailSender mailSender;
 
