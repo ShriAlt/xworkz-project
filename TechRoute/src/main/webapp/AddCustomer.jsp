@@ -112,9 +112,9 @@
 
 
             <div class="col-md-6">
-                <label for="pincode" class="form-label">Pincode</label>
-                <input type="text" class="form-control" name="pinCode" id="pinCode" placeholder="Enter pincode" onchange="checkPincode()">
-                <span id="pincodeError" class="text-danger"></span>
+                <label for="pinCode" class="form-label">PinCode</label>
+                <input type="text" class="form-control" name="pinCode" id="pinCode" placeholder="Enter pincode" onchange="checkPinCode()">
+                <span id="pinCodeError" class="text-danger"></span>
             </div>
 
             <!-- State (API-driven) -->
