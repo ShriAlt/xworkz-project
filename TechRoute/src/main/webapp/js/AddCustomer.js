@@ -5,7 +5,6 @@
 //            errorId.innerHTML = "Please enter a valid 6-digit pinCode.";
 //          }
           try {
-
           }
            const response = await axios(`https://api.postalpincode.in/pincode/${pincode}`);
            const data = response.data;
