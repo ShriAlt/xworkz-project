@@ -73,13 +73,14 @@
             <!-- Customer Name -->
             <div class="col-md-6">
                 <label for="customerName" class="form-label">Customer Name</label>
-                <input type="text" class="form-control" name="customerName" id="customerName" placeholder="Enter full name">
+                <input type="text" class="form-control" name="customerName" id="customerName" placeholder="Enter full name" required onchange="validateName()">
+                <span id="nameError" class="text-danger"></span>
             </div>
 
             <!-- Customer Type -->
             <div class="col-md-6">
                 <label for="customerType" class="form-label">Customer Type</label>
-                <select class="form-select" name="customerType" id="customerType">
+                <select class="form-select" name="customerType" id="customerType" required>
                     <option selected disabled>Select type</option>
                     <option value="Creditors">Creditor</option>
                     <option value="Debitors">Debitor</option>
@@ -89,22 +90,22 @@
             <!-- Email -->
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.com">
+                <input type="email" class="form-control" name="email" id="email" placeholder="example@domain.com" required onchange="validateEmail()">
+                <span id="emailError" class="text-danger"></span>
             </div>
 
-            <!-- Contact Number -->
             <div class="col-md-6">
                 <label for="contact" class="form-label">Contact Number</label>
-                <input type="tel" class="form-control" name="contact" id="contact" placeholder="+91 9876543210">
+                <input type="tel" class="form-control" name="contact" id="contact" placeholder="+91 9876543210" required onchange="validateContact()">
+                <span id="contactError" class="text-danger"></span>
             </div>
 
-            <!-- GST Number -->
             <div class="col-md-6">
                 <label for="gst" class="form-label">GST Number</label>
-                <input type="text" class="form-control" name="gst" id="gst" placeholder="Enter GSTIN">
+                <input type="text" class="form-control" name="gst" id="gst" placeholder="Enter GSTIN" onchange="validateGST()">
+                <span id="gstError" class="text-danger"></span>
             </div>
 
-            <!-- Country (Read-only) -->
             <div class="col-md-6">
                 <label for="country" class="form-label">Country</label>
                 <input type="text" class="form-control"  name="country" id="country" value="India" readonly>
@@ -117,7 +118,6 @@
                 <span id="pinCodeError" class="text-danger"></span>
             </div>
 
-            <!-- State (API-driven) -->
             <div class="col-md-6">
                 <label for="state" class="form-label">State</label>
                 <select class="form-select" name="state" id="state">
@@ -141,13 +141,12 @@
             <!-- Billing Address -->
             <div class="col-md-6">
                 <label for="billingAddress" class="form-label">Billing Address</label>
-                <textarea class="form-control" id="billingAddress" name="billingAddress" rows="2" placeholder="Billing details..."></textarea>
+                <textarea class="form-control" id="billingAddress" name="billingAddress" rows="2" placeholder="Billing details..." ></textarea>
             </div>
 
-            <!-- Same as Billing Checkbox -->
             <div class="col-12">
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="sameAddress">
+                    <input class="form-check-input" type="checkbox" id="sameAddress" onclick="copyBillingAddress()" >
                     <label class="form-check-label" for="sameAddress">
                         Shipping address same as billing
                     </label>
@@ -157,8 +156,11 @@
             <!-- Shipping Address -->
             <div class="col-md-12">
                 <label for="shippingAddress" class="form-label">Shipping Address</label>
-                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="2" placeholder="Shipping details..."></textarea>
+                <textarea class="form-control" id="shippingAddress" name="shippingAddress" rows="2" placeholder="Shipping details..." ></textarea>
             </div>
+
+
+
             <!-- Payment Mode -->
             <div class="col-md-12">
                 <label class="form-label d-block mb-2">Payment Mode</label>
