@@ -108,6 +108,13 @@
           <artifactId>spring-boot-starter-mail</artifactId>
           <version>2.5.6</version>
       </dependency>
+
+
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>jstl</artifactId>
+          <version>1.2</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>TechRoute</finalName>

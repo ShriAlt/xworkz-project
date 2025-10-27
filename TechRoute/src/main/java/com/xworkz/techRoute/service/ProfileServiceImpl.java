@@ -84,7 +84,7 @@ public class ProfileServiceImpl implements ProfileService {
                     UserLoginEntity userLoginEntity = new UserLoginEntity();
                     BeanUtils.copyProperties(loginDto, userLoginEntity);
                     userLoginEntity.setTimestamp(LocalDateTime.now());
-                    if (!profileRepository.saveLoginInfo(userLoginEntity)){
+                    if (!profileRepository.save(userLoginEntity)){
                         return IssueCode.DB_ERROR;
                     }
                     return IssueCode.USER;
@@ -93,7 +93,7 @@ public class ProfileServiceImpl implements ProfileService {
                     AdminLoginEntity adminLoginEntity = new AdminLoginEntity();
                     BeanUtils.copyProperties(loginDto,adminLoginEntity);
                     adminLoginEntity.setTimestamp(LocalDateTime.now());
-                    if (!profileRepository.saveLoginInfo(adminLoginEntity)){
+                    if (!profileRepository.save(adminLoginEntity)){
                         return IssueCode.DB_ERROR;
                     }
                     return IssueCode.ADMIN;

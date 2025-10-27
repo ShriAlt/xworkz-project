@@ -1,6 +1,9 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.CustomerEntity;
 import com.xworkz.techRoute.entity.RegisterEntity;
+
+import java.util.List;
 
 public interface ProfileRepository {
 
@@ -10,11 +13,12 @@ public interface ProfileRepository {
 
     RegisterEntity checkByPhone(String phone);
 
-   <T> boolean saveLoginInfo(T entity);
+//   <T> boolean saveLoginInfo(T entity);
 
   <T> boolean updateProfile(T entity);
 
   boolean clearOtp();
 
+  List<CustomerEntity> findAll();
 
 }

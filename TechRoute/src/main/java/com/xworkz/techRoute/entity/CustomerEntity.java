@@ -15,6 +15,10 @@ import javax.persistence.*;
 //@NamedQuery(
 //        name = "findByPhone",
 //        query = "SELECT u FROM CustomerEntity u WHERE u.phoneNumber = :phoneNumber" )
+@NamedQuery(
+        name = "findAll",
+        query = " SELECT entity from CustomerEntity entity "
+)
 public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

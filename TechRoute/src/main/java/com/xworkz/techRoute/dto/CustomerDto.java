@@ -13,6 +13,8 @@ public class CustomerDto implements Serializable {
         System.out.println("no args of CustomerDto");
     }
 
+    private int id;
+
     @NotBlank(message = "Customer name is required")
     private String customerName;
 

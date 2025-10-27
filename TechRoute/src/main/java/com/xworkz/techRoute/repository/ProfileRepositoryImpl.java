@@ -9,6 +9,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 import java.time.LocalDateTime;
+import java.util.Collections;
+import java.util.List;
 
 @Repository
 public class ProfileRepositoryImpl implements ProfileRepository {
@@ -92,31 +94,31 @@ public class ProfileRepositoryImpl implements ProfileRepository {
         }
     }
 
-    @Override
-    public <T> boolean saveLoginInfo(T entity) {
-        EntityManager entityManager = null;
-        EntityTransaction entityTransaction = null;
-        try {
-            entityManager = entityManagerFactory.createEntityManager();
-            entityTransaction = entityManager.getTransaction();
-            entityTransaction.begin();
-            entityManager.persist(entity);
-            entityTransaction.commit();
-            return true;
-        }
-        catch (Exception e){
-            if (entityTransaction != null && entityTransaction.isActive()){
-                entityTransaction.rollback();
-            }
-            e.printStackTrace();
-            return false;
-        }
-        finally {
-            if (entityManager != null && entityManager.isOpen()) {
-                entityManager.close();
-            }
-        }
-    }
+//    @Override
+//    public <T> boolean saveLoginInfo(T entity) {
+//        EntityManager entityManager = null;
+//        EntityTransaction entityTransaction = null;
+//        try {
+//            entityManager = entityManagerFactory.createEntityManager();
+//            entityTransaction = entityManager.getTransaction();
+//            entityTransaction.begin();
+//            entityManager.persist(entity);
+//            entityTransaction.commit();
+//            return true;
+//        }
+//        catch (Exception e){
+//            if (entityTransaction != null && entityTransaction.isActive()){
+//                entityTransaction.rollback();
+//            }
+//            e.printStackTrace();
+//            return false;
+//        }
+//        finally {
+//            if (entityManager != null && entityManager.isOpen()) {
+//                entityManager.close();
+//            }
+//        }
+//    }
 
     @Override
     public <T> boolean updateProfile(T entity) {
@@ -164,6 +166,25 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             }
             e.printStackTrace();
             return false;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+    @Override
+    public List findAll() {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query=  entityManager.createNamedQuery("findAll");
+            return  query.getResultList();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return Collections.emptyList();
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {
