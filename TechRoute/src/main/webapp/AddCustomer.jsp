@@ -69,7 +69,9 @@
 <div class="container py-5">
     <h2 class="text-info mb-4">Add Customer</h2>
     <form action="addCustomer" method="post">
+
         <div class="row g-3">
+            <span class="text-danger">${error}</span>
             <!-- Customer Name -->
             <div class="col-md-6">
                 <label for="customerName" class="form-label">Customer Name</label>
@@ -187,7 +189,7 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src=js/AddCustomer.js></script>
+<script src="js/AddCustomer.js"></script>
 </body>
 
 </html>

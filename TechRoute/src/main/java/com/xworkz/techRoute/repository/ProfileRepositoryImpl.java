@@ -20,14 +20,15 @@ public class ProfileRepositoryImpl implements ProfileRepository {
     EntityManagerFactory entityManagerFactory;
 
     @Override
-    public boolean saveUser(RegisterEntity registerEntity) {
+    public <S> boolean save(S entity) {
         EntityManager entityManager = null;
         EntityTransaction entityTransaction = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
-            entityManager.persist(registerEntity);
+            System.err.println(entity);
+            entityManager.persist(entity);
             entityTransaction.commit();
             return true;
         }

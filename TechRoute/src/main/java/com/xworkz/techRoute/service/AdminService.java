@@ -1,0 +1,9 @@
+package com.xworkz.techRoute.service;
+
+import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.enums.IssueCode;
+
+public interface AdminService {
+
+    IssueCode validateAndSaveCustomer(CustomerDto dto);
+}

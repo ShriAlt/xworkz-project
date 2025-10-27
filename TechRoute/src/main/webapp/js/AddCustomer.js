@@ -28,53 +28,56 @@ async function checkPinCode() {
     errorId.innerHTML = "Failed to fetch data. Try again later.";
   }
 }
- function validateName(){
-    const name = document.getElementById('customerName');
-    const nameError = document.getElementById('nameError');
-    const namePattern = /^[A-Za-z\s]+$/;
-
-    nameError.innerHTML = '';
-    if (!namePattern.test(name)) {
-        nameError.innerHTML = "Name can only contain letters and spaces.";
-    }
- }
- function validateEmail(){
-    const email = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    emailError.innerHTML = '';
-    if (!emailPattern.test(email)) {
-        emailError.innerHTML = "Please enter a valid email address.";
-    }
- }
-  function  validateContact(){
-    const contact = document.getElementById('contactNumber');
-    const contactError = document.getElementById('contactError');
-    const contactPattern = /^\d{10}$/;
-
-    contactError.innerHTML = '';
-    if (!contactPattern.test(contact)) {
-        contactError.innerHTML = "Contact number must be a 10-digit number.";
-    }
-    }
- function validateGST(){
-    const gst = document.getElementById('gstNumber');
-    const gstError = document.getElementById('gstError');
-    const gstPattern = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
-
-    gstError.innerHTML = '';
-    if (!gstPattern.test(gst)) {
-        gstError.innerHTML = "Please enter a valid GST number.";
-    }
-    }
-function copyBillingAddress() {
-    const copyAddressCheckbox = document.getElementById('sameAddress')
- const billingAddress = document.getElementById('billingAddress').value;
-    const shippingAddress = document.getElementById('shippingAddress');
-
-    if (copyAddressCheckbox.checked){
-        shippingAddress.value = billingAddress;
-    } else {
-        shippingAddress.value = '';
-}
+//function validateName(){
+//    const name = document.getElementById('customerName');
+//    const nameError = document.getElementById('nameError');
+//    const namePattern = /^[A-Za-z\s]+$/;
+//
+//    nameError.innerHTML = '';
+//    if (!namePattern.test(name)) {
+//        nameError.innerHTML = "Name can only contain letters and spaces.";
+//    }
+// }
+//function validateEmail(){
+//    const email = document.getElementById('email');
+//    const emailError = document.getElementById('emailError');
+//    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//
+//    emailError.innerHTML = '';
+//    if (!emailPattern.test(email)) {
+//        emailError.innerHTML = "Please enter a valid email address.";
+//    }
+// }
+// function  validateContact(){
+//    const contact = document.getElementById('contactNumber');
+//    const contactError = document.getElementById('contactError');
+//    const contactPattern = /^\d{10}$/;
+//
+//    contactError.innerHTML = '';
+//    if (!contactPattern.test(contact)) {
+//        contactError.innerHTML = "Contact number must be a 10-digit number.";
+//    }
+//}
+//
+// function validateGST(){
+//    const gst = document.getElementById('gstNumber');
+//    const gstError = document.getElementById('gstError');
+//    const gstPattern = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
+//
+//    gstError.innerHTML = '';
+//    if (!gstPattern.test(gst)) {
+//        gstError.innerHTML = "Please enter a valid GST number.";
+//    }
+//    }
+//
+//function copyBillingAddress() {
+//    const copyAddressCheckbox = document.getElementById('sameAddress')
+// const billingAddress = document.getElementById('billingAddress').value;
+//    const shippingAddress = document.getElementById('shippingAddress');
+//
+//    if (copyAddressCheckbox.checked){
+//        shippingAddress.value = billingAddress;
+//    } else {
+//        shippingAddress.value = '';
+//}
+//}

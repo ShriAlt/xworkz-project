@@ -4,7 +4,7 @@ import com.xworkz.techRoute.entity.RegisterEntity;
 
 public interface ProfileRepository {
 
-    boolean saveUser(RegisterEntity registerEntity);
+   <S> boolean save(S entity);
 
     RegisterEntity checkByMail(String email);
 
@@ -15,5 +15,6 @@ public interface ProfileRepository {
   <T> boolean updateProfile(T entity);
 
   boolean clearOtp();
+
 
 }

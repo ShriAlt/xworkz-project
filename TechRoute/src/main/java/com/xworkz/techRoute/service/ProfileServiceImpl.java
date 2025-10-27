@@ -39,7 +39,7 @@ public class ProfileServiceImpl implements ProfileService {
         RegisterEntity registerEntity = new RegisterEntity();
         BeanUtils.copyProperties(dto, registerEntity);
         registerEntity.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
-        boolean result = profileRepository.saveUser(registerEntity);
+        boolean result = profileRepository.save(registerEntity);
         if (result){
             return IssueCode.OK;
         }
