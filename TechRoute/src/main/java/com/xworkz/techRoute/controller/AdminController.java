@@ -36,26 +36,41 @@ public class AdminController {
          service.validateAndSaveCustomer(customerDto);
         return "AddCustomer";
     }
-
     @GetMapping("viewProfilePage")
     public String viewProfilePage(){
         return "ViewPage";
     }
 
     @GetMapping("/viewCustomerPage")
-    public String viewCustomerPage(@RequestParam(defaultValue = "0") int page,
-                                   @RequestParam(defaultValue = "10") int size,
-                                   Model model) {
-        List<CustomerDto> allCustomers = service.viewCustomer(); // full list
+    public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, Model model) {
+        List<CustomerDto> allCustomers = service.viewCustomer();
+
         int totalCustomers = allCustomers.size();
-        int start = page * size;
+
+        int start = (page-1) * size;
         int end = Math.min(start + size, totalCustomers);
 
         List<CustomerDto> paginatedList = allCustomers.subList(start, end);
 
-        model.addAttribute("customerList", paginatedList);
+        model.addAttribute("listOfCustomer", paginatedList);
+        model.addAttribute("totalCustomers", totalCustomers);
         model.addAttribute("currentPage", page);
         model.addAttribute("totalPages", (int) Math.ceil((double) totalCustomers / size));
-        return "CustomerDetails"; // JSP name
+        model.addAttribute("startIndex", start+1);
+        model.addAttribute("endIndex", end);
+        model.addAttribute("currentPage", page);
+        return "CustomerDetails";
+    }
+
+    @GetMapping("updateCustomer")
+    public String updateCustomer(int id){
+
+        return "CustomerDetails";
+    }
+    @GetMapping("deleteCustomer")
+    public String deleteCustomer(int id){
+
+        return "CustomerDetails";
     }
 }
+

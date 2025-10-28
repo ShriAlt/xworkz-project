@@ -10,4 +10,6 @@ public interface AdminService {
     IssueCode validateAndSaveCustomer(CustomerDto dto);
 
     List<CustomerDto> viewCustomer();
+
+    IssueCode validateAndUpdate(int id);
 }
