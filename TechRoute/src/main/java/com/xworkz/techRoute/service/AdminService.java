@@ -11,5 +11,9 @@ public interface AdminService {
 
     List<CustomerDto> viewCustomer();
 
-    IssueCode validateAndUpdate(int id);
+    IssueCode validateAndUpdate(CustomerDto dto);
+
+    CustomerDto fetchCustomer(int id);
+
+    boolean deleteCustomer(int id);
 }

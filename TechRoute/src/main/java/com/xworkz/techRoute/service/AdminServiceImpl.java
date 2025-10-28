@@ -46,8 +46,28 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public IssueCode validateAndUpdate(int id) {
+    public IssueCode validateAndUpdate(CustomerDto dto) {
 
-        return IssueCode.NULL_ERROR;
+        if (dto == null){
+            return IssueCode.INVALID;
+        }
+        CustomerEntity customerEntity = new CustomerEntity();
+        BeanUtils.copyProperties(dto,customerEntity);
+        System.err.println(customerEntity+"in service");
+        profileRepository.updateProfile(customerEntity);
+        return IssueCode.OK;
+    }
+
+    @Override
+    public CustomerDto fetchCustomer(int id) {
+        CustomerEntity customerEntity = profileRepository.fetchCustomerEntity(id);
+        CustomerDto customerDto = new CustomerDto();
+        BeanUtils.copyProperties(customerEntity,customerDto);
+        return customerDto;
+    }
+
+    @Override
+    public boolean deleteCustomer(int id) {
+        return  profileRepository.deleteCustomer(id);
     }
 }

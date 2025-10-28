@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.CustomerEntity;
 import com.xworkz.techRoute.entity.RegisterEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -185,6 +186,55 @@ public class ProfileRepositoryImpl implements ProfileRepository {
         catch (Exception e){
             e.printStackTrace();
             return Collections.emptyList();
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public CustomerEntity fetchCustomerEntity(int id) {
+        EntityManager entityManager = null;
+
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query=  entityManager.createNamedQuery("findById");
+            query.setParameter("id",id);
+            return (CustomerEntity) query.getSingleResult();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public boolean deleteCustomer(int id) {
+        EntityManager entityManager = null;
+        EntityTransaction entityTransaction = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            entityTransaction = entityManager.getTransaction();
+            entityTransaction.begin();
+            Query query=  entityManager.createNamedQuery("deleteById");
+            query.setParameter("id", id);
+            query.executeUpdate();
+            entityTransaction.commit();
+            return true;
+        }
+        catch (Exception e){
+            if (entityTransaction != null && entityTransaction.isActive()){
+                entityTransaction.rollback();
+            }
+            e.printStackTrace();
+            return false;
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {

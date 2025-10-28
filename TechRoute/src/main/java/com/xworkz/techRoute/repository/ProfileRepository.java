@@ -21,4 +21,8 @@ public interface ProfileRepository {
 
   List<CustomerEntity> findAll();
 
+  CustomerEntity fetchCustomerEntity(int id);
+
+  boolean deleteCustomer(int id);
+
 }

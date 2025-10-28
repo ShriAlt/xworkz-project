@@ -19,6 +19,14 @@ import javax.persistence.*;
         name = "findAll",
         query = " SELECT entity from CustomerEntity entity "
 )
+@NamedQuery(
+        name = "findById",
+        query = " SELECT entity from CustomerEntity entity where entity.id = :id"
+)
+@NamedQuery(
+        name = "deleteById",
+        query = " delete  CustomerEntity where id = :id"
+)
 public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -17,12 +17,13 @@
                         <h5 class="card-title">${customer.customerName}</h5>
                         <p class="card-text">
                             <strong>Email:</strong> ${customer.email}<br>
-                            <strong>Contact:</strong> ${customer.contact}
+                            <strong>Contact:</strong> ${customer.contact}<br>
+                            <strong>Contact:</strong> ${customer.customerType}
                         </p>
                     </div>
                     <div class="card-footer d-flex justify-content-between">
 <!--                        <a href="viewCustomer?customerId={customer.id}" class="btn btn-outline-primary btn-sm">View</a>-->
-                        <a href="updateCustomer?id=${customer.id}" class="btn btn-outline-warning btn-sm">Update</a>
+                        <a href="updateCustomerPage?id=${customer.id}" class="btn btn-outline-warning btn-sm">Update</a>
                         <a href="deleteCustomer?id=${customer.id}" class="btn btn-outline-danger btn-sm"
                            onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
                     </div>

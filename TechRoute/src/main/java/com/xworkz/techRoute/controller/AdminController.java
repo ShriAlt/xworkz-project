@@ -1,6 +1,7 @@
 package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,25 +34,59 @@ public class AdminController {
             model.addAttribute("error","fill your form correctly ");
             return "AddCustomer";
         }
-         service.validateAndSaveCustomer(customerDto);
+//        switch (service.validateAndSaveCustomer(customerDto)){
+//            case NULL_ERROR:
+//        }
         return "AddCustomer";
     }
-    @GetMapping("viewProfilePage")
-    public String viewProfilePage(){
-        return "ViewPage";
+
+//    @GetMapping("viewProfilePage")
+//    public String viewProfilePage(){
+//        return "ViewPage";
+//    }
+    @GetMapping("/viewCustomerPage")
+    public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model) {
+        pagination(page, size, model);
+        return "CustomerDetails";
     }
 
-    @GetMapping("/viewCustomerPage")
-    public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, Model model) {
+    @GetMapping("updateCustomerPage")
+    public String updateCustomerPage(int id , Model model){
+       CustomerDto  dto =  service.fetchCustomer(id);
+       model.addAttribute("dto",dto);
+        return "UpdateCustomerPage";
+    }
+
+    @PostMapping("UpdateCustomer")
+     public String updateCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, @Valid CustomerDto dto , BindingResult bindingResult , Model model){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("error","fill your form correctly ");
+            model.addAttribute("dto",dto);
+            return "UpdateCustomerPage";
+        }
+        IssueCode issueCode = service.validateAndUpdate(dto);
+        pagination(page,size,model);
+        return "CustomerDetails";
+   }
+
+    @GetMapping("deleteCustomer")
+    public String deleteCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, Model model ,int id){
+        if(!service.deleteCustomer(id)){
+            pagination(page, size, model);
+            model.addAttribute("error", "could not delete user ");
+            return "CustomerDetails";
+        }
+        pagination(page, size, model);
+        model.addAttribute("error", "deleted done ");
+        return "CustomerDetails";
+    }
+
+    private void pagination(int page, int size, Model model) {
         List<CustomerDto> allCustomers = service.viewCustomer();
-
         int totalCustomers = allCustomers.size();
-
-        int start = (page-1) * size;
+        int start = (page -1) * size;
         int end = Math.min(start + size, totalCustomers);
-
         List<CustomerDto> paginatedList = allCustomers.subList(start, end);
-
         model.addAttribute("listOfCustomer", paginatedList);
         model.addAttribute("totalCustomers", totalCustomers);
         model.addAttribute("currentPage", page);
@@ -59,18 +94,6 @@ public class AdminController {
         model.addAttribute("startIndex", start+1);
         model.addAttribute("endIndex", end);
         model.addAttribute("currentPage", page);
-        return "CustomerDetails";
-    }
-
-    @GetMapping("updateCustomer")
-    public String updateCustomer(int id){
-
-        return "CustomerDetails";
-    }
-    @GetMapping("deleteCustomer")
-    public String deleteCustomer(int id){
-
-        return "CustomerDetails";
     }
 }
 

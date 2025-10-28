@@ -3,13 +3,12 @@
   <component name="BroNotes">
     <option name="plainNotes">
       <list>
-        <option value="work on add coustomer " />
+        <option value="complete add customer&#10;" />
       </list>
     </option>
     <option name="todoNotes">
       <list>
-        <option value="add view profile  page  " />
-        <option value="work on view coustomer &#10;" />
+        <option value="complete all  validations&#10;" />
       </list>
     </option>
   </component>
