@@ -162,7 +162,6 @@
                 <input type="text" class="form-control" name="customerName" id="customerName" placeholder="Enter full name" required onchange="validateName()">
                 <span id="nameError" class="text-danger"></span>
             </div>
-
             <!-- Customer Type -->
             <div class="col-md-6">
                 <label for="customerType" class="form-label">Customer Type</label>
@@ -172,7 +171,6 @@
                     <option value="Debitors">Debitor</option>
                 </select>
             </div>
-
             <!-- Email -->
             <div class="col-md-6">
                 <label for="email" class="form-label">Email</label>

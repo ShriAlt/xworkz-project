@@ -31,9 +31,9 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             entityManager = entityManagerFactory.createEntityManager();
             entityTransaction = entityManager.getTransaction();
             entityTransaction.begin();
-            System.err.println(entity);
             entityManager.persist(entity);
             entityTransaction.commit();
+            System.err.println("===============================================OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK- in repo");
             return true;
         }
         catch (Exception e){

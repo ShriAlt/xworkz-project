@@ -158,7 +158,7 @@
 <div class="container py-5">
     <h2 class="text-info mb-4">Update Customer</h2>
     <form action="UpdateCustomer" method="post">
-
+        <input type="text" name="id" value="${dto.id}"  hidden >
         <div class="row g-3">
             <span class="text-danger">${error}</span>
             <!-- Customer Name -->

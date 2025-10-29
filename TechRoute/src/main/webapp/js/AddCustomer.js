@@ -4,7 +4,6 @@ async function checkPinCode() {
   const stateSelect = document.getElementById('state');
   const cityInput = document.getElementById('city');
 
-  // Clear previous errors and reset fields
   errorId.innerHTML = '';
   stateSelect.innerHTML = '<option selected disabled>Loading states...</option>';
   cityInput.value = '';
@@ -80,4 +79,4 @@ async function checkPinCode() {
 //    } else {
 //        shippingAddress.value = '';
 //}
-//}
+}

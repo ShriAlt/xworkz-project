@@ -60,13 +60,20 @@ public class AdminController {
                 model.addAttribute("error","couldn't save customer");
                 return "AddCustomer";
             }
+            case PHONE_EXIST:{
+                model.addAttribute("error","number exist");
+                return "AddCustomer";
+            }
+            case EMAIL_EXIST:{
+                model.addAttribute("error","email exist");
+                return "AddCustomer";
+            }
             default: {
                 model.addAttribute("error","customer saved!!!");
                 return "AddCustomer";
             }
         }
     }
-
     @PostMapping("UpdateCustomer")
      public String updateCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, @Valid CustomerDto dto , BindingResult bindingResult , Model model){
         if (bindingResult.hasErrors()){
@@ -74,10 +81,19 @@ public class AdminController {
             model.addAttribute("dto",dto);
             return "UpdateCustomerPage";
         }
+        System.err.println(dto.getId()+"==========================================");
         switch (service.validateAndUpdate(dto)){
             case INVALID :
             case DB_ERROR: {
                 model.addAttribute("error","couldn't update customer");
+                return "UpdateCustomerPage";
+            }
+            case PHONE_EXIST:{
+                model.addAttribute("error","number exist");
+                return "UpdateCustomerPage";
+            }
+            case EMAIL_EXIST:{
+                model.addAttribute("error","email exist");
                 return "UpdateCustomerPage";
             }
             default: {

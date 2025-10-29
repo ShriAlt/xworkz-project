@@ -29,9 +29,15 @@ public class AdminServiceImpl implements AdminService{
         if (dto == null){
             return IssueCode.INVALID;
         }
+        if (adminRepository.fetchCustomerEntityByMail(dto.getEmail())!= null){
+            return IssueCode.EMAIL_EXIST;
+        }
+        if (adminRepository.fetchCustomerEntityByNumber(dto.getContact())!= null){
+            return IssueCode.PHONE_EXIST;
+        }
         CustomerEntity customerEntity = new CustomerEntity();
         BeanUtils.copyProperties(dto,customerEntity);
-        if (profileRepository.save(customerEntity)){
+    if (!profileRepository.save(customerEntity)){
             return IssueCode.DB_ERROR;
         }
         return IssueCode.OK;
@@ -53,8 +59,19 @@ public class AdminServiceImpl implements AdminService{
         if (dto == null){
             return IssueCode.INVALID;
         }
+        CustomerEntity existingByEmail = adminRepository.fetchCustomerEntityByMail(dto.getEmail());
+        if (existingByEmail != null && existingByEmail.getId() != dto.getId()) {
+            return IssueCode.EMAIL_EXIST;
+        }
+
+        CustomerEntity existingByPhone = adminRepository.fetchCustomerEntityByNumber(dto.getContact());
+        if (existingByPhone != null && existingByPhone.getId() != dto.getId()) {
+            return IssueCode.PHONE_EXIST;
+        }
+
         CustomerEntity customerEntity = new CustomerEntity();
         BeanUtils.copyProperties(dto,customerEntity);
+        customerEntity.setId(dto.getId());
         if(!profileRepository.updateProfile(customerEntity)){
             return IssueCode.DB_ERROR;
         }
