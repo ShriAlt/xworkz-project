@@ -95,32 +95,6 @@ public class ProfileRepositoryImpl implements ProfileRepository {
         }
     }
 
-//    @Override
-//    public <T> boolean saveLoginInfo(T entity) {
-//        EntityManager entityManager = null;
-//        EntityTransaction entityTransaction = null;
-//        try {
-//            entityManager = entityManagerFactory.createEntityManager();
-//            entityTransaction = entityManager.getTransaction();
-//            entityTransaction.begin();
-//            entityManager.persist(entity);
-//            entityTransaction.commit();
-//            return true;
-//        }
-//        catch (Exception e){
-//            if (entityTransaction != null && entityTransaction.isActive()){
-//                entityTransaction.rollback();
-//            }
-//            e.printStackTrace();
-//            return false;
-//        }
-//        finally {
-//            if (entityManager != null && entityManager.isOpen()) {
-//                entityManager.close();
-//            }
-//        }
-//    }
-
     @Override
     public <T> boolean updateProfile(T entity) {
         EntityManager entityManager = null;
@@ -235,6 +209,49 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             }
             e.printStackTrace();
             return false;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public CustomerEntity fetchCustomerEntityByMail(String email) {
+        EntityManager entityManager = null;
+        CustomerEntity customerEntity;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query = entityManager.createNamedQuery("findByMail");
+            query.setParameter("email",email);
+            customerEntity =  (CustomerEntity) query.getSingleResult();
+            return customerEntity;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+    @Override
+    public CustomerEntity fetchCustomerEntityByNumber(String number) {
+        EntityManager entityManager = null;
+        CustomerEntity customerEntity;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query = entityManager.createNamedQuery("findByPhone");
+            query.setParameter("contact",number);
+            customerEntity =  (CustomerEntity) query.getSingleResult();
+            return customerEntity;
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {

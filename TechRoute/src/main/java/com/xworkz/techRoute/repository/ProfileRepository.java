@@ -25,4 +25,8 @@ public interface ProfileRepository {
 
   boolean deleteCustomer(int id);
 
+    CustomerEntity fetchCustomerEntityByMail(String email);
+
+    CustomerEntity fetchCustomerEntityByNumber(String number);
+
 }

@@ -15,58 +15,145 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <style>
+        /* ===== Global Theme ===== */
         body {
-          background-color: #0f172a;
+          background: #0f172a;
           color: #e2e8f0;
+          height: 100vh;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
           font-family: 'Poppins', sans-serif;
         }
-        h2 {
-          color: #38bdf8;
+        h1 {
           font-weight: 700;
-          text-shadow: 0 0 6px rgba(56, 189, 248, 0.4);
-        }
-        label {
-          font-weight: 500;
-          color: #e2e8f0;
-        }
-        .form-control,
-        .form-select,
-        textarea {
-          background-color: #1e293b;
-          color: #e2e8f0;
-          border: 1px solid #334155;
-          transition: border-color 0.3s ease;
-
-        .form-control:focus,
-        .form-select:focus,
-        textarea:focus {
-          border-color: #38bdf8;
-          box-shadow: 0 0 0 0.2rem rgba(56, 189, 248, 0.25);
+          color: #38bdf8;
         }
 
-        .form-check-label {
+        p {
           color: #cbd5e1;
         }
 
-        .btn-outline-primary {
-          border-color: #38bdf8;
+        /* ===== Navbar ===== */
+        .navbar {
+          background: rgba(15, 23, 42, 0.95);
+          border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .navbar-brand strong {
+          font-size: 1.4rem;
           color: #38bdf8;
-          transition: all 0.3s ease;
         }
 
-        .btn-outline-primary:hover {
-          background-color: #38bdf8;
-          color: #0f172a;
-          border: none;
+        .navbar-brand img {
+          height: 40px;
+          margin-right: 8px;
+          border-radius: 6px;
         }
 
-        textarea {
-          resize: vertical;
+        .nav-link {
+          color: #e2e8f0 !important;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          color: #38bdf8 !important;
+        }
+
+        /* ===== Admin Badge / Dropdown ===== */
+        .admin-badge {
+          color: #38bdf8;
+          font-weight: 600;
+          margin-left: auto;
+          margin-right: 1rem;
+          display: flex;
+          align-items: center;
+        }
+
+        .admin-badge i {
+          margin-right: 6px;
+        }
+        /* ===== Content ===== */
+        .content {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 60px 20px;
+        }
+        /* ===== Footer ===== */
+        footer {
+          background: #0f172a;
+          color: #94a3b8;
+          padding: 20px 0;
+          border-top: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        footer .nav-link {
+          color: #94a3b8 !important;
+        }
+
+        footer .nav-link:hover {
+          color: #38bdf8 !important;
+        }
+
+        footer p {
+          margin: 0;
+          font-size: 0.9rem;
         }
     </style>
+
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/techroute-logo.png" alt="Logo">
+            <strong>TechRoute</strong>
+        </a>
+        <div class="dropdown ms-auto me-3">
+            <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
+                <li>
+                    <a class="dropdown-item text-danger" href="adminHome">
+                        <i class="fa fa-sign-out-alt me-2"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewProfilePage">
+                        <i class="fa fa-user-circle me-2 text-info"></i> View Profile
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="addCustomerPage">
+                        <i class="fa fa-user-plus me-2 text-info"></i> Add Customer
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewCustomerPage">
+                        <i class="fa fa-users me-2 text-info"></i> View Customers
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider border-info"></li>
+                <li>
+                    <a class="dropdown-item text-danger" href="viewUsers">
+                        <i class="fa fa-sign-out-alt me-2"></i> view Users
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="logout">
+                        <i class="fa fa-sign-out-alt me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div class="container py-5">
     <h2 class="text-info mb-4">Update Customer</h2>

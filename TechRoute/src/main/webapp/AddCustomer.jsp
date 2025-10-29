@@ -13,10 +13,48 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <style>
+        /* ===== Global Theme ===== */
         body {
-          background-color: #0f172a;
+          background: #0f172a;
           color: #e2e8f0;
+          height: 100vh;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
           font-family: 'Poppins', sans-serif;
+        }
+        h1 {
+          font-weight: 700;
+          color: #38bdf8;
+        }
+
+        p {
+          color: #cbd5e1;
+        }
+         /* ===== Navbar ===== */
+        .navbar {
+          background: rgba(15, 23, 42, 0.95);
+          border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .navbar-brand strong {
+          font-size: 1.4rem;
+          color: #38bdf8;
+        }
+
+        .navbar-brand img {
+          height: 40px;
+          margin-right: 8px;
+          border-radius: 6px;
+        }
+
+        .nav-link {
+          color: #e2e8f0 !important;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          color: #38bdf8 !important;
         }
         h2 {
           color: #38bdf8;
@@ -63,13 +101,59 @@
         }
     </style>
 </head>
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/techroute-logo.png" alt="Logo">
+            <strong>TechRoute</strong>
+        </a>
+        <div class="dropdown ms-auto me-3">
+            <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
+                <li>
+                    <a class="dropdown-item text-danger" href="adminHome">
+                        <i class="fa fa-sign-out-alt me-2"></i> Home
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewProfilePage">
+                        <i class="fa fa-user-circle me-2 text-info"></i> View Profile
+                    </a>
+                </li>
+<!--                <li>-->
+<!--                    <a class="dropdown-item text-light" href="addCustomerPage">-->
+<!--                        <i class="fa fa-user-plus me-2 text-info"></i> Add Customer-->
+<!--                    </a>-->
+<!--                </li>-->
+                <li>
+                    <a class="dropdown-item text-light" href="viewCustomerPage">
+                        <i class="fa fa-users me-2 text-info"></i> View Customers
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider border-info"></li>
+                <li>
+                    <a class="dropdown-item text-danger" href="viewUsers">
+                        <i class="fa fa-sign-out-alt me-2"></i> view Users
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-danger" href="logout">
+                        <i class="fa fa-sign-out-alt me-2"></i> Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <body>
 
 <div class="container py-5">
     <h2 class="text-info mb-4">Add Customer</h2>
     <form action="addCustomer" method="post">
-
         <div class="row g-3">
             <span class="text-danger">${error}</span>
             <!-- Customer Name -->

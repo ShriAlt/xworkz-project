@@ -132,6 +132,11 @@
                 </li>
                 <li><hr class="dropdown-divider border-info"></li>
                 <li>
+                    <a class="dropdown-item text-danger" href="viewUsers">
+                        <i class="fa fa-sign-out-alt me-2"></i> view Users
+                    </a>
+                </li>
+                <li>
                     <a class="dropdown-item text-danger" href="logout">
                         <i class="fa fa-sign-out-alt me-2"></i> Logout
                     </a>

@@ -16,4 +16,8 @@ public interface AdminService {
     CustomerDto fetchCustomer(int id);
 
     boolean deleteCustomer(int id);
+
+    boolean checkCustomerEmail(String email);
+
+    boolean checkCustomerPhone(String phone);
 }

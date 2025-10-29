@@ -21,14 +21,14 @@ public class CustomerDto implements Serializable {
     @NotNull(message = "Customer type must be specified")
     private CustomerType customerType;
 
-//    @Email(message = "Invalid email format")
+    @Email(message = "Invalid email format")
     @NotBlank(message = "Email is required")
     private String email;
 
-//    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Invalid Indian contact number")
+    @Pattern(regexp = "^[6-9]\\d{9}$", message = "Invalid Indian contact number")
     private String contact;
 
-//    @Pattern(regexp = "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$", message = "Invalid GST number")
+    @Pattern(regexp = "^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$", message = "Invalid GST number")
     private String gst;
 
     @NotBlank(message = "Country is required")
@@ -40,7 +40,7 @@ public class CustomerDto implements Serializable {
     @NotBlank(message = "City is required")
     private String city;
 
-//    @Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid Indian pin code")
+    @Pattern(regexp = "^[1-9][0-9]{5}$", message = "Invalid Indian pin code")
     private String pinCode;
 
     @NotBlank(message = "Address is required")

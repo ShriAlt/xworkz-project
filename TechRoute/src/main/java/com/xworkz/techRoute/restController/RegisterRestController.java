@@ -73,4 +73,5 @@ public class RegisterRestController {
         }
         return ResponseEntity.ok("sent");
     }
+
 }

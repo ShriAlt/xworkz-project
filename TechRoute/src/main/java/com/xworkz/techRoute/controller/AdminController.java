@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -27,34 +28,42 @@ public class AdminController {
     public String addCustomerPage(){
         return "AddCustomer";
     }
-
+    @GetMapping("viewProfilePage")
+    public String viewProfilePage(){
+        return "ViewPage";
+    }
+    @GetMapping("updateCustomerPage")
+    public String updateCustomerPage(int id , Model model){
+        CustomerDto  dto =  service.fetchCustomer(id);
+        model.addAttribute("dto",dto);
+        return "UpdateCustomerPage";
+    }
+    @GetMapping("viewCustomerPage")
+    public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model) {
+        pagination(page, size, model);
+        return "CustomerDetails";
+    }
+    @GetMapping("adminHome")
+    public String  adminHonePage(){
+        return "AdminHome";
+    }
     @PostMapping("addCustomer")
     public String addCustomer( CustomerDto customerDto , BindingResult bindingResult , Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("error","fill your form correctly ");
             return "AddCustomer";
         }
-//        switch (service.validateAndSaveCustomer(customerDto)){
-//            case NULL_ERROR:
-//        }
-        return "AddCustomer";
-    }
-
-//    @GetMapping("viewProfilePage")
-//    public String viewProfilePage(){
-//        return "ViewPage";
-//    }
-    @GetMapping("/viewCustomerPage")
-    public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model) {
-        pagination(page, size, model);
-        return "CustomerDetails";
-    }
-
-    @GetMapping("updateCustomerPage")
-    public String updateCustomerPage(int id , Model model){
-       CustomerDto  dto =  service.fetchCustomer(id);
-       model.addAttribute("dto",dto);
-        return "UpdateCustomerPage";
+        switch (service.validateAndSaveCustomer(customerDto)){
+            case INVALID :
+            case DB_ERROR: {
+                model.addAttribute("error","couldn't save customer");
+                return "AddCustomer";
+            }
+            default: {
+                model.addAttribute("error","customer saved!!!");
+                return "AddCustomer";
+            }
+        }
     }
 
     @PostMapping("UpdateCustomer")
@@ -64,20 +73,28 @@ public class AdminController {
             model.addAttribute("dto",dto);
             return "UpdateCustomerPage";
         }
-        IssueCode issueCode = service.validateAndUpdate(dto);
-        pagination(page,size,model);
-        return "CustomerDetails";
+        switch (service.validateAndUpdate(dto)){
+            case INVALID :
+            case DB_ERROR: {
+                model.addAttribute("error","couldn't update customer");
+                return "UpdateCustomerPage";
+            }
+            default: {
+                model.addAttribute("error","customer updated!!!");
+                pagination(page,size,model);
+                return "CustomerDetails";
+            }
+        }
    }
-
     @GetMapping("deleteCustomer")
     public String deleteCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, Model model ,int id){
         if(!service.deleteCustomer(id)){
             pagination(page, size, model);
-            model.addAttribute("error", "could not delete user ");
+            model.addAttribute("error", "could not delete customer ");
             return "CustomerDetails";
         }
         pagination(page, size, model);
-        model.addAttribute("error", "deleted done ");
+        model.addAttribute("error", "deleted customer ");
         return "CustomerDetails";
     }
 
