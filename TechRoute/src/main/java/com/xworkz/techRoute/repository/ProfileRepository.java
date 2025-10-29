@@ -13,8 +13,6 @@ public interface ProfileRepository {
 
     RegisterEntity checkByPhone(String phone);
 
-//   <T> boolean saveLoginInfo(T entity);
-
   <T> boolean updateProfile(T entity);
 
   boolean clearOtp();

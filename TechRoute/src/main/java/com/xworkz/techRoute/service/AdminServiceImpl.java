@@ -2,8 +2,8 @@ package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.CustomerDto;
 import com.xworkz.techRoute.entity.CustomerEntity;
-import com.xworkz.techRoute.entity.RegisterEntity;
 import com.xworkz.techRoute.enums.IssueCode;
+import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +21,9 @@ public class AdminServiceImpl implements AdminService{
     @Autowired
     private ProfileRepository profileRepository;
 
+    @Autowired
+    private AdminRepository adminRepository;
+
     @Override
     public IssueCode validateAndSaveCustomer(CustomerDto dto) {
         if (dto == null){
@@ -35,7 +38,7 @@ public class AdminServiceImpl implements AdminService{
     }
     @Override
     public List<CustomerDto> viewCustomer(){
-      List <CustomerEntity> customerEntities = profileRepository.findAll();
+      List <CustomerEntity> customerEntities = adminRepository.findAll();
 
       List<CustomerDto> customerDtosList = new ArrayList<>();
       for(CustomerEntity customerEntity : customerEntities){
@@ -59,14 +62,14 @@ public class AdminServiceImpl implements AdminService{
     }
     @Override
     public CustomerDto fetchCustomer(int id) {
-        CustomerEntity customerEntity = profileRepository.fetchCustomerEntity(id);
+        CustomerEntity customerEntity = adminRepository.fetchCustomerEntity(id);
         CustomerDto customerDto = new CustomerDto();
         BeanUtils.copyProperties(customerEntity,customerDto);
         return customerDto;
     }
     @Override
     public boolean deleteCustomer(int id) {
-        return  profileRepository.deleteCustomer(id);
+        return  adminRepository.deleteCustomer(id);
     }
 
     @Override
@@ -74,16 +77,15 @@ public class AdminServiceImpl implements AdminService{
         if (email == null){
             return false;
         }
-        CustomerEntity customerEntity = profileRepository.fetchCustomerEntityByMail(email);
+        CustomerEntity customerEntity = adminRepository.fetchCustomerEntityByMail(email);
         return customerEntity != null;
     }
-
     @Override
     public boolean checkCustomerPhone(String phone) {
         if (phone == null){
             return false;
         }
-        CustomerEntity customerEntity = profileRepository.fetchCustomerEntityByNumber(phone);
+        CustomerEntity customerEntity = adminRepository.fetchCustomerEntityByNumber(phone);
         return customerEntity != null;
     }
 }
