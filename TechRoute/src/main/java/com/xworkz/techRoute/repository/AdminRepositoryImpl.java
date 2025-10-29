@@ -91,7 +91,7 @@ public class AdminRepositoryImpl implements AdminRepository{
         CustomerEntity customerEntity;
         try {
             entityManager = entityManagerFactory.createEntityManager();
-            Query query = entityManager.createNamedQuery("findByMail");
+            Query query = entityManager.createNamedQuery("findByCustomerMail");
             query.setParameter("email",email);
             customerEntity =  (CustomerEntity) query.getSingleResult();
             return customerEntity;
@@ -112,7 +112,7 @@ public class AdminRepositoryImpl implements AdminRepository{
         CustomerEntity customerEntity;
         try {
             entityManager = entityManagerFactory.createEntityManager();
-            Query query = entityManager.createNamedQuery("findByPhone");
+            Query query = entityManager.createNamedQuery("findByCustomerPhone");
             query.setParameter("contact",number);
             customerEntity =  (CustomerEntity) query.getSingleResult();
             return customerEntity;

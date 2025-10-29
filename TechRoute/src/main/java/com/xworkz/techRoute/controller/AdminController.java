@@ -50,6 +50,7 @@ public class AdminController {
     @PostMapping("addCustomer")
     public String addCustomer( CustomerDto customerDto , BindingResult bindingResult , Model model){
         if (bindingResult.hasErrors()){
+            bindingResult.getAllErrors().forEach(System.err::println);
             model.addAttribute("error","fill your form correctly ");
             return "AddCustomer";
         }

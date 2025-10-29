@@ -19,6 +19,7 @@ public class ProfileRepositoryImpl implements ProfileRepository {
     public ProfileRepositoryImpl(){
         System.out.println("no args of ProfileRepositoryImpl");
     }
+
     @Autowired
     EntityManagerFactory entityManagerFactory;
 

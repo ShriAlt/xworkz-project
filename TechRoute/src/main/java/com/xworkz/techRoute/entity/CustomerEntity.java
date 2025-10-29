@@ -10,10 +10,10 @@ import javax.persistence.*;
 @Data
 @Table(name = "customer_details")
 @NamedQuery(
-        name = "findByMail",
+        name = "findByCustomerMail",
         query = "SELECT u FROM CustomerEntity u WHERE u.email = :email" )
 @NamedQuery(
-        name = "findByPhone",
+        name = "findByCustomerPhone",
         query = "SELECT u FROM CustomerEntity u WHERE u.contact = :contact" )
 @NamedQuery(
         name = "findAll",
