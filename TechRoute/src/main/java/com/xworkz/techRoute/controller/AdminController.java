@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.servlet.http.HttpSession;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -38,11 +38,13 @@ public class AdminController {
         model.addAttribute("dto",dto);
         return "UpdateCustomerPage";
     }
+
     @GetMapping("viewCustomerPage")
     public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model) {
         pagination(page, size, model);
         return "CustomerDetails";
     }
+
     @GetMapping("adminHome")
     public String  adminHonePage(){
         return "AdminHome";
@@ -116,11 +118,15 @@ public class AdminController {
     }
 
     private void pagination(int page, int size, Model model) {
+
         List<CustomerDto> allCustomers = service.viewCustomer();
+
         int totalCustomers = allCustomers.size();
         int start = (page -1) * size;
         int end = Math.min(start + size, totalCustomers);
+
         List<CustomerDto> paginatedList = allCustomers.subList(start, end);
+
         model.addAttribute("listOfCustomer", paginatedList);
         model.addAttribute("totalCustomers", totalCustomers);
         model.addAttribute("currentPage", page);
