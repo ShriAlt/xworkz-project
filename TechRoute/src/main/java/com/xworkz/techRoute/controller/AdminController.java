@@ -44,7 +44,6 @@ public class AdminController {
         pagination(page, size, model);
         return "CustomerDetails";
     }
-
     @GetMapping("adminHome")
     public String  adminHonePage(){
         return "AdminHome";
