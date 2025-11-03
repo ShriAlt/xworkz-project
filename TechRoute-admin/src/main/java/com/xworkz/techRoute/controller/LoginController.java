@@ -57,7 +57,7 @@ public class LoginController {
                         return "LoginPage";
                     }
                     httpSession.setAttribute("dto",profileDto);
-                    return "redirect:http://localhost:8081/user/dashboard";
+                    return "redirect:http://localhost:8081/TechRoute-User/";
                 }
                 case ADMIN: {
                     ProfileDto profileDto = profileService.displayProfile(dto.getIdentifier());
