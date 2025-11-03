@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bronotes_data_state.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/EmailConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/PersistenceConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/SwaggerConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/ResetPasswordController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/LoginDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProfileDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/AdminLoginEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/RegisterEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/UserLoginEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/CustomerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/IssueCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/PaymentMode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/init/WebInit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepositoryImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/RegisterRestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/Scheduler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/SchedulerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddCustomer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CustomerDetails.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ForgotPasswordPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoginPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/OtpVerificationPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ResetPasswordPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/UpdateCustomerPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/UserHome.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/logo-hollowKnight.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/AddCustomer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/LoginPageValidation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/OtpPage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/ResetPasswordValidation.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ShriAlt&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ShriAlt/xworkz-project.git&quot;,
+    &quot;accountId&quot;: &quot;23c3a1dd-ed10-4559-a9fb-d37be2396847&quot;
+  }
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="33kglTyQv7javicdjZTduvJboW0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MailServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [verify].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: TechRoute.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shrih/OneDrive/Pictures/Documents/Project-modules/shriharsha-xworkz-modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\shrih\OneDrive\Pictures\Documents\xworkz-project\TechRoute\src\main\webapp\images" />
+    </key>
+  </component>
+  <component name="RunAnythingContextRecentDirectoryCache">
+    <option name="paths">
+      <recentPaths value="$PROJECT_DIR$/../../Project-modules/shriharsha-xworkz-modules" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Smart Tomcat.Tomcat: TechRoute">
+    <configuration name="MailServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.xworkz.techRoute.service.MailServiceImpl" />
+      <module name="TechRoute-admin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat: TechRoute" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\shrih\.SmartTomcat\TechRoute\TechRoute" />
+      <option name="contextPath" value="/TechRoute" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="extraClassPath" value="" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/9.0.104" />
+          <option name="path" value="$PROJECT_DIR$/../../apache-tomcat-9.0.104-windows-x64/apache-tomcat-9.0.104" />
+          <option name="version" value="9.0.104.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="" />
+      <module name="TechRoute-admin" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.MailServiceImpl" />
+      <item itemvalue="Smart Tomcat.Tomcat: TechRoute" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MailServiceImpl" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="" />
+      <created>1759866636192</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759866636192</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update .gitignore to prevent committing application-secret.properties">
+      <option name="closed" value="true" />
+      <created>1759946872383</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1759946872383</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implement user registration with validation and persistence; update database configuration">
+      <option name="closed" value="true" />
+      <created>1759953583969</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1759953583969</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add login functionality with user authentication and create login page">
+      <option name="closed" value="true" />
+      <created>1760015812319</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760015812319</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add login functionality with user authentication and create login page">
+      <option name="closed" value="true" />
+      <created>1760033723726</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760033723726</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Enhance login functionality with identifier validation and error handling; add client-side validation for email and phone number">
+      <option name="closed" value="true" />
+      <created>1760120255658</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760120255658</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implement forgot password functionality; add endpoint and JSP page for password recovery">
+      <option name="closed" value="true" />
+      <created>1760125114101</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1760125114101</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implement forgot password flow; add OTP verification endpoint and update controller methods">
+      <option name="closed" value="true" />
+      <created>1760241295383</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1760241295383</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implement reset password functionality; add OTP verification flow and update related services and controllers">
+      <option name="closed" value="true" />
+      <created>1760378975330</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1760378975330</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Add email configuration and mail service for OTP functionality; implement JavaMailSender and MailService interface">
+      <option name="closed" value="true" />
+      <created>1760465414882</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1760465414882</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add email configuration and mail service for OTP functionality; implement JavaMailSender and MailService interface">
+      <option name="closed" value="true" />
+      <created>1760478708009</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1760478708010</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update on js validation">
+      <option name="closed" value="true" />
+      <created>1760509510361</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1760509510361</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update on js validation">
+      <option name="closed" value="true" />
+      <created>1760550478265</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1760550478265</updated>
+    </task>
+    <task id="LOCAL-00017" summary="schedulers added">
+      <option name="closed" value="true" />
+      <created>1760558842020</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1760558842020</updated>
+    </task>
+    <task id="LOCAL-00018" summary="new look !!!">
+      <option name="closed" value="true" />
+      <created>1760558870765</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1760558870765</updated>
+    </task>
+    <task id="LOCAL-00019" summary="otp cleared">
+      <option name="closed" value="true" />
+      <created>1760558889224</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1760558889224</updated>
+    </task>
+    <task id="LOCAL-00020" summary="update on logo and style">
+      <option name="closed" value="true" />
+      <created>1760561625423</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1760561625423</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update on logo and style">
+      <option name="closed" value="true" />
+      <created>1760561660013</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1760561660013</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update on logout">
+      <option name="closed" value="true" />
+      <created>1760561939222</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1760561939222</updated>
+    </task>
+    <task id="LOCAL-00023" summary="added resend otp function">
+      <option name="closed" value="true" />
+      <created>1760566286621</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1760566286621</updated>
+    </task>
+    <task id="LOCAL-00024" summary="added resend otp function">
+      <option name="closed" value="true" />
+      <created>1760566465717</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1760566465717</updated>
+    </task>
+    <task id="LOCAL-00025" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760675571513</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1760675571513</updated>
+    </task>
+    <task id="LOCAL-00026" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760729855382</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1760729855382</updated>
+    </task>
+    <task id="LOCAL-00027" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760811553160</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1760811553160</updated>
+    </task>
+    <task id="LOCAL-00028" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760811824750</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1760811824750</updated>
+    </task>
+    <task id="LOCAL-00029" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760812061859</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1760812061859</updated>
+    </task>
+    <task id="LOCAL-00030" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760812126939</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1760812126939</updated>
+    </task>
+    <task id="LOCAL-00031" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760812245546</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1760812245546</updated>
+    </task>
+    <task id="LOCAL-00032" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760814366475</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1760814366475</updated>
+    </task>
+    <task id="LOCAL-00033" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1760982862136</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1760982862136</updated>
+    </task>
+    <task id="LOCAL-00034" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761068751198</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1761068751198</updated>
+    </task>
+    <task id="LOCAL-00035" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761154305447</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1761154305448</updated>
+    </task>
+    <task id="LOCAL-00036" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761154523881</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1761154523881</updated>
+    </task>
+    <task id="LOCAL-00037" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761241921338</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1761241921338</updated>
+    </task>
+    <task id="LOCAL-00038" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761241935321</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1761241935321</updated>
+    </task>
+    <task id="LOCAL-00039" summary="update on admin logic">
+      <option name="closed" value="true" />
+      <created>1761328762104</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1761328762104</updated>
+    </task>
+    <task id="LOCAL-00040" summary="update on admin js">
+      <option name="closed" value="true" />
+      <created>1761333577470</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1761333577470</updated>
+    </task>
+    <task id="LOCAL-00041" summary="update on admin js">
+      <option name="closed" value="true" />
+      <created>1761501609294</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1761501609295</updated>
+    </task>
+    <task id="LOCAL-00042" summary="update on admin js">
+      <option name="closed" value="true" />
+      <created>1761502139393</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1761502139393</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add validation and error handling for customer form fields">
+      <option name="closed" value="true" />
+      <created>1761508438265</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1761508438265</updated>
+    </task>
+    <task id="LOCAL-00044" summary="refactor: update customer form validation and service implementation">
+      <option name="closed" value="true" />
+      <created>1761548302429</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1761548302429</updated>
+    </task>
+    <task id="LOCAL-00045" summary="feat: implement customer pagination and enhance profile viewing functionality">
+      <option name="closed" value="true" />
+      <created>1761566314334</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1761566314334</updated>
+    </task>
+    <task id="LOCAL-00046" summary="feat: enhance customer management with pagination and update/delete functionality">
+      <option name="closed" value="true" />
+      <created>1761637525146</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1761637525146</updated>
+    </task>
+    <task id="LOCAL-00047" summary="feat: enhance customer management with pagination and update/delete functionality">
+      <option name="closed" value="true" />
+      <created>1761680686250</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1761680686250</updated>
+    </task>
+    <task id="LOCAL-00048" summary="feat: enhance customer management with new update and view functionalities, improved UI, and added email/phone validation">
+      <option name="closed" value="true" />
+      <created>1761730682823</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1761730682823</updated>
+    </task>
+    <task id="LOCAL-00049" summary="feat: implement AdminRepository and AdminRepositoryImpl for customer management, refactor service layer to utilize new repository methods">
+      <option name="closed" value="true" />
+      <created>1761731565457</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1761731565457</updated>
+    </task>
+    <task id="LOCAL-00050" summary="feat: update named queries for customer email and phone in CustomerEntity and AdminRepositoryImpl, add error logging in addCustomer method">
+      <option name="closed" value="true" />
+      <created>1761733114138</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1761733114138</updated>
+    </task>
+    <task id="LOCAL-00051" summary="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage">
+      <option name="closed" value="true" />
+      <created>1761762639509</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1761762639509</updated>
+    </task>
+    <task id="LOCAL-00052" summary="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage">
+      <option name="closed" value="true" />
+      <created>1761934713604</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1761934713605</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage">
+      <option name="closed" value="true" />
+      <created>1762106014441</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1762106014442</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update .gitignore to prevent committing application-secret.properties" />
+    <MESSAGE value="Implement user registration with validation and persistence; update database configuration" />
+    <MESSAGE value="Add login functionality with user authentication and create login page" />
+    <MESSAGE value="Enhance login functionality with identifier validation and error handling; add client-side validation for email and phone number" />
+    <MESSAGE value="Implement forgot password functionality; add endpoint and JSP page for password recovery" />
+    <MESSAGE value="Implement forgot password flow; add OTP verification endpoint and update controller methods" />
+    <MESSAGE value="Implement reset password functionality; add OTP verification flow and update related services and controllers" />
+    <MESSAGE value="Add email configuration and mail service for OTP functionality; implement JavaMailSender and MailService interface" />
+    <MESSAGE value="update on js validation" />
+    <MESSAGE value="schedulers added" />
+    <MESSAGE value="new look !!!" />
+    <MESSAGE value="otp cleared" />
+    <MESSAGE value="update on logo and style" />
+    <MESSAGE value="update on logout" />
+    <MESSAGE value="added resend otp function" />
+    <MESSAGE value="update on admin logic" />
+    <MESSAGE value="update on admin js" />
+    <MESSAGE value="add validation and error handling for customer form fields" />
+    <MESSAGE value="refactor: update customer form validation and service implementation" />
+    <MESSAGE value="feat: implement customer pagination and enhance profile viewing functionality" />
+    <MESSAGE value="feat: enhance customer management with pagination and update/delete functionality" />
+    <MESSAGE value="feat: enhance customer management with new update and view functionalities, improved UI, and added email/phone validation" />
+    <MESSAGE value="feat: implement AdminRepository and AdminRepositoryImpl for customer management, refactor service layer to utilize new repository methods" />
+    <MESSAGE value="feat: update named queries for customer email and phone in CustomerEntity and AdminRepositoryImpl, add error logging in addCustomer method" />
+    <MESSAGE value="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage" />
+  </component>
+</project>
