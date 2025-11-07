@@ -33,7 +33,6 @@ public class ProfileRepositoryImpl implements ProfileRepository {
             entityTransaction.begin();
             entityManager.persist(entity);
             entityTransaction.commit();
-            System.err.println("===============================================OKOKOKOKOKOKOKOKOKOKOKOKOKOKOKOK- in repo");
             return true;
         }
         catch (Exception e){

@@ -5,70 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bronotes_data_state.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/EmailConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/PersistenceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/SwaggerConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/ResetPasswordController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/CustomerDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/LoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProfileDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/AdminLoginEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/RegisterEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/UserLoginEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/CustomerType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/IssueCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/PaymentMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/init/WebInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/RegisterRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/Scheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/SchedulerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AddCustomer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CustomerDetails.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ForgotPasswordPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/LoginPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/OtpVerificationPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ResetPasswordPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/UpdateCustomerPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/UserHome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/images/logo-hollowKnight.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/AddCustomer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/LoginPageValidation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/OtpPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/ResetPasswordValidation.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/logo-hollowKnight.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/techroute-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/techroute-text.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +115,6 @@
         </TomcatInfo>
       </option>
       <option name="vmOptions" value="" />
-      <module name="TechRoute-admin" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

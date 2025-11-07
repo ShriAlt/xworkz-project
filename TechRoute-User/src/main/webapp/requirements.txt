@@ -1,4 +1,5 @@
-Voucher Type---sales purchase   
+Voucher Type---sales purchase
+
 Customer Name --dropdown  debit customer name
 
 (swagger)
@@ -12,12 +13,12 @@ Item Name--->make model product
 Opening Value (Initial Price)---1000
 Opening Balance (Stock-in-hand)---5
 Purchase Price----1000
+quantity
 Order Due Date-- date 
 
 
 status pending.....
 
 
-order
 
  
