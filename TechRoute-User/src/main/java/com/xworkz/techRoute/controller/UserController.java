@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.Objects;
 
 @Controller
 @RequestMapping("/")
@@ -39,7 +40,19 @@ public class UserController {
             return "PurchasePage";
         }
         IssueCode issueCode = userService.validateAndSaveOrder(purchaseDto);
-
-        return "PurchasePage";
+        switch (issueCode){
+            case NAME_EXIST:{
+                model.addAttribute("error", "name exist");
+                return "PurchasePage";
+            }
+            case OK:{
+                model.addAttribute("error", "added");
+                return "PurchasePage";
+            }
+            default:{
+                model.addAttribute("error", "something went wrong");
+                return "PurchasePage";
+            }
+        }
     }
 }

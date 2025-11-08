@@ -15,10 +15,10 @@ import javax.persistence.*;
 @NamedQuery(
         name = "findByCustomerPhone",
         query = "SELECT u FROM CustomerEntity u WHERE u.contact = :contact" )
-//@NamedQuery(
-//        name = "findAll",
-//        query = " SELECT entity from CustomerEntity entity "
-//)
+@NamedQuery(
+        name = "findAllCustomer",
+        query = " SELECT entity from CustomerEntity entity "
+)
 @NamedQuery(
         name = "findById",
         query = " SELECT entity from CustomerEntity entity where entity.id = :id"
@@ -26,6 +26,10 @@ import javax.persistence.*;
 @NamedQuery(
         name = "deleteById",
         query = " delete  CustomerEntity where id = :id"
+)
+@NamedQuery(
+        name = "findByCustomerName",
+        query = " SELECT entity from CustomerEntity entity where entity.customerName = :customerName"
 )
 public class CustomerEntity {
     @Id

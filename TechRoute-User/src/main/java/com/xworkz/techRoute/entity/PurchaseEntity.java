@@ -41,6 +41,7 @@ public class PurchaseEntity {
 
     private String  orderDueDate;
 
+
     @Enumerated(EnumType.STRING)
     private Status status;
 }

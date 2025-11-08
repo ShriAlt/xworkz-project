@@ -1,21 +1,19 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.CustomerEntity;
 import com.xworkz.techRoute.entity.ProductGroupEntity;
 
 import java.util.List;
 
-public interface UserRepository {
+public interface UserRepository{
 
 
-    List<ProductGroupEntity> findAll();
-//
-//    CustomerEntity fetchCustomerEntity(int id);
-//
-//    boolean deleteCustomer(int id);
-//
-//    CustomerEntity fetchCustomerEntityByMail(String email);
-//
-//    CustomerEntity fetchCustomerEntityByNumber(String number);
+    List<ProductGroupEntity> findAllProductGroupName();
 
     <T> boolean  save(T entity);
+
+      List<CustomerEntity> findAllCustomer();
+
+      CustomerEntity findByName(String name);
+
 }

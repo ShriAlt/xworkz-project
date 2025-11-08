@@ -1,8 +1,12 @@
 package com.xworkz.techRoute.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum IssueCode {
     DB_ERROR("error in db"),
     INVALID("error in db"),
+    NAME_EXIST("error in db"),
     NO_EMAIL("error in db"),
     PASSWORD_MISMATCH("error in db"),
     USER("error in db"),
@@ -22,7 +26,4 @@ public enum IssueCode {
         this.messages = messages;
     }
 
-    public String getMessages() {
-        return messages;
-    }
 }

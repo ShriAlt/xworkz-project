@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@NamedQuery(name = "findAll",
+@NamedQuery(name = "findAllProductGroupName",
             query = "select entity from ProductGroupEntity entity")
 public class ProductGroupEntity {
 

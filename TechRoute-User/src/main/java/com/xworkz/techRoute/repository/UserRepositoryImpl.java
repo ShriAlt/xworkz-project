@@ -1,8 +1,8 @@
 package com.xworkz.techRoute.repository;
 
+import com.xworkz.techRoute.entity.CustomerEntity;
 import com.xworkz.techRoute.entity.ProductGroupEntity;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -47,16 +47,94 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
-    public List<ProductGroupEntity> findAll() {
+    public List<ProductGroupEntity> findAllProductGroupName() {
         EntityManager entityManager = null;
         try {
             entityManager = entityManagerFactory.createEntityManager();
-            Query query=  entityManager.createNamedQuery("findAll");
+            Query query=  entityManager.createNamedQuery("findAllProductGroupName");
             return  query.getResultList();
         }
         catch (Exception e){
             e.printStackTrace();
             return Collections.emptyList();
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+//    @Override
+//    public List fetchAllProducts() {
+//        EntityManager entityManager = null;
+//        try {
+//            entityManager = entityManagerFactory.createEntityManager();
+//            Query query=  entityManager.createNamedQuery("findAllProducts");
+//            return  query.getResultList();
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//            return Collections.emptyList();
+//        }
+//        finally {
+//            if (entityManager != null && entityManager.isOpen()) {
+//                entityManager.close();
+//            }
+//        }
+//    }
+
+//    @Override
+//    public List<CustomerEntity> findAllCreditors() {
+//        EntityManager entityManager = null;
+//        try {
+//            entityManager = entityManagerFactory.createEntityManager();
+//            Query query=  entityManager.createNamedQuery("findAllCreditors");
+//            return  query.getResultList();
+//        }
+//        catch (Exception e){
+//            e.printStackTrace();
+//            return Collections.emptyList();
+//        }
+//        finally {
+//            if (entityManager != null && entityManager.isOpen()) {
+//                entityManager.close();
+//            }
+//        }
+//    }
+
+    @Override
+    public List<CustomerEntity> findAllCustomer() {
+        EntityManager entityManager = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query=  entityManager.createNamedQuery("findAllCustomer");
+            return  query.getResultList();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public CustomerEntity findByName(String name) {
+
+        EntityManager entityManager = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query=  entityManager.createNamedQuery("findByCustomerName");
+            query.setParameter("customerName",name);
+            return (CustomerEntity) query.getSingleResult();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
         }
         finally {
             if (entityManager != null && entityManager.isOpen()) {
