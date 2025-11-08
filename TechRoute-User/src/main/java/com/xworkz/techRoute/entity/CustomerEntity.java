@@ -15,10 +15,10 @@ import javax.persistence.*;
 @NamedQuery(
         name = "findByCustomerPhone",
         query = "SELECT u FROM CustomerEntity u WHERE u.contact = :contact" )
-@NamedQuery(
-        name = "findAll",
-        query = " SELECT entity from CustomerEntity entity "
-)
+//@NamedQuery(
+//        name = "findAll",
+//        query = " SELECT entity from CustomerEntity entity "
+//)
 @NamedQuery(
         name = "findById",
         query = " SELECT entity from CustomerEntity entity where entity.id = :id"

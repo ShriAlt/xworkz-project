@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.dto;
 
+import com.xworkz.techRoute.enums.Status;
 import lombok.*;
 import net.bytebuddy.implementation.bind.annotation.Default;
 
@@ -12,8 +13,6 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class PurchaseDto implements Serializable {
 
-//    @NotBlank
-//    private String voucherType;
 
     @NotBlank
     private String customerName;
@@ -23,7 +22,7 @@ public class PurchaseDto implements Serializable {
 
     @NotBlank
     @Size(max = 50)
-    private String make;
+    private String companyName;
 
     @NotBlank
     @Size(max = 50)
@@ -35,14 +34,10 @@ public class PurchaseDto implements Serializable {
 
     @NotBlank
     @Size(max = 100)
-    private String itemName;
+    private String productName;
 
     @NotNull
     private Long openingValue;
-
-    @NotNull
-    @Min(0)
-    private Integer openingBalance;
 
     @NotNull
     @DecimalMin(value = "0.0", inclusive = false)
@@ -52,10 +47,13 @@ public class PurchaseDto implements Serializable {
     @Min(1)
     private Integer quantity;
 
-    @FutureOrPresent
-    private LocalDate orderDueDate;
+    @NotNull
+    @Min(1)
+    private Integer stockInHand;
 
     @NotBlank
-    @Pattern(regexp = "pending|confirmed|shipped|cancelled", flags = Pattern.Flag.CASE_INSENSITIVE)
-    private String status;
+    private String orderDueDate;
+
+    @NotNull
+    private Status status;
 }

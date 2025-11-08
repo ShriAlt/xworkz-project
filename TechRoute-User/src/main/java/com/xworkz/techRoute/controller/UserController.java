@@ -31,6 +31,7 @@ public class UserController {
         return "PurchasePage";
     }
 
+
     @PostMapping("purchase")
     public String purchase(@Valid PurchaseDto purchaseDto , BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()){
