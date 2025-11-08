@@ -76,7 +76,7 @@ public class AdminController {
         }
     }
     @PostMapping("UpdateCustomer")
-     public String updateCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, @Valid CustomerDto dto , BindingResult bindingResult , Model model){
+     public String updateCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, @Valid CustomerDto dto , BindingResult bindingResult , Model model){
         if (bindingResult.hasErrors()){
             model.addAttribute("error","fill your form correctly ");
             model.addAttribute("dto",dto);
@@ -105,7 +105,7 @@ public class AdminController {
         }
    }
     @GetMapping("deleteCustomer")
-    public String deleteCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int size, Model model ,int id){
+    public String deleteCustomer(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model ,int id){
         if(!service.deleteCustomer(id)){
             pagination(page, size, model);
             model.addAttribute("error", "could not delete customer ");

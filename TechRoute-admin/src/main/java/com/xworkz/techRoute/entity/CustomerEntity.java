@@ -27,6 +27,7 @@ import javax.persistence.*;
         name = "deleteById",
         query = " delete  CustomerEntity where id = :id"
 )
+
 public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
