@@ -37,7 +37,6 @@ public class AdminController {
         model.addAttribute("dto",dto);
         return "UpdateCustomerPage";
     }
-
     @GetMapping("viewCustomerPage")
     public String viewCustomerPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "9") int size, Model model) {
         pagination(page, size, model);

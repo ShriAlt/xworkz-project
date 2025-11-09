@@ -6,6 +6,7 @@
     <title>TechRoute | Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <style>
         /* ===== Global Theme ===== */
@@ -109,11 +110,19 @@
 
         <!-- Admin Dropdown -->
         <div class="dropdown ms-auto me-3">
+            <div class="position-relative me-3">
+                <a href="viewOrdersPage" class="position-relative me-3">
+                    <i class="fas fa-bell fa-lg text-warning"></i>
+                    <span id="notificationCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                </a>
+            </div>
+
             <span>${dto.firstName}</span>
             <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
                 <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel
             </a>
+
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
                 <li>
                     <a class="dropdown-item text-light" href="viewProfilePage">
@@ -169,6 +178,21 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      axios("http://localhost:8080/TechRoute/getNotifications")
+        .then(function (response) {
+          const count = response.data;
+
+          const badge = document.getElementById("notificationCount");
+          badge.textContent = count;
+          badge.style.display = count > 0 ? "inline-block" : "none";
+        })
+        .catch(function (error) {
+          console.error("Failed to fetch notifications:", error);
+        });
+    });
+</script>
 </body>
 
 </html>
