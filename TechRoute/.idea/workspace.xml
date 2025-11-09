@@ -4,149 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="feat: update pagination default size for customer operations in AdminController, add new line in AdminRestController, and format CustomerEntity">
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/.smarttomcat/TechRoute-User/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/configuration/EmailConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/configuration/PersistenceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/configuration/SwaggerConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/dto/CustomerDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/entity/ProductGroupEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/enums/CustomerType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/enums/IssueCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/enums/PaymentMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/enums/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/enums/Status.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/init/WebInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/repository/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/repository/UserRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/scheduler/Scheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/scheduler/SchedulerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/service/MailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/service/MailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/resources/application-secret.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/PurchasePage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/SalesPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/logo-hollowKnight.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/techroute-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/images/techroute-text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-User/src/main/webapp/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/bronotes_data_state.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/copilot.data.migration.ask2agent.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute-admin/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/catalina.policy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/catalina.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/jaspic-providers.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/jaspic-providers.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/logging.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/tomcat-users.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/tomcat-users.xsd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/.smarttomcat/TechRoute/conf/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/requirements.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/configuration/EmailConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/configuration/PersistenceConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/configuration/SwaggerConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/controller/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/controller/ResetPasswordController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/dto/CustomerDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/dto/LoginDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/dto/ProfileDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/entity/AdminLoginEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/entity/RegisterEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/entity/UserLoginEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/enums/CustomerType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/enums/IssueCode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/enums/PaymentMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/enums/Role.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/init/WebInit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/repository/AdminRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/repository/AdminRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/repository/ProfileRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/repository/ProfileRepositoryImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/restController/RegisterRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/scheduler/Scheduler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/scheduler/SchedulerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/MailService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/MailServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/ProfileService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/ProfileServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/ResetPasswordService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/java/com/xworkz/techRoute/service/ResetPasswordServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/AddCustomer.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/AdminHome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/CustomerDetails.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/ForgotPasswordPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/LoginPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/OtpVerificationPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/ResetPasswordPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/UpdateCustomerPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/UserHome.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/ViewPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/images/logo-hollowKnight.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/images/techroute-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/images/techroute-text.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/js/AddCustomer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/js/LoginPageValidation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/js/OtpPage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TechRoute-admin/src/main/webapp/js/ResetPasswordValidation.js" beforeDir="false" />
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="feat: add initial entity and service classes for customer management, implement role and status enums, and configure email and persistence settings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -290,14 +148,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Enhance login functionality with identifier validation and error handling; add client-side validation for email and phone number">
-      <option name="closed" value="true" />
-      <created>1760120255658</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1760120255658</updated>
     </task>
     <task id="LOCAL-00010" summary="Implement forgot password functionality; add endpoint and JSP page for password recovery">
       <option name="closed" value="true" />
@@ -683,11 +533,18 @@
       <option name="project" value="LOCAL" />
       <updated>1762623236462</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="feat: add initial entity and service classes for customer management, implement role and status enums, and configure email and persistence settings">
+      <option name="closed" value="true" />
+      <created>1762674491051</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1762674491051</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add login functionality with user authentication and create login page" />
     <MESSAGE value="Enhance login functionality with identifier validation and error handling; add client-side validation for email and phone number" />
     <MESSAGE value="Implement forgot password functionality; add endpoint and JSP page for password recovery" />
     <MESSAGE value="Implement forgot password flow; add OTP verification endpoint and update controller methods" />
@@ -712,6 +569,7 @@
     <MESSAGE value="feat: add email and phone existence validation in customer management, update error handling in AddCustomer and UpdateCustomerPage" />
     <MESSAGE value="update" />
     <MESSAGE value="feat: update pagination default size for customer operations in AdminController, add new line in AdminRestController, and format CustomerEntity" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update pagination default size for customer operations in AdminController, add new line in AdminRestController, and format CustomerEntity" />
+    <MESSAGE value="feat: add initial entity and service classes for customer management, implement role and status enums, and configure email and persistence settings" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial entity and service classes for customer management, implement role and status enums, and configure email and persistence settings" />
   </component>
 </project>
