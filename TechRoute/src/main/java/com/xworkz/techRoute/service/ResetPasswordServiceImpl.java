@@ -1,5 +1,6 @@
 package com.xworkz.techRoute.service;
 
+import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.entity.RegisterEntity;
 import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.repository.ProfileRepository;
@@ -31,6 +32,11 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
         if (identifier == null){
             return IssueCode.INVALID;
         }
+        PurchaseEntity purchaseEntity =  PurchaseEntity.
+                builder().
+                companyName("").
+                customerName("").
+                build();
         if (identifier.matches("^[6-9]\\d{9}$")){
             RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
             return validateAndSendOtp(registerEntity);

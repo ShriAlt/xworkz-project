@@ -1,6 +1,7 @@
 package com.xworkz.techRoute.repository;
 
 import com.xworkz.techRoute.entity.CustomerEntity;
+import com.xworkz.techRoute.entity.PurchaseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -127,4 +128,42 @@ public class AdminRepositoryImpl implements AdminRepository{
             }
         }
     }
+
+    @Override
+    public List<PurchaseEntity> findAllOrders() {
+        EntityManager entityManager = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query = entityManager.createNamedQuery("findAllOrders");
+            return query.getResultList();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }
+    }
+
+    @Override
+    public PurchaseEntity findOrderById(int id) {
+        EntityManager entityManager = null;
+        try {
+            entityManager = entityManagerFactory.createEntityManager();
+            Query query = entityManager.createNamedQuery("findOrderById");
+            query.setParameter("id",id);
+            return (PurchaseEntity) query.getSingleResult();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+        finally {
+            if (entityManager != null && entityManager.isOpen()) {
+                entityManager.close();
+            }
+        }    }
 }

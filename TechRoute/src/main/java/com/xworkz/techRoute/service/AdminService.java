@@ -1,8 +1,10 @@
 package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.enums.IssueCode;
+import com.xworkz.techRoute.enums.Status;
 
 import java.util.List;
 
@@ -22,5 +24,10 @@ public interface AdminService {
 
     boolean checkCustomerPhone(String phone);
 
-    List<PurchaseEntity> getAllPendingOrders();
+    List<PurchaseDto> getAllPendingOrders();
+
+    PurchaseDto getOrderById(String  id);
+
+    boolean updateStatus(String id, Status status);
+
 }

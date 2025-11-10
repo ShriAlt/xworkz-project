@@ -2,6 +2,7 @@ package com.xworkz.techRoute.entity;
 
 import com.xworkz.techRoute.enums.Status;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,15 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@NamedQuery( name = "findAllOrders",
+        query = "SELECT entity FROM PurchaseEntity entity"
+
+)
+@NamedQuery( name = "findOrderById",
+        query = "SELECT entity FROM PurchaseEntity entity where entity.id =:id"
+
+)
+@Builder
 public class PurchaseEntity {
 
     @Id

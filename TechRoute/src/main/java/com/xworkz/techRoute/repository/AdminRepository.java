@@ -1,6 +1,7 @@
 package com.xworkz.techRoute.repository;
 
 import com.xworkz.techRoute.entity.CustomerEntity;
+import com.xworkz.techRoute.entity.PurchaseEntity;
 
 import java.util.List;
 
@@ -14,4 +15,8 @@ public interface AdminRepository {
     CustomerEntity fetchCustomerEntityByMail(String email);
 
     CustomerEntity fetchCustomerEntityByNumber(String number);
+
+    List<PurchaseEntity> findAllOrders();
+
+    PurchaseEntity findOrderById(int id);
 }

@@ -1,12 +1,15 @@
 package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.dto.PurchaseDto;
+import com.xworkz.techRoute.enums.Status;
 import com.xworkz.techRoute.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -30,6 +33,11 @@ public class AdminController {
     @GetMapping("viewProfilePage")
     public String viewProfilePage(){
         return "ViewPage";
+    }
+
+    @GetMapping("adminHomePage")
+    public String adminHomePage(){
+        return "AdminHome";
     }
     @GetMapping("updateCustomerPage")
     public String updateCustomerPage(int id , Model model){
@@ -80,7 +88,6 @@ public class AdminController {
             model.addAttribute("dto",dto);
             return "UpdateCustomerPage";
         }
-        System.err.println(dto.getId()+"==========================================");
         switch (service.validateAndUpdate(dto)){
             case INVALID :
             case DB_ERROR: {
@@ -132,5 +139,36 @@ public class AdminController {
         model.addAttribute("endIndex", end);
         model.addAttribute("currentPage", page);
     }
+    @GetMapping("/viewOrder")
+    public String  viewOrder(String id , Model model){
+        PurchaseDto orderById = service.getOrderById(id);
+        if (orderById== null){
+            model.addAttribute("error","something went wrong ");
+            return "AdminHome";
+        }
+        model.addAttribute("purchaseDto",orderById);
+        return "ViewOrderPage";
+    }
+    @PostMapping("approvePurchase")
+    public String approvePurchase(String id,Model model){
+        boolean b = service.updateStatus(id, Status.CONFIRMED);
+        if (!b){
+            PurchaseDto orderById = service.getOrderById(id);
+            model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
+            return "ViewOrderPage";
+        }
+        return "AdminHome";
+    }
+    @PostMapping("cancelPurchase")
+    public String cancelPurchase(String id,Model model){
+        boolean b = service.updateStatus(id, Status.CANCELLED);
+        if (!b){
+            PurchaseDto orderById = service.getOrderById(id);
+            model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
+            return "ViewOrderPage";
+        }
+        return "AdminHome";
+    }
+
 }
 

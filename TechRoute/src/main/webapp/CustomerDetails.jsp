@@ -347,7 +347,7 @@
                 </c:forEach>
 
                 <c:if test="${currentPage < totalPages}">
-                    <li><a class="next" href="viewCustomerPage?page=${currentPage + 1}&size=10">&raquo;</a></li>
+                    <li><a class="next" href="viewCustomerPage?page=${currentPage + 1}&size=9">&raquo;</a></li>
                 </c:if>
             </ul>
 

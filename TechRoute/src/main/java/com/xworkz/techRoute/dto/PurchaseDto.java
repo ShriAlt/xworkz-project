@@ -13,6 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class PurchaseDto implements Serializable {
 
+    int id;
 
     @NotBlank
     private String customerName;

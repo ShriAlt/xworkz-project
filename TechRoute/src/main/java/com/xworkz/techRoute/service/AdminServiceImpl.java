@@ -1,11 +1,14 @@
 package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.entity.CustomerEntity;
 import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.enums.IssueCode;
+import com.xworkz.techRoute.enums.Status;
 import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.repository.ProfileRepository;
+import com.xworkz.techRoute.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +28,9 @@ public class AdminServiceImpl implements AdminService{
 
     @Autowired
     private AdminRepository adminRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @Override
     public IssueCode validateAndSaveCustomer(CustomerDto dto) {
@@ -109,7 +115,38 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public List<PurchaseEntity> getAllPendingOrders() {
-        return Collections.emptyList();
+    public List<PurchaseDto> getAllPendingOrders() {
+        List<PurchaseEntity> allOrders = adminRepository.findAllOrders();
+        if (allOrders.isEmpty()){
+            return Collections.emptyList();
+        }
+        List<PurchaseDto> purchaseDtoList = new ArrayList<>();
+        allOrders.stream().filter(purchaseEntity -> purchaseEntity.getStatus().equals(Status.PENDING)).forEach(purchaseEntity ->{
+            PurchaseDto purchaseDto = new PurchaseDto();
+            BeanUtils.copyProperties(purchaseEntity,purchaseDto);
+            purchaseDtoList.add(purchaseDto);
+        });
+        return purchaseDtoList;
+
+    }
+
+    @Override
+    public PurchaseDto getOrderById(String id) {
+        PurchaseEntity purchaseEntity = adminRepository.findOrderById(Integer.parseInt(id));
+        PurchaseDto purchaseDto = new PurchaseDto();
+        BeanUtils.copyProperties(purchaseEntity,purchaseDto);
+        return purchaseDto;
+    }
+
+    @Override
+    public boolean updateStatus(String id, Status status) {
+        PurchaseEntity entity = adminRepository.findOrderById(Integer.parseInt(id));
+        if (entity== null){
+            return false;
+        }
+        entity.setStatus(status);
+        System.err.println(entity.toString());
+        profileRepository.updateProfile(entity);
+        return true;
     }
 }

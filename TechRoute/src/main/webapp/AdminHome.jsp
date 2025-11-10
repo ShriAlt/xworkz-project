@@ -108,19 +108,18 @@
             <strong>TechRoute</strong>
         </a>
 
+        <div class="position-relative me-3">
+            <a href="#" class="position-relative me-3" data-bs-toggle="modal" data-bs-target="#notificationsModel">
+                <i class="fas fa-bell fa-lg text-warning"></i>
+                <span id="notificationCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+            </a>
+        </div>
         <!-- Admin Dropdown -->
         <div class="dropdown ms-auto me-3">
-            <div class="position-relative me-3">
-                <a href="viewOrdersPage" class="position-relative me-3">
-                    <i class="fas fa-bell fa-lg text-warning"></i>
-                    <span id="notificationCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                </a>
-            </div>
 
-            <span>${dto.firstName}</span>
             <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
-                <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel
+                <i class="fas fa-user-shield me-1 text-info"></i> Admin Panel (<span>${dto.firstName}</span>)
             </a>
 
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
@@ -163,6 +162,20 @@
     </div>
 </div>
 
+<div class="modal fade" id="notificationsModel" tabindex="-1" aria-labelledby="notificationsModelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content bg-dark text-light border-info">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationsModelLabel">Notifications</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="notificationsContainer">
+                <!-- Orders will be injected here -->
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Footer -->
 <footer class="py-3 my-4">
     <div class="container">
@@ -178,21 +191,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-      axios("http://localhost:8080/TechRoute/getNotifications")
-        .then(function (response) {
-          const count = response.data;
-
-          const badge = document.getElementById("notificationCount");
-          badge.textContent = count;
-          badge.style.display = count > 0 ? "inline-block" : "none";
-        })
-        .catch(function (error) {
-          console.error("Failed to fetch notifications:", error);
-        });
-    });
-</script>
+<script src="js/AdminHome.js"></script>
 </body>
 
 </html>
