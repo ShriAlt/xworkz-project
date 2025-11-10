@@ -2,6 +2,8 @@ package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.enums.IssueCode;
+import com.xworkz.techRoute.repository.AdminRepository;
+import com.xworkz.techRoute.service.AdminService;
 import com.xworkz.techRoute.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
@@ -18,8 +21,11 @@ public class UserController {
 
     private final UserService userService;
 
-    public UserController(UserService userService){
+    private final AdminService adminService;
+
+    public UserController(UserService userService,AdminService adminService){
         this.userService=userService;
+        this.adminService=adminService;
     }
 
     @GetMapping("purchasePage")
@@ -49,5 +55,11 @@ public class UserController {
                 return "OrdersPage";
             }
         }
+    }
+    @GetMapping("viewAllOrders")
+    public String viewAllOrders(Model model){
+        List<PurchaseDto> allOrders = adminService.getAllOrders();
+        model.addAttribute("allOrders",allOrders);
+        return "userViewAllOrdersPage";
     }
 }

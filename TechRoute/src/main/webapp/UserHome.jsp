@@ -141,9 +141,14 @@
 <!--                </li>-->
                 <li>
                 <a class="dropdown-item text-light" href="purchasePage">
-                    <i class="fa fa-id-card me-2 text-info"></i> Purchase
+                    <i class="fa fa-id-card me-2 text-info"></i> Order
                 </a>
             </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewAllOrders">
+                        <i class="fa fa-id-card me-2 text-info"></i> View All Orders
+                    </a>
+                </li>
                 <li><hr class="dropdown-divider border-info"></li>
                 <li>
                     <a class="dropdown-item text-danger" href="logout">
