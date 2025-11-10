@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="all done with views">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" afterDir="false" />
     </list>
@@ -151,14 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00015" summary="update on js validation">
-      <option name="closed" value="true" />
-      <created>1760509510361</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1760509510361</updated>
     </task>
     <task id="LOCAL-00016" summary="update on js validation">
       <option name="closed" value="true" />
@@ -544,7 +535,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762775666811</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="all done with views">
+      <option name="closed" value="true" />
+      <created>1762776147630</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1762776147630</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

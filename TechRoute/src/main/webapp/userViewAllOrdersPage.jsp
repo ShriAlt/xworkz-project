@@ -148,16 +148,11 @@
                 <i class="fas fa-user-shield me-1 text-info"></i> Orders
             </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
-                <!--                <li>-->
-                <!--                    <a class="dropdown-item text-light" href="viewProfile">-->
-                <!--                        <i class="fa fa-id-card me-2 text-info"></i> View Profile-->
-                <!--                    </a>-->
-                <!--                </li>-->
-                <!--                <li>-->
-                <!--                    <a class="dropdown-item text-light" href="salesPage">-->
-                <!--                        <i class="fa fa-id-card me-2 text-info"></i> Sales-->
-                <!--                    </a>-->
-                <!--                </li>-->
+                <li>
+                    <a class="dropdown-item text-light" href="userHomePage">
+                        <i class="fa fa-id-card me-2 text-info"></i> Home
+                    </a>
+                </li>
                 <li>
                     <a class="dropdown-item text-light" href="purchasePage">
                         <i class="fa fa-id-card me-2 text-info"></i> Order
@@ -183,30 +178,42 @@
 <div class="container py-5">
     <h3 class="text-info mb-4"><i class="fas fa-clipboard-list me-2"></i>All Orders</h3>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <c:forEach var="order" items="${allOrders}">
-            <div class="col">
-                <!-- Card -->
-                <div class="card bg-dark text-light border-info shadow-sm h-100">
-                    <div class="card-body">
-                        <h5 class="card-title text-info">
-                            <i class="fas fa-box-open me-2"></i>${order.productName}
-                        </h5>
-                        <p class="card-text mb-1">
-                            <i class="fas fa-user me-2 text-info"></i><strong>Customer:</strong> ${order.customerName}<br>
-                            <i class="fas fa-calendar-alt me-2 text-info"></i><strong>Due Date:</strong> ${order.orderDueDate}<br>
-                            <i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong>
-                            <span class="badge bg-info text-dark">${order.status}</span>
-                        </p>
-                    </div>
-                    <div class="card-footer text-end border-info">
-                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#orderModal${order.id}">
+    <div class="table-responsive">
+        <table class="table table-dark table-bordered border-info align-middle">
+            <thead class="table-info text-dark">
+            <tr>
+                <th>Product Name</th>
+                <th>Customer</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th class="text-center">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach var="order" items="${allOrders}">
+                <tr>
+                    <td>${order.productName}</td>
+                    <td>${order.customerName}</td>
+                    <td>${order.orderDueDate}</td>
+                    <td>
+                        <span class="badge bg-info text-dark">${order.status}</span>
+                    </td>
+                    <td class="text-center">
+                        <!-- View Button -->
+                        <button class="btn btn-outline-primary btn-sm me-2" data-bs-toggle="modal" data-bs-target="#orderModal${order.id}">
                             <i class="fas fa-eye me-1"></i>View
                         </button>
-                    </div>
-                </div>
 
-                <!-- Modal -->
+                        <!-- Conditional Invoice Button -->
+                        <c:if test="${order.status == 'CONFIRMED'}">
+                            <a href="generateInvoice?id=${order.id}" class="btn btn-outline-success btn-sm">
+                                <i class="fas fa-file-invoice me-1"></i>Invoice
+                            </a>
+                        </c:if>
+                    </td>
+                </tr>
+
+                <!-- Modal for Order Details -->
                 <div class="modal fade" id="orderModal${order.id}" tabindex="-1" aria-labelledby="orderModalLabel${order.id}" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
                         <div class="modal-content bg-dark text-light border-info">
@@ -236,8 +243,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </c:forEach>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
 </div>
 

@@ -131,14 +131,9 @@
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
                                 <li>
                                     <a class="dropdown-item text-light" href="userHomePage">
-                                        <i class="fa fa-id-card me-2 text-info"></i> View Profile
+                                        <i class="fa fa-id-card me-2 text-info"></i> Home
                                     </a>
                                 </li>
-                <!--                <li>-->
-                <!--                    <a class="dropdown-item text-light" href="salesPage">-->
-                <!--                        <i class="fa fa-id-card me-2 text-info"></i> Sales-->
-                <!--                    </a>-->
-                <!--                </li>-->
                 <li>
                     <a class="dropdown-item text-light" href="purchasePage">
                         <i class="fa fa-id-card me-2 text-info"></i> Order
