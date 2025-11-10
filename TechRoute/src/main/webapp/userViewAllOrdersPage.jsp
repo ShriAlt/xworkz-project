@@ -12,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <style>
         /* ===== Global Styles ===== */
@@ -136,19 +135,29 @@
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg shadow-sm">
-    <div class="container-fluid">
+    <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/techroute-logo.png" alt="TechRoute Logo" style="height: 45px; margin-right: 9px;">
-            <strong class="text-info">TechRoute</strong>
+            <img src="images/techroute-logo.png" alt="Logo">
+            <strong>TechRoute</strong>
         </a>
 
-        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- Admin Dropdown -->
+        <div class="dropdown ms-auto me-3">
+            <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
+               aria-expanded="false">
+                <i class="fas fa-user-shield me-1 text-info"></i> Orders
+            </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
+                <!--                <li>-->
+                <!--                    <a class="dropdown-item text-light" href="viewProfile">-->
+                <!--                        <i class="fa fa-id-card me-2 text-info"></i> View Profile-->
+                <!--                    </a>-->
+                <!--                </li>-->
+                <!--                <li>-->
+                <!--                    <a class="dropdown-item text-light" href="salesPage">-->
+                <!--                        <i class="fa fa-id-card me-2 text-info"></i> Sales-->
+                <!--                    </a>-->
+                <!--                </li>-->
                 <li>
                     <a class="dropdown-item text-light" href="purchasePage">
                         <i class="fa fa-id-card me-2 text-info"></i> Order
@@ -171,7 +180,6 @@
 </nav>
 
 
-<!-- Content Area --><!-- Content Area -->
 <div class="container py-5">
     <h3 class="text-info mb-4"><i class="fas fa-clipboard-list me-2"></i>All Orders</h3>
 
@@ -232,6 +240,7 @@
         </c:forEach>
     </div>
 </div>
+
 
 <!-- Footer -->
 <footer class="py-3 my-4">

@@ -33,6 +33,10 @@ public class UserController {
         return "OrdersPage";
     }
 
+    @GetMapping("userHomePage")
+    public String userHomePage(){
+        return "UserHome";
+    }
 
     @PostMapping("purchase")
     public String purchase(@Valid PurchaseDto purchaseDto , BindingResult bindingResult, Model model){

@@ -122,23 +122,39 @@
             <strong>TechRoute</strong>
         </a>
 
+        <!-- Admin Dropdown -->
         <div class="dropdown ms-auto me-3">
             <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
                 <i class="fas fa-user-shield me-1 text-info"></i> Orders
             </a>
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
+                                <li>
+                                    <a class="dropdown-item text-light" href="userHomePage">
+                                        <i class="fa fa-id-card me-2 text-info"></i> View Profile
+                                    </a>
+                                </li>
+                <!--                <li>-->
+                <!--                    <a class="dropdown-item text-light" href="salesPage">-->
+                <!--                        <i class="fa fa-id-card me-2 text-info"></i> Sales-->
+                <!--                    </a>-->
+                <!--                </li>-->
                 <li>
-                    <a class="dropdown-item text-light" href="salesPage">
-                        <i class="fa fa-id-card me-2 text-info"></i> Sales
+                    <a class="dropdown-item text-light" href="purchasePage">
+                        <i class="fa fa-id-card me-2 text-info"></i> Order
                     </a>
                 </li>
-<!--                <li>-->
-<!--                    <a class="dropdown-item text-light" href="purchasePage">-->
-<!--                        <i class="fa fa-id-card me-2 text-info"></i> Purchase-->
-<!--                    </a>-->
-<!--                </li>-->
-<!--                <li><hr class="dropdown-divider border-info"></li>-->
+                <li>
+                    <a class="dropdown-item text-light" href="viewAllOrders">
+                        <i class="fa fa-id-card me-2 text-info"></i> View All Orders
+                    </a>
+                </li>
+                <li><hr class="dropdown-divider border-info"></li>
+                <li>
+                    <a class="dropdown-item text-danger" href="logout">
+                        <i class="fa fa-sign-out-alt me-2"></i> Logout
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
