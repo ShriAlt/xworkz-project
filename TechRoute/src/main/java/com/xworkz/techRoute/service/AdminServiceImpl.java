@@ -149,4 +149,16 @@ public class AdminServiceImpl implements AdminService{
         profileRepository.updateProfile(entity);
         return true;
     }
+
+    @Override
+    public List<PurchaseDto> getAllOrders() {
+        List<PurchaseEntity> allOrders = adminRepository.findAllOrders();
+        List<PurchaseDto> purchaseDtoList = new ArrayList<>();
+        allOrders.forEach(purchaseEntity -> {
+            PurchaseDto purchaseDto = new PurchaseDto();
+            BeanUtils.copyProperties(purchaseEntity,purchaseDto);
+            purchaseDtoList.add(purchaseDto);
+        });
+        return purchaseDtoList;
+    }
 }

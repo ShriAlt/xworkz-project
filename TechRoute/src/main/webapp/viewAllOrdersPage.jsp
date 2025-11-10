@@ -1,0 +1,235 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page isELIgnored="false" %>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechRoute</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/techroute-logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <style>
+        /* ===== Global Styles ===== */
+        body {
+          background: #0f172a; /* deep navy instead of heavy gradient */
+          color: #e2e8f0;
+          height: 100vh;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3 {
+          font-weight: 700;
+          color: #38bdf8; /* softer cyan accent */
+        }
+
+        p {
+          color: #cbd5e1;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+          background: rgba(15, 23, 42, 0.95);
+          border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        .navbar-brand strong {
+          font-size: 1.4rem;
+          color: #38bdf8;
+        }
+
+        .navbar-brand img {
+          height: 40px;
+          margin-right: 8px;
+          border-radius: 6px;
+        }
+
+        .nav-link {
+          color: #e2e8f0 !important;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          color: #38bdf8 !important;
+        }
+
+        .btn-outline-primary {
+          border-color: #38bdf8;
+          color: #38bdf8;
+        }
+
+        .btn-outline-primary:hover {
+          background: #38bdf8;
+          color: #0f172a;
+          border: none;
+        }
+
+        /* ===== Hero Section ===== */
+        .content {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding: 60px 20px;
+        }
+
+        .content h1 {
+          font-size: 2.8rem;
+          margin-bottom: 20px;
+          text-shadow: 0 0 6px rgba(56, 189, 248, 0.4); /* subtle glow */
+        }
+
+        .content p {
+          font-size: 1.1rem;
+          max-width: 600px;
+          margin: auto;
+        }
+
+.navbar-brand img:hover {
+  filter: drop-shadow(0 0 4px #38bdf8);
+}
+
+        /* ===== Footer ===== */
+        footer {
+          background: #0f172a;
+          color: #94a3b8;
+          padding: 20px 0;
+          border-top: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        footer .nav-link {
+          color: #94a3b8 !important;
+        }
+
+        footer .nav-link:hover {
+          color: #38bdf8 !important;
+        }
+
+        footer p {
+          margin: 0;
+          font-size: 0.9rem;
+        }
+        .btn-outline-primary {
+  border-color: #38bdf8;
+  color: #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+  background: #38bdf8;
+  color: #0f172a !important; /* dark navy text on cyan background */
+  border: none;
+}
+
+    </style>
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="images/techroute-logo.png" alt="TechRoute Logo" style="height: 45px; margin-right: 9px;">
+            <strong class="text-info">TechRoute</strong>
+        </a>
+
+        <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
+                <li>
+                    <a class="dropdown-item text-light" href="viewAllOrdersPage">
+                        <i class="fas fa-clipboard-list me-2 text-info"></i> View All Orders
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="addCustomerPage">
+                        <i class="fa fa-user-plus me-2 text-info"></i> Add Customer
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewCustomerPage">
+                        <i class="fa fa-users me-2 text-info"></i> View Customers
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item text-light" href="viewUsers">
+                        <i class="fa fa-users me-2 text-info"></i> View Users
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- Content Area --><!-- Content Area -->
+<div class="container py-5">
+    <h3 class="text-info mb-4"><i class="fas fa-clipboard-list me-2"></i>All Orders</h3>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <c:forEach var="order" items="${allOrders}">
+            <div class="col">
+                <div class="card bg-dark text-light border-info shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title text-info">
+                            <i class="fas fa-box-open me-2"></i>${order.productName}
+                        </h5>
+                        <p class="card-text mb-1">
+                            <i class="fas fa-user me-2 text-info"></i><strong>Customer:</strong> ${order.customerName}<br>
+                            <i class="fas fa-calendar-alt me-2 text-info"></i><strong>Due Date:</strong> ${order.orderDueDate}<br>
+                            <i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong>
+                            <span class="badge bg-info text-dark">${order.status}</span>
+                        </p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-between align-items-center border-info">
+                        <a href="viewOrder?id=${order.id}" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-eye me-1"></i>View
+                        </a>
+                        <form action="cancelPurchase" method="post" style="display:inline;" onsubmit="return confirm('Cancel this order?');">
+                            <input type="hidden" name="id" value="${order.id}">
+                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <i class="fas fa-times-circle me-1"></i>Cancel
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </c:forEach>
+    </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="py-3 my-4">
+    <div class="container-fluid">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3 flex-wrap">
+            <li class="nav-item"><a href="#" class="nav-link px-2">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2">About</a></li>
+        </ul>
+        <p class="text-center"> © 2025 Shriharsha | Where Code Meets Character</p>
+    </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

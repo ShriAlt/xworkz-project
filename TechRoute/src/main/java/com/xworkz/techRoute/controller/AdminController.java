@@ -30,9 +30,11 @@ public class AdminController {
     public String addCustomerPage(){
         return "AddCustomer";
     }
-    @GetMapping("viewProfilePage")
-    public String viewProfilePage(){
-        return "ViewPage";
+    @GetMapping("viewAllOrdersPage")
+    public String viewProfilePage(Model model){
+        List<PurchaseDto> allOrders = service.getAllOrders();
+        model.addAttribute("allOrders",allOrders);
+        return "viewAllOrdersPage";
     }
 
     @GetMapping("adminHomePage")
@@ -157,7 +159,7 @@ public class AdminController {
             model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
             return "ViewOrderPage";
         }
-        return "AdminHome";
+        return "viewAllOrdersPage";
     }
     @PostMapping("cancelPurchase")
     public String cancelPurchase(String id,Model model){
@@ -167,8 +169,7 @@ public class AdminController {
             model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
             return "ViewOrderPage";
         }
-        return "AdminHome";
+        return "viewAllOrdersPage";
     }
-
 }
 

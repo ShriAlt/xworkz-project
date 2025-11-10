@@ -124,8 +124,8 @@
 
             <ul class="dropdown-menu dropdown-menu-end bg-dark border-info">
                 <li>
-                    <a class="dropdown-item text-light" href="viewProfilePage">
-                        <i class="fa fa-user-circle me-2 text-info"></i> View Profile
+                    <a class="dropdown-item text-light" href="viewAllOrdersPage">
+                        <i class="fas fa-clipboard-list me-2 text-info"></i> View All Orders
                     </a>
                 </li>
                 <li>
@@ -138,12 +138,12 @@
                         <i class="fa fa-users me-2 text-info"></i> View Customers
                     </a>
                 </li>
-                <li><hr class="dropdown-divider border-info"></li>
                 <li>
-                    <a class="dropdown-item text-danger" href="viewUsers">
-                        <i class="fa fa-sign-out-alt me-2"></i> view Users
+                    <a class="dropdown-item text-light" href="viewUsers">
+                        <i class="fa fa-users me-2 text-info"></i> View Users
                     </a>
                 </li>
+                <li><hr class="dropdown-divider border-info"></li>
                 <li>
                     <a class="dropdown-item text-danger" href="logout">
                         <i class="fa fa-sign-out-alt me-2"></i> Logout

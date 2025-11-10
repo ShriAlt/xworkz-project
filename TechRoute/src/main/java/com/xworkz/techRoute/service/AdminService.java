@@ -30,4 +30,6 @@ public interface AdminService {
 
     boolean updateStatus(String id, Status status);
 
+    List<PurchaseDto> getAllOrders();
+
 }
