@@ -21,4 +21,6 @@ public interface UserService {
 
     void saveCustomer(List<CustomerDto > dtos);
 
+    void saveOrders(List<PurchaseDto > dtoList);
+
 }

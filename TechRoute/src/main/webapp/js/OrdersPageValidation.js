@@ -14,7 +14,7 @@
     });
 
     document.addEventListener("DOMContentLoaded", function () {
-      axios("http://localhost:8080/TechRoute-User/fetch-products")
+      axios("http://localhost:8080/TechRoute/fetch-products")
         .then(function (response) {
           const dropdown = document.getElementById("productGroupDropdown");
           response.data.forEach(function (debitor) {
@@ -29,7 +29,7 @@
         });
     });
     document.addEventListener("DOMContentLoaded", function () {
-      axios("http://localhost:8080/TechRoute-User/fetch-debitors")
+      axios("http://localhost:8080/TechRoute/fetch-debitors")
         .then(function (response) {
           const dropdown = document.getElementById("customerNameDropdown");
           response.data.forEach(function (customer) {

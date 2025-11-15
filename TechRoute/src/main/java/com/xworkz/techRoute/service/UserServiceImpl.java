@@ -80,4 +80,13 @@ public class UserServiceImpl implements UserService{
             profileRepository.save(customerEntity);
         }
     }
+
+    @Override
+    public void saveOrders(List<PurchaseDto> dtoList) {
+        for (PurchaseDto dto : dtoList){
+            PurchaseEntity purchaseEntity = new PurchaseEntity();
+            BeanUtils.copyProperties(dto,purchaseEntity);
+            profileRepository.save(purchaseEntity);
+        }
+    }
 }

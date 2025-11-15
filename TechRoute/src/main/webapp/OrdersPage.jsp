@@ -288,7 +288,7 @@
         <p class="text-center">© 2025 Shriharsha | Where Code Meets Character</p>
     </div>
 </footer>
-<script src="../../../../TechRoute-admin/src/main/webapp/js/OrdersPageValidation.js"></script>
+<script src="js/OrdersPageValidation.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
