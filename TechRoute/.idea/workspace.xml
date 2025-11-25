@@ -6,12 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="all done with views">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,14 +148,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00017" summary="schedulers added">
-      <option name="closed" value="true" />
-      <created>1760558842020</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1760558842020</updated>
     </task>
     <task id="LOCAL-00018" summary="new look !!!">
       <option name="closed" value="true" />
@@ -547,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762776870067</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="all done with views">
+      <option name="closed" value="true" />
+      <created>1763228488637</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1763228488637</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

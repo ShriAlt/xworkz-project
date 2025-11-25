@@ -102,6 +102,7 @@ public class ProfileServiceImpl implements ProfileService {
         }
         return IssueCode.ACCOUNT_LOCKED;
     }
+
     @Override
     public boolean checkMail(String mail) {
         if (mail == null){
