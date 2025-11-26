@@ -66,4 +66,12 @@ public class UserController {
         model.addAttribute("allOrders",allOrders);
         return "userViewAllOrdersPage";
     }
+
+    @GetMapping("generateInvoice")
+    public String generateInvoice(String id, Model model){
+//        List<PurchaseDto> allOrders = adminService.getAllOrders();
+//        model.addAttribute("allOrders",allOrders);
+        IssueCode issueCode = userService.generateInvoice(id);
+        return "userViewAllOrdersPage";
+    }
 }

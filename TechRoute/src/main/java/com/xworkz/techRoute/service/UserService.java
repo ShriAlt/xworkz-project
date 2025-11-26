@@ -19,8 +19,8 @@ public interface UserService {
 
     List<String> fetchCreditors();
 
-    void saveCustomer(List<CustomerDto > dtos);
-
     void saveOrders(List<PurchaseDto > dtoList);
+
+    IssueCode generateInvoice(String id);
 
 }

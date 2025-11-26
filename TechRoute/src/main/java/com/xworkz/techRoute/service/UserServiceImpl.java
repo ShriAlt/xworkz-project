@@ -7,6 +7,7 @@ import com.xworkz.techRoute.entity.ProductGroupEntity;
 import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.enums.CustomerType;
 import com.xworkz.techRoute.enums.IssueCode;
+import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import com.xworkz.techRoute.repository.UserRepository;
 import org.springframework.beans.BeanUtils;
@@ -22,9 +23,12 @@ public class UserServiceImpl implements UserService{
 
     private final ProfileRepository profileRepository;
 
-    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository) {
+    private  final AdminRepository adminRepository;
+
+    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository, AdminRepository adminRepository) {
         this.userRepository=userRepository;
         this.profileRepository = profileRepository;
+        this.adminRepository=adminRepository;
     }
 
     @Override
@@ -36,7 +40,6 @@ public class UserServiceImpl implements UserService{
         }
         PurchaseEntity purchaseEntity = new PurchaseEntity();
         BeanUtils.copyProperties(dto,purchaseEntity);
-        System.err.println(purchaseEntity);
         boolean save = profileRepository.save(purchaseEntity);
         if (!save){
             return IssueCode.INVALID;
@@ -72,14 +75,14 @@ public class UserServiceImpl implements UserService{
         return userRepository.findAllCustomer().stream().filter(customerEntity -> customerEntity.getCustomerType().equals(CustomerType.Creditors)).map(CustomerEntity::getCustomerName).collect(Collectors.toList());
     }
 
-    @Override
-    public void saveCustomer(List<CustomerDto> dos) {
-        for (CustomerDto dto : dos ){
-            CustomerEntity customerEntity = new CustomerEntity();
-            BeanUtils.copyProperties(dto,customerEntity);
-            profileRepository.save(customerEntity);
-        }
-    }
+//    @Override
+//    public void saveCustomer(List<CustomerDto> dos) {
+//        for (CustomerDto dto : dos ){
+//            CustomerEntity customerEntity = new CustomerEntity();
+//            BeanUtils.copyProperties(dto,customerEntity);
+//            profileRepository.save(customerEntity);
+//        }
+//    }
 
     @Override
     public void saveOrders(List<PurchaseDto> dtoList) {
@@ -88,5 +91,15 @@ public class UserServiceImpl implements UserService{
             BeanUtils.copyProperties(dto,purchaseEntity);
             profileRepository.save(purchaseEntity);
         }
+    }
+
+    @Override
+    public IssueCode generateInvoice(String orderId) {
+        PurchaseEntity order = adminRepository.findOrderById(Integer.parseInt(orderId));
+
+        CustomerEntity byName = userRepository.findByName(order.getCustomerName());
+
+
+        return null;
     }
 }
