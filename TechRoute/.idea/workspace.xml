@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="some minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -152,14 +151,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00019" summary="otp cleared">
-      <option name="closed" value="true" />
-      <created>1760558889224</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1760558889224</updated>
     </task>
     <task id="LOCAL-00020" summary="update on logo and style">
       <option name="closed" value="true" />
@@ -545,7 +536,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764094299012</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="some minor changes">
+      <option name="closed" value="true" />
+      <created>1764135474330</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1764135474331</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
