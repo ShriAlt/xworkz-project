@@ -1,8 +1,6 @@
 package com.xworkz.techRoute.service;
 
-import com.xworkz.techRoute.dto.CustomerDto;
 import com.xworkz.techRoute.dto.PurchaseDto;
-import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.enums.IssueCode;
 
 import java.util.List;
@@ -21,6 +19,6 @@ public interface UserService {
 
     void saveOrders(List<PurchaseDto > dtoList);
 
-    IssueCode generateInvoice(String id);
+    String generateInvoiceForDownload(String id);
 
 }

@@ -2,9 +2,9 @@ package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.enums.IssueCode;
-import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.service.AdminService;
 import com.xworkz.techRoute.service.UserService;
+import com.xworkz.techRoute.util.PdfGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -67,11 +69,19 @@ public class UserController {
         return "userViewAllOrdersPage";
     }
 
-    @GetMapping("generateInvoice")
-    public String generateInvoice(String id, Model model){
-//        List<PurchaseDto> allOrders = adminService.getAllOrders();
-//        model.addAttribute("allOrders",allOrders);
-        IssueCode issueCode = userService.generateInvoice(id);
-        return "userViewAllOrdersPage";
+    @GetMapping("downloadInvoice")
+    public void generateInvoice(String id,Model model, HttpServletResponse response){
+        List<PurchaseDto> allOrders = adminService.getAllOrders();
+        model.addAttribute("allOrders",allOrders);
+        String htmlPage =  userService.generateInvoiceForDownload(id);
+        byte[] pdfBytes = PdfGenerator.htmlToPdf(htmlPage);
+        response.setContentType("application/pdf");
+        response.setHeader("Content-Disposition", "attachment; filename=invoice_" + id + ".pdf");
+        try {
+            response.getOutputStream().write(pdfBytes);
+            response.getOutputStream().flush();
+        } catch (IOException e) {
+            System.out.println();
+        }
     }
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; }
+        h1 { text-align: center; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #333; padding: 8px; text-align: left; }
+        .totals { margin-top: 20px; text-align: right; }
+    </style>
+</head>
+<body>
+<h1>INVOICE</h1>
+
+<div>
+    <strong>Company:</strong> <span th:text="${order.companyName}"></span><br/>
+    <strong>Product Group:</strong> <span th:text="${order.productGroupName}"></span><br/>
+    <strong>Product Code:</strong> <span th:text="${order.productCode}"></span>
+</div>
+
+<div>
+    <strong>Customer:</strong> <span th:text="${customer.customerName}"></span><br/>
+    <strong>Billing Address:</strong> <span th:text="${customer.billingAddress}"></span><br/>
+    <strong>Shipping Address:</strong> <span th:text="${customer.shippingAddress}"></span><br/>
+    <strong>Order Due Date:</strong> <span th:text="${order.orderDueDate}"></span>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Model</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${order.model}"></td>
+        <td th:text="${order.quantity}"></td>
+        <td th:text="${order.purchasePrice}"></td>
+        <td th:text="${order.quantity * order.purchasePrice}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="totals">
+    <p>Subtotal: <span th:text="${order.quantity * order.purchasePrice}"></span></p>
+    <p>Tax (18% GST): <span th:text="${order.quantity * order.purchasePrice * 0.18}"></span></p>
+    <p><strong>Grand Total: <span th:text="${order.quantity * order.purchasePrice * 1.18}"></span></strong></p>
+</div>
+
+<p style="text-align:center; margin-top:40px;">Thank you for your business!</p>
+</body>
+</html>

@@ -207,7 +207,7 @@
                         <!-- Conditional Invoice Button -->
                         <c:if test="${order.status == 'CONFIRMED'}">
                             <a href="generateInvoice?id=${order.id}" class="btn btn-outline-success btn-sm">
-                                <i class="fas fa-file-invoice me-1"></i>Invoice
+                                <i class="fas fa-file-invoice me-1"></i>Download Invoice
                             </a>
                         </c:if>
                     </td>

@@ -10,10 +10,16 @@ import com.xworkz.techRoute.enums.IssueCode;
 import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import com.xworkz.techRoute.repository.UserRepository;
-import org.springframework.beans.BeanUtils;
-import org.springframework.stereotype.Service;
 
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
+
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,10 +31,13 @@ public class UserServiceImpl implements UserService{
 
     private  final AdminRepository adminRepository;
 
-    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository, AdminRepository adminRepository) {
+    private final TemplateEngine templateEngine;
+
+    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository, AdminRepository adminRepository , TemplateEngine templateEngine) {
         this.userRepository=userRepository;
         this.profileRepository = profileRepository;
         this.adminRepository=adminRepository;
+        this.templateEngine=templateEngine;
     }
 
     @Override
@@ -74,15 +83,6 @@ public class UserServiceImpl implements UserService{
     public List<String> fetchCreditors() {
         return userRepository.findAllCustomer().stream().filter(customerEntity -> customerEntity.getCustomerType().equals(CustomerType.Creditors)).map(CustomerEntity::getCustomerName).collect(Collectors.toList());
     }
-
-//    @Override
-//    public void saveCustomer(List<CustomerDto> dos) {
-//        for (CustomerDto dto : dos ){
-//            CustomerEntity customerEntity = new CustomerEntity();
-//            BeanUtils.copyProperties(dto,customerEntity);
-//            profileRepository.save(customerEntity);
-//        }
-//    }
     @Override
     public void saveOrders(List<PurchaseDto> dtoList) {
         for (PurchaseDto dto : dtoList){
@@ -93,10 +93,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public IssueCode generateInvoice(String orderId) {
+    public String generateInvoiceForDownload(String orderId) {
         PurchaseEntity order = adminRepository.findOrderById(Integer.parseInt(orderId));
-        CustomerEntity byName = userRepository.findByName(order.getCustomerName());
-
-        return null;
+        CustomerEntity customer = userRepository.findByName(order.getCustomerName());
+        Context context = new Context();
+        context.setVariable("order", order);
+        context.setVariable("customer", customer);
+        return templateEngine.process("invoice", context);
     }
 }
