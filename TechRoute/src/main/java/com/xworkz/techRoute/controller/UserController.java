@@ -69,7 +69,7 @@ public class UserController {
         return "userViewAllOrdersPage";
     }
 
-    @GetMapping("downloadInvoice")
+    @GetMapping("generateInvoice")
     public void generateInvoice(String id,Model model, HttpServletResponse response){
         List<PurchaseDto> allOrders = adminService.getAllOrders();
         model.addAttribute("allOrders",allOrders);
