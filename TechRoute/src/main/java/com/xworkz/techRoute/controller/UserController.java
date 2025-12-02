@@ -71,17 +71,26 @@ public class UserController {
 
     @GetMapping("generateInvoice")
     public void generateInvoice(String id,Model model, HttpServletResponse response){
-        List<PurchaseDto> allOrders = adminService.getAllOrders();
-        model.addAttribute("allOrders",allOrders);
         String htmlPage =  userService.generateInvoiceForDownload(id);
-        byte[] pdfBytes = PdfGenerator.htmlToPdf(htmlPage);
-        response.setContentType("application/pdf");
-        response.setHeader("Content-Disposition", "attachment; filename=invoice_" + id + ".pdf");
-        try {
-            response.getOutputStream().write(pdfBytes);
-            response.getOutputStream().flush();
-        } catch (IOException e) {
-            System.out.println();
+        switch (htmlPage){
+            case "errorFindingOrder" :{
+                throw new RuntimeException("errorFindingOrder");
+            }
+            case "errorFindingCustomer":{
+                throw  new RuntimeException("errorFindingCustomer");
+            }
+            default:{
+                byte[] pdfBytes = PdfGenerator.htmlToPdf(htmlPage);
+                response.setContentType("application/pdf");
+                response.setHeader("Content-Disposition", "attachment; filename=invoice_" + id + ".pdf");
+                try {
+                    response.getOutputStream().write(pdfBytes);
+                    response.getOutputStream().flush();
+                } catch (IOException e) {
+                    System.out.println();
+                }
+            }
         }
+
     }
 }

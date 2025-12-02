@@ -20,6 +20,10 @@ import javax.persistence.*;
         query = " SELECT entity from CustomerEntity entity "
 )
 @NamedQuery(
+        name = "findByCustomerName",
+        query = "Select entity from CustomerEntity entity where entity.customerName = :customerName"
+)
+@NamedQuery(
         name = "findById",
         query = " SELECT entity from CustomerEntity entity where entity.id = :id"
 )

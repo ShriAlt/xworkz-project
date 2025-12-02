@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
     }
     @Override
     public IssueCode validateAndSaveOrder(PurchaseDto dto) {
-        CustomerEntity customerEntity = userRepository.findByName(dto.getCustomerName());
+        CustomerEntity customerEntity = userRepository.findByCustomerName(dto.getCustomerName());
 
         if (!dto.getCustomerName().equals(customerEntity.getCustomerName())){
             return IssueCode.NAME_EXIST;
@@ -87,10 +87,17 @@ public class UserServiceImpl implements UserService{
     @Override
     public String generateInvoiceForDownload(String orderId) {
         PurchaseEntity order = adminRepository.findOrderById(Integer.parseInt(orderId));
-        CustomerEntity customer = userRepository.findByName(order.getCustomerName());
+        if (order==null){
+            return "errorFindingOrder";
+        }
+        CustomerEntity customer = userRepository.findByCustomerName(order.getCustomerName());
+        if (customer == null){
+            return "errorFindingCustomer";
+        }
+        System.err.println(customer);
         Context context = new Context();
         context.setVariable("order", order);
         context.setVariable("customer", customer);
-        return templateEngine.process("invoice", context);
+        return templateEngine.process("DebitorsInvoice", context);
     }
 }

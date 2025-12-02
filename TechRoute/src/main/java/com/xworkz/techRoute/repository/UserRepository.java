@@ -12,6 +12,6 @@ public interface UserRepository {
 
       List<CustomerEntity> findAllCustomer();
 
-      CustomerEntity findByName(String name);
+      CustomerEntity findByCustomerName(String name);
 
 }

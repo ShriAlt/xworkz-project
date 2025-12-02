@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="some minor changes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/ThymeleafConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepositoryImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,14 +156,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00022" summary="update on logout">
-      <option name="closed" value="true" />
-      <created>1760561939222</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1760561939222</updated>
     </task>
     <task id="LOCAL-00023" summary="added resend otp function">
       <option name="closed" value="true" />
@@ -548,7 +541,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764351677172</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="some minor changes">
+      <option name="closed" value="true" />
+      <created>1764592102425</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1764592102425</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

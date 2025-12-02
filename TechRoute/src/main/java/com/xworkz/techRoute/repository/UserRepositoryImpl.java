@@ -97,7 +97,7 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
-    public CustomerEntity findByName(String name) {
+    public CustomerEntity findByCustomerName(String name) {
 
         EntityManager entityManager = null;
         try {
