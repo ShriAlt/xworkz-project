@@ -251,7 +251,7 @@
     <!-- Sales Form Placeholder -->
     <div id="salesFormSection" style="display: none;">
         <h4 class="text-info">Sales Form</h4>
-        <p class="text-muted">Sales form coming soon...</p>
+
     </div>
 </div>
 
