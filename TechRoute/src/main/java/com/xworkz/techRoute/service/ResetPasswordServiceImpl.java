@@ -27,6 +27,7 @@ public class ResetPasswordServiceImpl implements ResetPasswordService{
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
+
     @Override
     public IssueCode sendAndSaveOtp(String identifier) {
         if (identifier == null){
