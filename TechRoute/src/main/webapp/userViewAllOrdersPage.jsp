@@ -196,7 +196,7 @@
                     <td>${order.customerName}</td>
                     <td>${order.orderDueDate}</td>
                     <td>
-                        <span class="badge bg-info text-dark">${order.status}</span>
+                        <span class="badge bg-info text-dark">${order.orderStatus}</span>
                     </td>
                     <td class="text-center">
                         <!-- View Button -->
@@ -205,7 +205,7 @@
                         </button>
 
                         <!-- Conditional Invoice Button -->
-                        <c:if test="${order.status == 'CONFIRMED'}">
+                        <c:if test="${order.orderStatus == 'CONFIRMED'}">
                             <a href="generateInvoice?id=${order.id}" class="btn btn-outline-success btn-sm">
                                 <i class="fas fa-file-invoice me-1"></i>Download Invoice
                             </a>
@@ -235,7 +235,7 @@
                                 <p><i class="fas fa-sort-numeric-up me-2 text-info"></i><strong>Quantity:</strong> ${order.quantity}</p>
                                 <p><i class="fas fa-boxes me-2 text-info"></i><strong>Stock In Hand:</strong> ${order.stockInHand}</p>
                                 <p><i class="fas fa-calendar-alt me-2 text-info"></i><strong>Order Due Date:</strong> ${order.orderDueDate}</p>
-                                <p><i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong> ${order.status}</p>
+                                <p><i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong> ${order.orderStatus}</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal">Close</button>

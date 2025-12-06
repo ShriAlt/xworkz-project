@@ -1,13 +1,13 @@
 package com.xworkz.techRoute.restController;
 
+import com.xworkz.techRoute.dto.ProductMasterDTO;
 import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -35,4 +35,9 @@ public class AdminRestController {
         return service.getAllPendingOrders();
     }
 
+    @PostMapping("AddProducts-ui")
+    public String addProducts(@RequestBody List<ProductMasterDTO> dtos){
+        dtos.forEach(dto ->service.addProduct(dto));
+        return "hello";
+    }
 }

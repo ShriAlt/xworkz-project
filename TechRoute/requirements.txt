@@ -15,7 +15,7 @@ Purchase Price----1000
 Order Due Date-- date 
 
 
-status pending.....
+orderStatus pending.....
 
 
 order

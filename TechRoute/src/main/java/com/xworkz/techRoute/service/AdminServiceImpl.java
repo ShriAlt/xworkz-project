@@ -1,11 +1,14 @@
 package com.xworkz.techRoute.service;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.dto.ProductMasterDTO;
 import com.xworkz.techRoute.dto.PurchaseDto;
 import com.xworkz.techRoute.entity.CustomerEntity;
+import com.xworkz.techRoute.entity.ProductGroupEntity;
+import com.xworkz.techRoute.entity.ProductMasterEntity;
 import com.xworkz.techRoute.entity.PurchaseEntity;
 import com.xworkz.techRoute.enums.IssueCode;
-import com.xworkz.techRoute.enums.Status;
+import com.xworkz.techRoute.enums.OrderStatus;
 import com.xworkz.techRoute.repository.AdminRepository;
 import com.xworkz.techRoute.repository.ProfileRepository;
 import com.xworkz.techRoute.repository.UserRepository;
@@ -121,7 +124,7 @@ public class AdminServiceImpl implements AdminService{
             return Collections.emptyList();
         }
         List<PurchaseDto> purchaseDtoList = new ArrayList<>();
-        allOrders.stream().filter(purchaseEntity -> purchaseEntity.getStatus().equals(Status.PENDING)).forEach(purchaseEntity ->{
+        allOrders.stream().filter(purchaseEntity -> purchaseEntity.getOrderStatus().equals(OrderStatus.PENDING)).forEach(purchaseEntity ->{
             PurchaseDto purchaseDto = new PurchaseDto();
             BeanUtils.copyProperties(purchaseEntity,purchaseDto);
             purchaseDtoList.add(purchaseDto);
@@ -139,12 +142,12 @@ public class AdminServiceImpl implements AdminService{
     }
 
     @Override
-    public boolean updateStatus(String id, Status status) {
+    public boolean updateStatus(String id, OrderStatus orderStatus) {
         PurchaseEntity entity = adminRepository.findOrderById(Integer.parseInt(id));
         if (entity== null){
             return false;
         }
-        entity.setStatus(status);
+        entity.setOrderStatus(orderStatus);
         System.err.println(entity.toString());
         profileRepository.updateProfile(entity);
         return true;
@@ -160,5 +163,15 @@ public class AdminServiceImpl implements AdminService{
             purchaseDtoList.add(purchaseDto);
         });
         return purchaseDtoList;
+    }
+
+    @Override
+    public IssueCode addProduct(ProductMasterDTO productMasterDTO) {
+        ProductMasterEntity productMasterEntity =new ProductMasterEntity();
+        BeanUtils.copyProperties(productMasterDTO,productMasterEntity);
+        System.err.println(productMasterEntity);
+        boolean save = profileRepository.save(productMasterEntity);
+
+        return null;
     }
 }

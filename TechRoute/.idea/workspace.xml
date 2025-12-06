@@ -5,11 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="generated PDF">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserSaleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/bronotes_data_state.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProductMasterDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/ProductMasterEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/OrderStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/AddProductPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserPurchaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/DebitorsInvoice.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/tomcat-users.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewOrderPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViewOrderPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewAllOrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewAllOrdersPage.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +38,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -59,31 +78,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.MailServiceImpl.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TechRoute [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TechRoute [deploy].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TechRoute [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TechRoute [validate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.TechRoute [verify].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Tomcat: TechRoute.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shrih/OneDrive/Pictures/Documents/xworkz-project/TechRoute&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.MailServiceImpl.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.TechRoute [clean].executor": "Run",
+    "Maven.TechRoute [deploy].executor": "Run",
+    "Maven.TechRoute [install].executor": "Run",
+    "Maven.TechRoute [validate].executor": "Run",
+    "Maven.TechRoute [verify].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Smart Tomcat.Tomcat: TechRoute.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/shrih/OneDrive/Pictures/Documents/xworkz-project/TechRoute",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "settings.sync"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shrih\OneDrive\Pictures\Documents\xworkz-project\TechRoute-admin\src\main\webapp" />
@@ -155,14 +174,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added resend otp function">
-      <option name="closed" value="true" />
-      <created>1760566465717</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1760566465717</updated>
     </task>
     <task id="LOCAL-00025" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -548,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1764659864744</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="generated PDF">
+      <option name="closed" value="true" />
+      <created>1764958897136</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1764958897137</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -222,7 +222,7 @@
                     <input type="number" class="form-control" name="stockInHand" min="0" required>
                 </div>
 
-                <!-- Date and Status -->
+                <!-- Date and OrderStatus -->
                 <div class="col-md-6">
                     <label class="form-label">Order Due Date</label>
                     <input type="date" class="form-control" name="orderDueDate" required>
@@ -230,8 +230,8 @@
 
                 <div class="col-md-6">
                     <label class="form-label">Status</label>
-                    <select class="form-select" name="status" required >
-<!--                        <option selected disabled>Select status</option>-->
+                    <select class="form-select" name="orderStatus" required >
+<!--                        <option selected disabled>Select orderStatus</option>-->
                         <option value="PENDING" selected>Pending</option>
 <!--                        <option value="CONFIRMED">Confirmed</option>-->
 <!--                        <option value="CANCELLED">Cancelled</option>-->

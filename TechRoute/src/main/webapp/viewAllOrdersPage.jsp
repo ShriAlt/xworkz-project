@@ -191,7 +191,7 @@
                             <i class="fas fa-user me-2 text-info"></i><strong>Customer:</strong> ${order.customerName}<br>
                             <i class="fas fa-calendar-alt me-2 text-info"></i><strong>Due Date:</strong> ${order.orderDueDate}<br>
                             <i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong>
-                            <span class="badge bg-info text-dark">${order.status}</span>
+                            <span class="badge bg-info text-dark">${order.orderStatus}</span>
                         </p>
                     </div>
                     <div class="card-footer d-flex justify-content-between align-items-center border-info">

@@ -1,17 +1,15 @@
 package com.xworkz.techRoute.controller;
 
 import com.xworkz.techRoute.dto.CustomerDto;
+import com.xworkz.techRoute.dto.ProductMasterDTO;
 import com.xworkz.techRoute.dto.PurchaseDto;
-import com.xworkz.techRoute.enums.Status;
+import com.xworkz.techRoute.enums.OrderStatus;
 import com.xworkz.techRoute.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 import javax.validation.Valid;
@@ -153,7 +151,7 @@ public class AdminController {
     }
     @PostMapping("approvePurchase")
     public String approvePurchase(String id,Model model){
-        boolean b = service.updateStatus(id, Status.CONFIRMED);
+        boolean b = service.updateStatus(id, OrderStatus.CONFIRMED);
         if (!b){
             PurchaseDto orderById = service.getOrderById(id);
             model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
@@ -163,7 +161,7 @@ public class AdminController {
     }
     @PostMapping("cancelPurchase")
     public String cancelPurchase(String id,Model model){
-        boolean b = service.updateStatus(id, Status.CANCELLED);
+        boolean b = service.updateStatus(id, OrderStatus.CANCELLED);
         if (!b){
             PurchaseDto orderById = service.getOrderById(id);
             model.addAttribute("purchaseDto",orderById);model.addAttribute("purchaseDto",orderById);
@@ -171,5 +169,21 @@ public class AdminController {
         }
         return "viewAllOrdersPage";
     }
+    @GetMapping("AddProduct")
+    public String addProductPage(){
+        return "AddProductPage";
+    }
+
+    @PostMapping("AddProducts")
+    public String addProduct(ProductMasterDTO dto){
+        System.out.println(dto);
+        return "AddProductPage";
+    }
+
+
+
+
+
+
 }
 

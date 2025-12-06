@@ -177,7 +177,7 @@
             <p><i class="fas fa-sort-numeric-up me-2 text-info"></i><strong>Quantity:</strong> ${purchaseDto.quantity}</p>
             <p><i class="fas fa-boxes me-2 text-info"></i><strong>Stock In Hand:</strong> ${purchaseDto.stockInHand}</p>
             <p><i class="fas fa-calendar-alt me-2 text-info"></i><strong>Order Due Date:</strong> ${purchaseDto.orderDueDate}</p>
-            <p><i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong> ${purchaseDto.status}</p>
+            <p><i class="fas fa-clipboard-check me-2 text-info"></i><strong>Status:</strong> ${purchaseDto.orderStatus}</p>
         </div>
 
         <div class="card-footer d-flex justify-content-between align-items-center border-info">

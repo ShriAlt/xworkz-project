@@ -49,7 +49,7 @@ public class UserRestController {
 //    @PostMapping("addCustomer")
 //    public ResponseEntity<String> addCustomer(@RequestBody List<CustomerDto> dtos){
 //         userService.saveCustomer(dtos);
-//        return  ResponseEntity.status(HttpStatus.CREATED).body("couldn't add ");
+//        return  ResponseEntity.orderStatus(HttpStatus.CREATED).body("couldn't add ");
 //    }
 @PostMapping("purchaseAll")
 public ResponseEntity<String> purchaseAll(@RequestBody List<PurchaseDto> purchaseDtos , BindingResult bindingResult, Model model){

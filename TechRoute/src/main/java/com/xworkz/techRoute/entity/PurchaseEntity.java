@@ -1,6 +1,6 @@
 package com.xworkz.techRoute.entity;
 
-import com.xworkz.techRoute.enums.Status;
+import com.xworkz.techRoute.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -51,5 +51,5 @@ public class PurchaseEntity {
 
 
     @Enumerated(EnumType.STRING)
-    private Status status;
+    private OrderStatus orderStatus;
 }

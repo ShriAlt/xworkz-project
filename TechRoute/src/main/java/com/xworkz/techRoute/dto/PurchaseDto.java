@@ -1,6 +1,6 @@
 package com.xworkz.techRoute.dto;
 
-import com.xworkz.techRoute.enums.Status;
+import com.xworkz.techRoute.enums.OrderStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -56,5 +56,5 @@ public class PurchaseDto implements Serializable {
     private String orderDueDate;
 
     @NotNull
-    private Status status;
+    private OrderStatus orderStatus;
 }

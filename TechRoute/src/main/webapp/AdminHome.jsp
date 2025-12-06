@@ -143,6 +143,11 @@
                         <i class="fa fa-users me-2 text-info"></i> View Users
                     </a>
                 </li>
+                <li>
+                    <a class="dropdown-item text-light" href="AddProduct">
+                        <i class="fa fa-users me-2 text-info"></i> Add Products
+                    </a>
+                </li>
                 <li><hr class="dropdown-divider border-info"></li>
                 <li>
                     <a class="dropdown-item text-danger" href="logout">
