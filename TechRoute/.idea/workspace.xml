@@ -4,31 +4,59 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="generated PDF">
-      <change afterPath="$PROJECT_DIR$/.idea/bronotes_data_state.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProductMasterDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/ProductMasterEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/OrderStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/AddProductPage.jsp" afterDir="false" />
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add product management page and backend functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/tomcat-users.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute-admin/conf/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/tomcat-users.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/tomcat-users.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.smarttomcat/TechRoute/conf/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/AdminHome.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ViewOrderPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ViewOrderPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/userViewAllOrdersPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/viewAllOrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/viewAllOrdersPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/EmailConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/EmailConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/PersistenceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/SwaggerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/ThymeleafConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/ThymeleafConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/configuration/WebAppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/ResetPasswordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserPurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/controller/UserSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserSaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/CustomerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/CustomerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/LoginDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/LoginDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProductMasterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProductMasterDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/ProfileDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProfileDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/dto/PurchaseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/PurchaseDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/AdminLoginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/AdminLoginEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/CustomerEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/ProductGroupEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductGroupEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/ProductMasterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductMasterEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/PurchaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/PurchaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/RegisterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/RegisterEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/entity/UserLoginEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/UserLoginEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/CustomerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/CustomerType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/IssueCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/IssueCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/PaymentMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/PaymentMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/enums/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/init/WebInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/init/WebInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/AdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/AdminRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/AdminRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/ProfileRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProfileRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/AdminRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/AdminRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/RegisterRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/RegisterRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/Scheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/scheduler/Scheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/scheduler/SchedulerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/scheduler/SchedulerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/AdminService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ResetPasswordService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/ResetPasswordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ResetPasswordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techRoute/util/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/util/PdfGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,31 +106,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MailServiceImpl.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "Maven.TechRoute [clean].executor": "Run",
-    "Maven.TechRoute [deploy].executor": "Run",
-    "Maven.TechRoute [install].executor": "Run",
-    "Maven.TechRoute [validate].executor": "Run",
-    "Maven.TechRoute [verify].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Smart Tomcat.Tomcat: TechRoute.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/shrih/OneDrive/Pictures/Documents/xworkz-project/TechRoute",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.MailServiceImpl.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.TechRoute [verify].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: TechRoute.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/shrih/OneDrive/Pictures/Documents/xworkz-project/TechRoute&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\shrih\OneDrive\Pictures\Documents\xworkz-project\TechRoute-admin\src\main\webapp" />
@@ -127,7 +155,7 @@
   </component>
   <component name="RunManager" selected="Smart Tomcat.Tomcat: TechRoute">
     <configuration name="MailServiceImpl" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.xworkz.techRoute.service.MailServiceImpl" />
+      <option name="MAIN_CLASS_NAME" value="com.xworkz.techroute.service.MailServiceImpl" />
       <module name="TechRoute" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,14 +202,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00025" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760675571513</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1760675571513</updated>
     </task>
     <task id="LOCAL-00026" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -567,11 +587,18 @@
       <option name="project" value="LOCAL" />
       <updated>1764958897137</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="add product management page and backend functionality">
+      <option name="closed" value="true" />
+      <created>1765024583152</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1765024583153</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add email configuration and mail service for OTP functionality; implement JavaMailSender and MailService interface" />
     <MESSAGE value="update on js validation" />
     <MESSAGE value="schedulers added" />
     <MESSAGE value="new look !!!" />
@@ -596,7 +623,8 @@
     <MESSAGE value="all done with views" />
     <MESSAGE value="some minor changes" />
     <MESSAGE value="generated PDF" />
-    <option name="LAST_COMMIT_MESSAGE" value="generated PDF" />
+    <MESSAGE value="add product management page and backend functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="add product management page and backend functionality" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

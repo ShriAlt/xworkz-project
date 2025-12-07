@@ -1,0 +1,60 @@
+package com.xworkz.techroute.restController;
+
+import com.xworkz.techroute.dto.PurchaseDto;
+import com.xworkz.techroute.service.UserService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/")
+public class UserRestController {
+
+    private final UserService userService;
+
+    public UserRestController(UserService userService){
+        this.userService=userService;
+    }
+
+    @PostMapping("add-product")
+    public ResponseEntity<String> addProductGroup(String productGroupName){
+        boolean result = userService.validateAndAddGroupName(productGroupName);
+        if(result){
+        return ResponseEntity.status(HttpStatus.CREATED).body("product group added");
+        }
+        return  ResponseEntity.status(HttpStatus.CREATED).body("couldn't add ");
+    }
+
+    @GetMapping("fetch-products")
+    public List<String> fetchProduct(){
+       return userService.fetchProducts();
+    }
+
+    @GetMapping("/fetch-debitors")
+    public List<String> findAllDebitors(){
+        return userService.fetchDebitors();
+    }
+
+    @GetMapping("fetch-creditors")
+    public List<String> findAllCreditors(){
+        return userService.fetchCreditors();
+    }
+
+//    @PostMapping("addCustomer")
+//    public ResponseEntity<String> addCustomer(@RequestBody List<CustomerDto> dtos){
+//         userService.saveCustomer(dtos);
+//        return  ResponseEntity.orderStatus(HttpStatus.CREATED).body("couldn't add ");
+//    }
+@PostMapping("purchaseAll")
+public ResponseEntity<String> purchaseAll(@RequestBody List<PurchaseDto> purchaseDtos , BindingResult bindingResult, Model model){
+    if (bindingResult.hasErrors()){
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("no okay");
+    }
+    userService.saveOrders(purchaseDtos);
+    return ResponseEntity.status(HttpStatus.CONFLICT).body("no okay");
+}
+}

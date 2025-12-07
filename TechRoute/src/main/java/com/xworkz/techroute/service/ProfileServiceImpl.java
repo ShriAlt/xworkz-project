@@ -1,0 +1,144 @@
+package com.xworkz.techroute.service;
+
+
+import com.xworkz.techroute.dto.LoginDto;
+import com.xworkz.techroute.dto.ProfileDto;
+import com.xworkz.techroute.entity.AdminLoginEntity;
+import com.xworkz.techroute.entity.RegisterEntity;
+import com.xworkz.techroute.entity.UserLoginEntity;
+import com.xworkz.techroute.enums.IssueCode;
+import com.xworkz.techroute.repository.ProfileRepository;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+
+@Service
+public class ProfileServiceImpl implements ProfileService {
+
+    public ProfileServiceImpl(){
+        System.out.println("no args of ProfileServiceImpl ");
+    }
+
+    @Autowired
+    ProfileRepository profileRepository;
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Override
+    public IssueCode validateAndSave(ProfileDto dto) {
+        if (profileRepository.checkByMail(dto.getEmail()) != null){
+            return IssueCode.EMAIL_EXIST;
+        }
+        if (profileRepository.checkByPhone(dto.getPhoneNumber()) != null){
+            return IssueCode.PHONE_EXIST;
+        }
+        RegisterEntity registerEntity = new RegisterEntity();
+        BeanUtils.copyProperties(dto, registerEntity);
+        registerEntity.setPassword(bCryptPasswordEncoder.encode(dto.getPassword()));
+        boolean result = profileRepository.save(registerEntity);
+        if (result){
+            return IssueCode.OK;
+        }
+        return IssueCode.DB_ERROR;
+    }
+
+
+    @Override
+    public IssueCode login(LoginDto loginDto) {
+        String identifier = loginDto.getIdentifier();
+        if (identifier == null){
+            return IssueCode.INVALID;
+        }
+       if (identifier.matches("^[6-9]\\d{9}$")){
+          RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
+           System.err.println(registerEntity);
+           return getResult(loginDto, registerEntity);
+       }
+       if (identifier.contains(".") && identifier.contains("@")){
+         RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
+         return getResult(loginDto, registerEntity);
+       }
+        return IssueCode.INVALID;
+    }
+    private IssueCode getResult(LoginDto loginDto, RegisterEntity registerEntity) {
+        if (registerEntity == null){
+            return IssueCode.NO_EMAIL;
+        }
+        if (registerEntity.getLoginAttempt()<3){
+            if (!bCryptPasswordEncoder.matches(loginDto.getPassword(), registerEntity.getPassword())){
+                registerEntity.setLoginAttempt(registerEntity.getLoginAttempt()+1);
+                profileRepository.updateProfile(registerEntity);
+                return IssueCode.PASSWORD_MISMATCH;
+            }
+            registerEntity.setLoginAttempt(0);
+          boolean update = profileRepository.updateProfile(registerEntity);
+          if (!update){
+              return IssueCode.DB_ERROR;
+          }
+            switch (registerEntity.getRole()){
+                case USER:{
+                    UserLoginEntity userLoginEntity = new UserLoginEntity();
+                    BeanUtils.copyProperties(loginDto, userLoginEntity);
+                    userLoginEntity.setTimestamp(LocalDateTime.now());
+                    if (!profileRepository.save(userLoginEntity)){
+                        return IssueCode.DB_ERROR;
+                    }
+                    return IssueCode.USER;
+                }
+                case ADMIN:{
+                    AdminLoginEntity adminLoginEntity = new AdminLoginEntity();
+                    BeanUtils.copyProperties(loginDto,adminLoginEntity);
+                    adminLoginEntity.setTimestamp(LocalDateTime.now());
+                    if (!profileRepository.save(adminLoginEntity)){
+                        return IssueCode.DB_ERROR;
+                    }
+                    return IssueCode.ADMIN;
+                }
+            }
+        }
+        return IssueCode.ACCOUNT_LOCKED;
+    }
+
+    @Override
+    public boolean checkMail(String mail) {
+        if (mail == null){
+            return false;
+        }
+       RegisterEntity registerEntity = profileRepository.checkByMail(mail);
+        return registerEntity != null;
+    }
+    @Override
+    public boolean checkPhone(String phone) {
+        if (phone == null){
+            return false;
+        }
+        RegisterEntity registerEntity = profileRepository.checkByPhone(phone);
+        return registerEntity != null;
+    }
+
+    @Override
+    public ProfileDto displayProfile(String identifier) {
+        if (identifier == null){
+            return null;
+        }
+        if (identifier.matches("^[6-9]\\d{9}$")){
+            RegisterEntity registerEntity =  profileRepository.checkByPhone(identifier);
+            ProfileDto dto = new ProfileDto();
+            BeanUtils.copyProperties(registerEntity,dto);
+            System.err.println(dto);
+            return dto;
+        }
+        if (identifier.contains(".") && identifier.contains("@")){
+            RegisterEntity registerEntity = profileRepository.checkByMail(identifier);
+            ProfileDto dto = new ProfileDto();
+            BeanUtils.copyProperties(registerEntity,dto);
+            System.err.println(dto);
+            return dto;
+        }
+        return null;
+    }
+}
