@@ -21,4 +21,6 @@ public interface UserService {
 
     String generateInvoiceForDownload(String id);
 
+    List<String> fetchProductsByGroup(String productGroupName);
+
 }

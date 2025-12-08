@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -99,5 +100,10 @@ public class UserServiceImpl implements UserService{
         context.setVariable("order", order);
         context.setVariable("customer", customer);
         return templateEngine.process("DebitorsInvoice", context);
+    }
+
+    @Override
+    public List<String> fetchProductsByGroup(String productGroupName) {
+        return Collections.emptyList();
     }
 }

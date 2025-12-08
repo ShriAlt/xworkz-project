@@ -12,7 +12,6 @@
         salesForm.style.display = "block";
       }
     });
-
     document.addEventListener("DOMContentLoaded", function () {
       axios("http://localhost:8080/TechRoute/fetch-products")
         .then(function (response) {

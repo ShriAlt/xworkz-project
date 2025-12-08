@@ -44,6 +44,12 @@ public class UserRestController {
         return userService.fetchCreditors();
     }
 
+    @GetMapping("fetch-products")
+    public List<String> fetchAllInProductGroup(String productGroupName){
+
+        return userService.fetchCreditors();
+    }
+
 //    @PostMapping("addCustomer")
 //    public ResponseEntity<String> addCustomer(@RequestBody List<CustomerDto> dtos){
 //         userService.saveCustomer(dtos);
@@ -57,4 +63,5 @@ public ResponseEntity<String> purchaseAll(@RequestBody List<PurchaseDto> purchas
     userService.saveOrders(purchaseDtos);
     return ResponseEntity.status(HttpStatus.CONFLICT).body("no okay");
 }
+
 }
