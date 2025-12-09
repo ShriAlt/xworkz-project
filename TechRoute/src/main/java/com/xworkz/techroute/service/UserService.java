@@ -1,5 +1,6 @@
 package com.xworkz.techroute.service;
 
+import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
 import com.xworkz.techroute.enums.IssueCode;
 
@@ -21,6 +22,6 @@ public interface UserService {
 
     String generateInvoiceForDownload(String id);
 
-    List<String> fetchProductsByGroup(String productGroupName);
+    List<ProductMasterDTO> fetchProductsByGroup(String productGroupName);
 
 }

@@ -9,6 +9,10 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "product_master")
 @Data
+@NamedQuery(
+        name = "fetchAllProductByGroupName",
+        query = "SELECT p FROM ProductMasterEntity p JOIN FETCH p.stocks s WHERE p.productGroupName = :groupName"
+)
 public class ProductMasterEntity {
 
     @Id
@@ -53,4 +57,7 @@ public class ProductMasterEntity {
     public ProductMasterEntity(){
         this.createdAt=LocalDateTime.now();
     }
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private java.util.List<StockEntity> stocks;
 }

@@ -1,5 +1,6 @@
 package com.xworkz.techroute.restController;
 
+import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
 import com.xworkz.techroute.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -44,16 +45,13 @@ public class UserRestController {
         return userService.fetchCreditors();
     }
 
-    @GetMapping("fetch-allProducts")
-    public List<String> fetchAllInProductGroup(String productGroupName){
-
-        return userService.fetchCreditors();
+    @GetMapping("fetch-allProductInGroupName")
+    public List<ProductMasterDTO> fetchAllInProductGroup(String productGroupName){
+        System.out.println("=========================================== in controller");
+        return userService.fetchProductsByGroup(productGroupName);
     }
-//    @PostMapping("addCustomer")
-//    public ResponseEntity<String> addCustomer(@RequestBody List<CustomerDto> dtos){
-//         userService.saveCustomer(dtos);
-//        return  ResponseEntity.orderStatus(HttpStatus.CREATED).body("couldn't add ");
-//    }
+
+
 @PostMapping("purchaseAll")
 public ResponseEntity<String> purchaseAll(@RequestBody List<PurchaseDto> purchaseDtos , BindingResult bindingResult, Model model){
     if (bindingResult.hasErrors()){

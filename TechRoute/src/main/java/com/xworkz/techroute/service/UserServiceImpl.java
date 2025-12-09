@@ -1,8 +1,11 @@
 package com.xworkz.techroute.service;
 
+import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
+import com.xworkz.techroute.dto.StockDTO;
 import com.xworkz.techroute.entity.CustomerEntity;
 import com.xworkz.techroute.entity.ProductGroupEntity;
+import com.xworkz.techroute.entity.ProductMasterEntity;
 import com.xworkz.techroute.entity.PurchaseEntity;
 import com.xworkz.techroute.enums.CustomerType;
 import com.xworkz.techroute.enums.IssueCode;
@@ -103,7 +106,39 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public List<String> fetchProductsByGroup(String productGroupName) {
-        return Collections.emptyList();
+    public List<ProductMasterDTO> fetchProductsByGroup(String productGroupName) {
+        System.out.println("==================================== in service");
+
+        List<ProductMasterEntity> productMasterEntities =
+                userRepository.fetchAllProductsByGroupName(productGroupName);
+
+        // Map entities to DTOs
+        return productMasterEntities.stream()
+                .map(entity -> new ProductMasterDTO(
+                        entity.getProductId(),
+                        entity.getProductCode(),
+                        entity.getProductName(),
+                        entity.getProductGroupName(),
+                        entity.getModel(),
+                        entity.getCompanyName(),
+                        entity.getVariantAttributes(),
+                        entity.getDefaultPurchasePrice(),
+                        entity.getDefaultSalePrice(),
+                        entity.getStatus(),
+                        entity.getCreatedAt(),
+                        entity.getUpdatedAt(),
+                        entity.getStocks().stream()
+                                .map(stock -> new StockDTO(
+                                        stock.getStockId(),
+                                        stock.getQuantity(),
+                                        stock.getOpeningValue(),
+                                        stock.getPurchasePrice(),
+                                        stock.getWarehouse(),
+                                        stock.getLastUpdated()
+                                ))
+                                .collect(Collectors.toList())
+                ))
+                .collect(Collectors.toList());
     }
+
 }
