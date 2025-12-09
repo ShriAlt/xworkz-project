@@ -44,12 +44,11 @@ public class UserRestController {
         return userService.fetchCreditors();
     }
 
-    @GetMapping("fetch-products")
+    @GetMapping("fetch-allProducts")
     public List<String> fetchAllInProductGroup(String productGroupName){
 
         return userService.fetchCreditors();
     }
-
 //    @PostMapping("addCustomer")
 //    public ResponseEntity<String> addCustomer(@RequestBody List<CustomerDto> dtos){
 //         userService.saveCustomer(dtos);
