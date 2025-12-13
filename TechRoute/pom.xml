@@ -138,6 +138,12 @@
           <artifactId>thymeleaf-spring5</artifactId>
           <version>3.0.15.RELEASE</version>
       </dependency>
+
+      <dependency>
+          <groupId>org.springframework.data</groupId>
+          <artifactId>spring-data-jpa</artifactId>
+          <version>2.7.0</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>TechRoute</finalName>

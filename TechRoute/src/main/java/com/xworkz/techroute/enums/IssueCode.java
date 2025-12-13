@@ -4,26 +4,42 @@ import lombok.Getter;
 
 @Getter
 public enum IssueCode {
-    DB_ERROR("error in db"),
-    INVALID("error in db"),
-    NAME_EXIST("error in db"),
-    NO_EMAIL("error in db"),
-    PASSWORD_MISMATCH("error in db"),
-    USER("error in db"),
-    ADMIN("error in db"),
-    ACCOUNT_LOCKED("error in db"),
-    NO_PHONE_NUMBER("error in db"),
-    SEND_ERROR("error in db"),
-    INVALID_IDENTIFIER("error in db"),
-    NULL_ERROR("null error"),
-    INVALID_PASSWORD("null error"),
-    OK("everything is fine"),
-    EMAIL_EXIST("everything is fine"),
-    PHONE_EXIST("everything is fine"), NAME_NAME_EXIST("NO NAME");
+    // ✅ General success
+    OK("Operation successful"),
 
-    private final String messages;
-    IssueCode(String messages){
-        this.messages = messages;
+    // ✅ Database / persistence
+    DB_ERROR("Database error occurred"),
+    NULL_ERROR("Null value encountered"),
+    INVALID_IDENTIFIER("Invalid identifier provided"),
+
+    // ✅ Validation errors
+    INVALID("Invalid input"),
+    INVALID_QUANTITY("Quantity is invalid"),
+    INSUFFICIENT_STOCK("Not enough stock available"),
+
+    USER("USER"),
+    ADMIN("ADMIN"),
+    // ✅ Product / stock domain
+    PRODUCT_NOT_FOUND("Product not found"),
+    STOCK_NOT_FOUND("Stock record not found"),
+
+    // ✅ User / account domain
+    USER_NOT_FOUND("User not found"),
+    NAME_EXIST("Name already exists"),
+    EMAIL_EXIST("Email already exists"),
+    PHONE_EXIST("Phone number already exists"),
+    NO_EMAIL("Email not provided"),
+    NO_PHONE_NUMBER("Phone number not provided"),
+    INVALID_PASSWORD("Invalid password"),
+    PASSWORD_MISMATCH("Passwords do not match"),
+    ACCOUNT_LOCKED("Account is locked"),
+
+    // ✅ Communication / messaging
+    SEND_ERROR("Error sending message");
+
+    private final String message;
+
+    IssueCode(String message) {
+        this.message = message;
     }
-
 }

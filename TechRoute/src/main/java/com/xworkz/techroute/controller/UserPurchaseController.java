@@ -48,7 +48,7 @@ public class UserPurchaseController {
         }
         IssueCode issueCode = userService.validateAndSaveOrder(purchaseDto);
         switch (issueCode){
-            case NAME_NAME_EXIST:{
+            case NAME_EXIST:{
                 model.addAttribute("error", "name not exist");
                 return "OrdersPage";
             }

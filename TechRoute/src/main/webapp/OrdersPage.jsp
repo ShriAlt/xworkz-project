@@ -164,15 +164,16 @@
             <option value="sales">Sales</option>
         </select>
     </div>
+    <span>${message}</span>
 
     <!-- Purchase Form -->
     <div id="purchaseFormSection">
-        <!-- Paste your full purchase form here -->
         <h4 class="text-info">Purchase Form</h4>
-        <!-- Example field -->
         <span class="text-danger">${error}</span>
         <form id="purchaseForm" action="purchase" method="post">
             <div class="row g-3">
+
+                <!-- Customer -->
                 <div class="col-md-6">
                     <label class="form-label">Customer Name</label>
                     <select class="form-control" name="customerName" id="customerNameDropdown" required>
@@ -180,6 +181,7 @@
                     </select>
                 </div>
 
+                <!-- Product Group -->
                 <div class="col-md-6">
                     <label class="form-label">Product Group Name</label>
                     <select class="form-control" name="productGroupName" id="productGroupDropdown" required>
@@ -187,55 +189,55 @@
                     </select>
                 </div>
 
+                <!-- Product Name -->
+                <div class="col-md-6">
+                    <label class="form-label">Product Name</label>
+                    <select class="form-control" name="productName" id="productNameDropdown" required>
+                        <option value="">Select a product</option>
+                    </select>
+                </div>
+
+                <!-- Auto-filled fields -->
                 <div class="col-md-6">
                     <label class="form-label">Company Name</label>
-                    <input type="text" class="form-control" name="companyName" maxlength="50" required>
+                    <input type="text" class="form-control" name="companyName" id="companyName" maxlength="50" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Model</label>
-                    <input type="text" class="form-control" name="model" maxlength="50" required>
+                    <input type="text" class="form-control" name="model" id="model" maxlength="50" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Product Code</label>
-                    <input type="text" class="form-control" name="productCode" maxlength="30" required>
-                </div>
-                <div class="col-md-6">
-                    <label class="form-label">Product Name</label>
-                    <input type="text" class="form-control" name="productName" maxlength="100" required>
+                    <input type="text" class="form-control" name="productCode" id="productCode" maxlength="30" required>
                 </div>
 
-                <!-- Numeric Fields -->
+                <!-- Stock fields -->
                 <div class="col-md-6">
                     <label class="form-label">Opening Value</label>
-                    <input type="number" class="form-control" name="openingValue" min="1" required>
+                    <input type="number" class="form-control" name="openingValue" id="openingValue" min="1" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Purchase Price</label>
-                    <input type="number" class="form-control" name="purchasePrice" min="1" step="1" required>
+                    <input type="number" class="form-control" name="purchasePrice" id="purchasePrice" min="1" step="1" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Quantity</label>
-                    <input type="number" class="form-control" name="quantity" min="1" required>
+                    <input type="number" class="form-control" name="quantity" id="quantity" min="1" required>
                 </div>
                 <div class="col-md-6">
                     <label class="form-label">Stock In Hand</label>
-                    <input type="number" class="form-control" name="stockInHand" min="0" required>
+                    <input type="number" class="form-control" name="stockInHand" id="stockInHand" min="0" required>
                 </div>
 
-                <!-- Date and OrderStatus -->
+                <!-- Order -->
                 <div class="col-md-6">
                     <label class="form-label">Order Due Date</label>
                     <input type="date" class="form-control" name="orderDueDate" required>
                 </div>
-
                 <div class="col-md-6">
                     <label class="form-label">Status</label>
-                    <select class="form-select" name="orderStatus" required >
-<!--                        <option selected disabled>Select orderStatus</option>-->
+                    <select class="form-select" name="orderStatus" required>
                         <option value="PENDING" selected>Pending</option>
-<!--                        <option value="CONFIRMED">Confirmed</option>-->
-<!--                        <option value="CANCELLED">Cancelled</option>-->
-<!--                        <option value="SHIPPED">Shipped</option>-->
                     </select>
                 </div>
 
@@ -248,9 +250,85 @@
         </form>
     </div>
 
+
     <!-- Sales Form Placeholder -->
     <div id="salesFormSection" style="display: none;">
-        <h4 class="text-info">Sales Form</h4>
+            <h4 class="text-success">Sales Form</h4>
+            <form id="salesForm" action="sales" method="post">
+                <div class="row g-3">
+
+                    <!-- Customer -->
+                    <div class="col-md-6">
+                        <label class="form-label">Customer Name</label>
+                        <select class="form-control" name="customerName" id="salesCustomerDropdown" required>
+                            <option value="">Select a customer</option>
+                        </select>
+                    </div>
+
+                    <!-- Product Group -->
+                    <div class="col-md-6">
+                        <label class="form-label">Product Group Name</label>
+                        <select class="form-control" name="productGroupName" id="salesProductGroupDropdown" required>
+                            <option value="">Select a product group</option>
+                        </select>
+                    </div>
+
+                    <!-- Product Name -->
+                    <div class="col-md-6">
+                        <label class="form-label">Product Name</label>
+                        <select class="form-control" name="productName" id="salesProductNameDropdown" required>
+                            <option value="">Select a product</option>
+                        </select>
+                    </div>
+
+                    <!-- Auto-filled fields -->
+                    <div class="col-md-6">
+                        <label class="form-label">Company Name</label>
+                        <input type="text" class="form-control" name="companyName" id="salesCompanyName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Model</label>
+                        <input type="text" class="form-control" name="model" id="salesModel" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Product Code</label>
+                        <input type="text" class="form-control" name="productCode" id="salesProductCode" required>
+                    </div>
+
+                    <!-- Stock fields -->
+                    <div class="col-md-6">
+                        <label class="form-label">Available Stock</label>
+                        <input type="number" class="form-control" name="availableStock" id="salesAvailableStock" readonly>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Sale Quantity</label>
+                        <input type="number" class="form-control" name="saleQuantity" id="salesQuantity" min="1" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Sale Price</label>
+                        <input type="number" class="form-control" name="salePrice" id="salesPrice" min="1" required>
+                    </div>
+
+                    <!-- Order -->
+                    <div class="col-md-6">
+                        <label class="form-label">Order Status</label>
+                        <select class="form-select" name="orderStatus" required>
+                            <option value="PENDING" selected>Pending</option>
+                            <option value="CONFIRMED">Confirmed</option>
+                            <option value="CANCELLED">Cancelled</option>
+                            <option value="SHIPPED">Shipped</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 text-end mt-4">
+                        <button type="submit" class="btn btn-outline-success">
+                            Place Sale
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
 
     </div>
 </div>

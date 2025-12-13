@@ -47,7 +47,6 @@ public class UserRestController {
 
     @GetMapping("fetch-allProductInGroupName")
     public List<ProductMasterDTO> fetchAllInProductGroup(String productGroupName){
-        System.out.println("=========================================== in controller");
         return userService.fetchProductsByGroup(productGroupName);
     }
 

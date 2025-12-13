@@ -107,12 +107,9 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<ProductMasterDTO> fetchProductsByGroup(String productGroupName) {
-        System.out.println("==================================== in service");
-
         List<ProductMasterEntity> productMasterEntities =
                 userRepository.fetchAllProductsByGroupName(productGroupName);
 
-        // Map entities to DTOs
         return productMasterEntities.stream()
                 .map(entity -> new ProductMasterDTO(
                         entity.getProductId(),

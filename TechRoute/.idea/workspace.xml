@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add fetchProductsByGroup method and related endpoint in UserRestController">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/StockDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/StockEntity.java" afterDir="false" />
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/SalesDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/SalesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProductMasterRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/SalesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/StockRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/SalesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/SalesServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProductMasterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProductMasterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductMasterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductMasterEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/IssueCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/IssueCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,10 +32,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -161,14 +169,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00029" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760812061859</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1760812061859</updated>
     </task>
     <task id="LOCAL-00030" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -554,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1765285378119</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching">
+      <option name="closed" value="true" />
+      <created>1765290747275</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1765290747275</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="new look !!!" />
     <MESSAGE value="otp cleared" />
     <MESSAGE value="update on logo and style" />
     <MESSAGE value="update on logout" />
@@ -583,7 +590,8 @@
     <MESSAGE value="add product management page and backend functionality" />
     <MESSAGE value="refactor package names to use consistent casing and update related imports" />
     <MESSAGE value="add fetchProductsByGroup method and related endpoint in UserRestController" />
-    <option name="LAST_COMMIT_MESSAGE" value="add fetchProductsByGroup method and related endpoint in UserRestController" />
+    <MESSAGE value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
+    <option name="LAST_COMMIT_MESSAGE" value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
