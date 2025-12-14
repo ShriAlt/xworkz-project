@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/SalesDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/SalesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProductMasterRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/SalesRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/StockRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/SalesService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/SalesServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/IssueCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/IssueCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/OrdersPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/js/OrdersPageValidation.js" afterDir="false" />
-    </list>
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add sales functionality with validation, DTOs, and repository integration" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,14 +150,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00030" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760812126939</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1760812126939</updated>
     </task>
     <task id="LOCAL-00031" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -562,11 +535,18 @@
       <option name="project" value="LOCAL" />
       <updated>1765290747275</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="add sales functionality with validation, DTOs, and repository integration">
+      <option name="closed" value="true" />
+      <created>1765648533642</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1765648533642</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="otp cleared" />
     <MESSAGE value="update on logo and style" />
     <MESSAGE value="update on logout" />
     <MESSAGE value="added resend otp function" />
@@ -591,7 +571,8 @@
     <MESSAGE value="refactor package names to use consistent casing and update related imports" />
     <MESSAGE value="add fetchProductsByGroup method and related endpoint in UserRestController" />
     <MESSAGE value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
+    <MESSAGE value="add sales functionality with validation, DTOs, and repository integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="add sales functionality with validation, DTOs, and repository integration" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
