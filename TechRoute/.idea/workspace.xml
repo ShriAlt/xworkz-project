@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add sales functionality with validation, DTOs, and repository integration" />
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add sales functionality with validation, DTOs, and repository integration">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/EmailConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/EmailConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,14 +157,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00031" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760812245546</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1760812245546</updated>
     </task>
     <task id="LOCAL-00032" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -543,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765648533642</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="add sales functionality with validation, DTOs, and repository integration">
+      <option name="closed" value="true" />
+      <created>1765719512044</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1765719512045</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -19,8 +19,6 @@ public class SalesController {
     @PostMapping("/sales")
     public String placeSale(SalesDTO salesDTO, Model model) {
 
-//        System.err.println(salesDTO.toString());
-
         IssueCode issueCode = salesService.validateAndSaveSale(salesDTO);
         switch (issueCode) {
             case OK:
