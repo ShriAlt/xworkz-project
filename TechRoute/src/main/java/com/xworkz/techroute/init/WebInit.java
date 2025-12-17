@@ -2,12 +2,14 @@ package com.xworkz.techroute.init;
 
 import com.xworkz.techroute.configuration.SwaggerConfiguration;
 import com.xworkz.techroute.configuration.WebAppConfiguration;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@Slf4j
 public class WebInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     public WebInit(){
-        System.out.println("no args of WebInit");
+        log.info("no args of WebInit");
     }
 
     @Override

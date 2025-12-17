@@ -5,6 +5,7 @@ import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.service.AdminService;
 import com.xworkz.techroute.service.UserService;
 import com.xworkz.techroute.util.PdfGenerator;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,6 +19,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
+@Slf4j
 @RequestMapping("/")
 public class UserPurchaseController {
 

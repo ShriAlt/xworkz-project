@@ -1,15 +1,17 @@
 package com.xworkz.techroute.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 @Service
+@Slf4j
 public class MailServiceImpl implements MailService{
 
     public MailServiceImpl(){
-        System.out.println("no args of MailService");
+        log.info("no args of MailService");
     }
     @Autowired
     private JavaMailSender mailSender;
@@ -18,7 +20,6 @@ public class MailServiceImpl implements MailService{
     public boolean sendOtp(String toEmail, String otp) {
         try {
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-//            simpleMailMessage.setReplyTo("shriharshakm10@gmail.com");
             simpleMailMessage.setTo(toEmail);
             simpleMailMessage.setSubject("your TechRoute otp");
             String body = "your otp for the application is " +
@@ -30,7 +31,7 @@ public class MailServiceImpl implements MailService{
             return true;
         }
         catch (Exception e ){
-            e.printStackTrace();
+            log.error("error sending otp to {}", toEmail);
         }
         return false;
     }

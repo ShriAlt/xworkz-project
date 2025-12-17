@@ -22,7 +22,6 @@ public class UserRestController {
     private final UserService userService;
 
     public UserRestController(UserService userService){
-        log.info("hellooo");
         this.userService=userService;
     }
 

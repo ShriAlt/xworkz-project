@@ -4,6 +4,7 @@ import com.xworkz.techroute.entity.PurchaseEntity;
 import com.xworkz.techroute.entity.RegisterEntity;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.repository.ProfileRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,10 +13,11 @@ import java.time.LocalDateTime;
 import java.util.Random;
 
 @Service
+@Slf4j
 public class ResetPasswordServiceImpl implements ResetPasswordService{
 
     public ResetPasswordServiceImpl(){
-        System.out.println("no args of ResetPasswordServiceImpl");
+        log.info("no args of ResetPasswordServiceImpl");
     }
 
     @Autowired

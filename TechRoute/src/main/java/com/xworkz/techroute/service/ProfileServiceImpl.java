@@ -8,6 +8,7 @@ import com.xworkz.techroute.entity.RegisterEntity;
 import com.xworkz.techroute.entity.UserLoginEntity;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.repository.ProfileRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -16,10 +17,11 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 
 @Service
+@Slf4j
 public class ProfileServiceImpl implements ProfileService {
 
     public ProfileServiceImpl(){
-        System.out.println("no args of ProfileServiceImpl ");
+        log.info("no args of ProfileServiceImpl ");
     }
 
     @Autowired

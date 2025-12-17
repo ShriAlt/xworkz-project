@@ -1,5 +1,6 @@
 package com.xworkz.techroute.configuration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+@Slf4j
 @Configuration
 public class PersistenceConfiguration {
 
@@ -27,7 +29,7 @@ public class PersistenceConfiguration {
     private String userName;
 
     public PersistenceConfiguration(){
-        System.out.println("no args of PersistenceConfiguration ");
+        log.info("no args of PersistenceConfiguration ");
     }
 
     @Bean

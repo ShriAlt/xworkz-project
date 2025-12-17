@@ -1,5 +1,6 @@
 package com.xworkz.techroute.configuration;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,11 +19,12 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScan(basePackages = "com.xworkz.techroute")
 @EnableWebMvc
 @EnableScheduling
+@Slf4j
 @EnableJpaRepositories(basePackages = "com.xworkz.techroute.repository")
 public class WebAppConfiguration implements WebMvcConfigurer {
 
     public WebAppConfiguration(){
-        System.out.println("no args of WebAppConfiguration");
+        log.info("no args of WebAppConfiguration");
     }
 
     @Override

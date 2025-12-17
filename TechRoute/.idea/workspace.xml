@@ -4,13 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add sales functionality with validation, DTOs, and repository integration">
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="configure logging levels and enhance EmailConfiguration with SLF4J logging">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/EmailConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/EmailConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/PersistenceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/SwaggerConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/ThymeleafConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/ThymeleafConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/configuration/WebAppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/ResetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/ResetPasswordController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/SalesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/enums/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserPurchaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserSaleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/init/WebInit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/init/WebInit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProfileRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/repository/ProfileRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/RegisterRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/RegisterRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/scheduler/SchedulerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/scheduler/SchedulerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ProfileServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ProfileServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ResetPasswordServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/ResetPasswordServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/util/PdfGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/util/PdfGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,6 +134,7 @@
       </method>
     </configuration>
     <configuration name="Tomcat: TechRoute" type="com.poratu.idea.plugins.tomcat">
+      <output_file is_save="true" />
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
@@ -126,6 +144,9 @@
       <option name="catalinaBase" value="C:\Users\shrih\.SmartTomcat\TechRoute\TechRoute" />
       <option name="contextPath" value="/TechRoute" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
       <option name="extraClassPath" value="" />
       <option name="tomcatInfo">
         <TomcatInfo>
@@ -157,14 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00032" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760814366475</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1760814366475</updated>
     </task>
     <task id="LOCAL-00033" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -550,11 +563,18 @@
       <option name="project" value="LOCAL" />
       <updated>1765719512045</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="configure logging levels and enhance EmailConfiguration with SLF4J logging">
+      <option name="closed" value="true" />
+      <created>1765895844457</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1765895844457</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update on logo and style" />
     <MESSAGE value="update on logout" />
     <MESSAGE value="added resend otp function" />
     <MESSAGE value="update on admin logic" />
@@ -579,7 +599,8 @@
     <MESSAGE value="add fetchProductsByGroup method and related endpoint in UserRestController" />
     <MESSAGE value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
     <MESSAGE value="add sales functionality with validation, DTOs, and repository integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="add sales functionality with validation, DTOs, and repository integration" />
+    <MESSAGE value="configure logging levels and enhance EmailConfiguration with SLF4J logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="configure logging levels and enhance EmailConfiguration with SLF4J logging" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>

@@ -11,6 +11,7 @@ import com.xworkz.techroute.enums.OrderStatus;
 import com.xworkz.techroute.repository.AdminRepository;
 import com.xworkz.techroute.repository.ProfileRepository;
 import com.xworkz.techroute.repository.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +21,10 @@ import java.util.Collections;
 import java.util.List;
 
 @Service
+@Slf4j
 public class AdminServiceImpl implements AdminService{
     public AdminServiceImpl(){
-        System.out.println("no args of AdminServiceImpl");
+        log.info("no args of AdminServiceImpl");
     }
 
     @Autowired

@@ -6,6 +6,7 @@ import com.xworkz.techroute.dto.PurchaseDto;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.enums.OrderStatus;
 import com.xworkz.techroute.service.AdminService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,10 +17,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+@Slf4j
 @Controller
 public class AdminController {
     public AdminController(){
-        System.out.println("no args of AdminController");
+        log.info("no args of AdminController");
     }
 
     @Autowired
@@ -58,7 +60,6 @@ public class AdminController {
     @PostMapping("addCustomer")
     public String addCustomer( CustomerDto customerDto , BindingResult bindingResult , Model model){
         if (bindingResult.hasErrors()){
-            bindingResult.getAllErrors().forEach(System.err::println);
             model.addAttribute("error","fill your form correctly ");
             return "AddCustomer";
         }

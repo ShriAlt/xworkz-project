@@ -5,6 +5,7 @@ import com.xworkz.techroute.dto.ProfileDto;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.service.ProfileService;
 import com.xworkz.techroute.service.ResetPasswordService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,11 +17,12 @@ import javax.validation.Valid;
 
 
 @RestController
+@Slf4j
 @RequestMapping("/")
 public class RegisterRestController {
 
     public RegisterRestController(){
-        System.out.println("No args of RegisterRestController");
+        log.info("No args of RegisterRestController");
     }
 
     @Autowired

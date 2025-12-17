@@ -4,6 +4,7 @@ import com.xworkz.techroute.dto.LoginDto;
 import com.xworkz.techroute.dto.ProfileDto;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.service.ProfileService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,10 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import javax.servlet.http.HttpSession;
 
 @Controller
+@Slf4j
 @RequestMapping("/")
 public class LoginController {
     public LoginController(){
-        System.out.println("no args LoginController");
+        log.info("no args LoginController");
     }
 
     @Autowired

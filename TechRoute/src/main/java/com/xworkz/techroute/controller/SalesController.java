@@ -3,6 +3,7 @@ package com.xworkz.techroute.controller;
 import com.xworkz.techroute.dto.SalesDTO;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.service.SalesService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@Slf4j
 @RequestMapping("/")
 public class SalesController {
 

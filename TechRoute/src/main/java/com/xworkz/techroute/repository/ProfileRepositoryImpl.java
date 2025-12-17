@@ -2,6 +2,7 @@ package com.xworkz.techroute.repository;
 
 import com.xworkz.techroute.entity.CustomerEntity;
 import com.xworkz.techroute.entity.RegisterEntity;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -14,10 +15,11 @@ import java.util.Collections;
 import java.util.List;
 
 @Repository
+@Slf4j
 public class ProfileRepositoryImpl implements ProfileRepository {
 
     public ProfileRepositoryImpl(){
-        System.out.println("no args of ProfileRepositoryImpl");
+        log.info("no args of ProfileRepositoryImpl");
     }
 
     @Autowired
