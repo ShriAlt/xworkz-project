@@ -3,14 +3,12 @@ package com.xworkz.techroute.service;
 import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
 import com.xworkz.techroute.dto.StockDTO;
-import com.xworkz.techroute.entity.CustomerEntity;
-import com.xworkz.techroute.entity.ProductGroupEntity;
-import com.xworkz.techroute.entity.ProductMasterEntity;
-import com.xworkz.techroute.entity.PurchaseEntity;
+import com.xworkz.techroute.entity.*;
 import com.xworkz.techroute.enums.CustomerType;
 import com.xworkz.techroute.enums.IssueCode;
 import com.xworkz.techroute.repository.AdminRepository;
 import com.xworkz.techroute.repository.ProfileRepository;
+import com.xworkz.techroute.repository.StockRepository;
 import com.xworkz.techroute.repository.UserRepository;
 
 import org.springframework.beans.BeanUtils;
@@ -18,6 +16,8 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -33,11 +33,14 @@ public class UserServiceImpl implements UserService{
 
     private final TemplateEngine templateEngine;
 
-    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository, AdminRepository adminRepository , TemplateEngine templateEngine) {
+    private final StockRepository stockRepository;
+
+    public UserServiceImpl(UserRepository userRepository , ProfileRepository profileRepository, AdminRepository adminRepository ,StockRepository stockRepository, TemplateEngine templateEngine) {
         this.userRepository=userRepository;
         this.profileRepository = profileRepository;
         this.adminRepository=adminRepository;
         this.templateEngine=templateEngine;
+        this.stockRepository=stockRepository;
     }
     @Override
     public IssueCode validateAndSaveOrder(PurchaseDto dto) {
@@ -126,16 +129,58 @@ public class UserServiceImpl implements UserService{
                         entity.getUpdatedAt(),
                         entity.getStocks().stream()
                                 .map(stock -> new StockDTO(
-                                        stock.getStockId(),
-                                        stock.getQuantity(),
-                                        stock.getOpeningValue(),
-                                        stock.getPurchasePrice(),
+                                      stock.getLastUpdated(),
                                         stock.getWarehouse(),
-                                        stock.getLastUpdated()
+                                        stock.getPurchasePrice(),
+                                        stock.getOpeningValue(),
+                                        stock.getQuantity(),
+                                        stock.getStockId()
                                 ))
                                 .collect(Collectors.toList())
                 ))
                 .collect(Collectors.toList());
     }
 
+    @Override
+    @Transactional
+    public List<StockDTO> fetchAllStock() {
+        List<StockEntity> all = stockRepository.findAll();
+        List<StockDTO> stockDTOs = new ArrayList<>();
+
+        all.forEach(stockEntity -> {
+            StockDTO stockDTO = new StockDTO();
+            stockDTO.setStockId(stockEntity.getStockId());
+            stockDTO.setWarehouse(stockEntity.getWarehouse());
+            stockDTO.setLastUpdated(stockEntity.getLastUpdated());
+            stockDTO.setOpeningValue(stockEntity.getOpeningValue());
+            stockDTO.setQuantity(stockEntity.getQuantity());
+            stockDTO.setPurchasePrice(stockEntity.getPurchasePrice());
+
+            ProductMasterEntity product = stockEntity.getProduct();
+            ProductMasterDTO productMasterDTO = new ProductMasterDTO();
+            productMasterDTO.setProductId(product.getProductId());
+            productMasterDTO.setProductCode(product.getProductCode());
+            productMasterDTO.setProductName(product.getProductName());
+            productMasterDTO.setProductGroupName(product.getProductGroupName());
+            productMasterDTO.setModel(product.getModel());
+            productMasterDTO.setCompanyName(product.getCompanyName());
+            productMasterDTO.setVariantAttributes(product.getVariantAttributes());
+            productMasterDTO.setDefaultPurchasePrice(product.getDefaultPurchasePrice());
+            productMasterDTO.setDefaultSalePrice(product.getDefaultSalePrice());
+            productMasterDTO.setStatus(product.getStatus());
+            productMasterDTO.setCreatedAt(product.getCreatedAt());
+            productMasterDTO.setUpdatedAt(product.getUpdatedAt());
+
+            // Link productDTO back into stockDTO
+            stockDTO.setProductMasterDTO(productMasterDTO);
+
+            // Optionally: link stockDTO list back into productDTO
+            productMasterDTO.setStocks(Collections.singletonList(stockDTO));
+
+            // Add to result list
+            stockDTOs.add(stockDTO);
+        });
+
+        return stockDTOs;
+    }
 }

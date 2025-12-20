@@ -122,7 +122,6 @@
             <strong>TechRoute</strong>
         </a>
 
-        <!-- Admin Dropdown -->
         <div class="dropdown ms-auto me-3">
             <a class="dropdown-toggle text-decoration-none text-light fw-semibold" href="#" role="button" data-bs-toggle="dropdown"
                aria-expanded="false">
@@ -134,11 +133,11 @@
 <!--                        <i class="fa fa-id-card me-2 text-info"></i> View Profile-->
 <!--                    </a>-->
 <!--                </li>-->
-<!--                <li>-->
-<!--                    <a class="dropdown-item text-light" href="salesPage">-->
-<!--                        <i class="fa fa-id-card me-2 text-info"></i> Sales-->
-<!--                    </a>-->
-<!--                </li>-->
+                <li>
+                    <a class="dropdown-item text-light" href="stockPage">
+                        <i class="fa fa-id-card me-2 text-info"></i> View Stock
+                    </a>
+                </li>
                 <li>
                 <a class="dropdown-item text-light" href="purchasePage">
                     <i class="fa fa-id-card me-2 text-info"></i> Order

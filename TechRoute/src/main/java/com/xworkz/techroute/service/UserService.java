@@ -2,6 +2,7 @@ package com.xworkz.techroute.service;
 
 import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
+import com.xworkz.techroute.dto.StockDTO;
 import com.xworkz.techroute.enums.IssueCode;
 
 import java.util.List;
@@ -24,4 +25,5 @@ public interface UserService {
 
     List<ProductMasterDTO> fetchProductsByGroup(String productGroupName);
 
+    List<StockDTO> fetchAllStock();
 }

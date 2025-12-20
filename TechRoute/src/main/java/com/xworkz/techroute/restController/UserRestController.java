@@ -2,9 +2,9 @@ package com.xworkz.techroute.restController;
 
 import com.xworkz.techroute.dto.ProductMasterDTO;
 import com.xworkz.techroute.dto.PurchaseDto;
+import com.xworkz.techroute.dto.StockDTO;
 import com.xworkz.techroute.service.UserService;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -12,7 +12,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/")
@@ -63,5 +62,10 @@ public ResponseEntity<String> purchaseAll(@RequestBody List<PurchaseDto> purchas
     userService.saveOrders(purchaseDtos);
     return ResponseEntity.status(HttpStatus.CONFLICT).body("no okay");
 }
+
+    @GetMapping("stockRest")
+    public List<StockDTO> stockPage(){
+        return userService.fetchAllStock();
+    }
 
 }

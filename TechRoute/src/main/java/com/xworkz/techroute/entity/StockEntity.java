@@ -29,7 +29,7 @@ public class StockEntity {
     @Column(name = "last_updated")
     private LocalDateTime lastUpdated;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id", referencedColumnName = "product_id", nullable = false)
     private ProductMasterEntity product;
 

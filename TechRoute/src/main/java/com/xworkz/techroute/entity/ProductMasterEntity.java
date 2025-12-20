@@ -58,6 +58,6 @@ public class ProductMasterEntity {
         this.createdAt=LocalDateTime.now();
     }
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private java.util.List<StockEntity> stocks;
 }
