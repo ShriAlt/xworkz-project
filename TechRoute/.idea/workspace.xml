@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="configure logging levels and enhance EmailConfiguration with SLF4J logging">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/StockPage.jsp" afterDir="false" />
+    <list default="true" id="6de0ccd7-821d-4f25-a3e1-8136de1edc6c" name="Changes" comment="add stock functionality with StockDTO, StockEntity, and update UserService for stock retrieval">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserSaleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/controller/UserSaleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProductMasterDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/ProductMasterDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/StockDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/dto/StockDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductMasterEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/ProductMasterEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/StockEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/entity/StockEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/restController/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/xworkz/techroute/service/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/UserHome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/UserHome.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,14 +153,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1759866636192</updated>
-    </task>
-    <task id="LOCAL-00033" summary="update on admin logic">
-      <option name="closed" value="true" />
-      <created>1760982862136</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1760982862136</updated>
     </task>
     <task id="LOCAL-00034" summary="update on admin logic">
       <option name="closed" value="true" />
@@ -556,7 +538,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765895844457</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="add stock functionality with StockDTO, StockEntity, and update UserService for stock retrieval">
+      <option name="closed" value="true" />
+      <created>1766223515657</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1766223515658</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -571,7 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update on logout" />
     <MESSAGE value="added resend otp function" />
     <MESSAGE value="update on admin logic" />
     <MESSAGE value="update on admin js" />
@@ -596,7 +585,8 @@
     <MESSAGE value="add ProductMasterDTO and StockDTO classes, update ProductMasterEntity and UserRepository for product group fetching" />
     <MESSAGE value="add sales functionality with validation, DTOs, and repository integration" />
     <MESSAGE value="configure logging levels and enhance EmailConfiguration with SLF4J logging" />
-    <option name="LAST_COMMIT_MESSAGE" value="configure logging levels and enhance EmailConfiguration with SLF4J logging" />
+    <MESSAGE value="add stock functionality with StockDTO, StockEntity, and update UserService for stock retrieval" />
+    <option name="LAST_COMMIT_MESSAGE" value="add stock functionality with StockDTO, StockEntity, and update UserService for stock retrieval" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
